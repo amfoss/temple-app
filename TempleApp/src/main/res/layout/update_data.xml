@@ -56,7 +56,5 @@
         android:text="Update"
         android:id="@+id/update_btn1"
         android:layout_marginTop="45dp"
-        android:layout_below="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"/>
-</>
+        android:layout_gravity="center" />
+</LinearLayout>
