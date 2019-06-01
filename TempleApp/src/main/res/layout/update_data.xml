@@ -36,9 +36,7 @@
         android:layout_height="50dp"
         android:layout_margin="45dp"
         android:id="@+id/name"
-        android:hint="Name"
-        android:layout_below="@+id/uid"
-        android:layout_centerHorizontal="true" />
+        android:hint="Name" />
 
 
 
