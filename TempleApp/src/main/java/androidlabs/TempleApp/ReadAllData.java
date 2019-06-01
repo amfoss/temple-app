@@ -18,7 +18,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by ADJ on 5/17/2017.
+ * Created by Chromicle.
  */
 public class ReadAllData extends AppCompatActivity {
 

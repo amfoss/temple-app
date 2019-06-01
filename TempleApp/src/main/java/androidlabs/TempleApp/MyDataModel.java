@@ -2,6 +2,11 @@ package androidlabs.TempleApp;
 
 
 
+/**
+ * Created by Chromicle.
+ */
+
+
 public class MyDataModel {
 
     private String name;

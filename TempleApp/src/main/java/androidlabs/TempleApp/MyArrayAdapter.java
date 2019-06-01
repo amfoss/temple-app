@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
+/**
+ * Created by Chromicle.
+ */
+
 public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
 
     List<MyDataModel> modelList;

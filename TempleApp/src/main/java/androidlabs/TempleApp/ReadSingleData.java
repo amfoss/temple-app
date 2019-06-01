@@ -18,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by ADJ on 5/14/2017.
+ * Created by Chromicle
  */
 public class ReadSingleData extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class ReadSingleData extends AppCompatActivity {
     String id;
     String name;
     private EditText uid1ET;
-    private TextView id_l, name_l, id_v, name_v;
+    private TextView id_l, name_l, id_v, name_v,paid_l,paid_v,pooja_l,pooja_v;
     View view;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,10 @@ public class ReadSingleData extends AppCompatActivity {
         name_l = (TextView) findViewById(R.id.name_l);
         id_v = (TextView) findViewById(R.id.id_v);
         name_v = (TextView) findViewById(R.id.name_v);
+        pooja_l = (TextView) findViewById(R.id.pooja_l);
+        pooja_v = (TextView) findViewById(R.id.pooja_v);
+        paid_l= (TextView) findViewById(R.id.paid_l);
+        paid_v= (TextView) findViewById(R.id.paid_v);
 
          view= this.getCurrentFocus();
 
@@ -107,9 +111,14 @@ public class ReadSingleData extends AppCompatActivity {
 
             if (name != null) {
                 id_l.setText("ID");
-                name_l.setText("NAME");
+                name_l.setText("Name");
                 id_v.setText(id);
-                name_v.setText(name);
+                String[] str=name.split(getResources().getString(R.string.empty));
+                name_v.setText(str[1]);
+                pooja_l.setText(str[0]);
+                paid_v.setText(str[2]);
+                pooja_v.setText("Type of pooja");
+                paid_l.setText("Paid Staus");
 
             } else
                 Toast.makeText(getApplicationContext(), "ID not found", Toast.LENGTH_LONG).show();

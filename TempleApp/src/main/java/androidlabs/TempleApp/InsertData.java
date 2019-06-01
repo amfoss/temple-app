@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by ADJ on 5/14/2017.
+ * Created by Chromicle.
  */
 public class InsertData extends AppCompatActivity{
 

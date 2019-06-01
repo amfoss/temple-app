@@ -9,10 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
-
-
-
+/**
+ * Created by Chromicle.
+ */
 
 
 public class MainActivity extends AppCompatActivity {
