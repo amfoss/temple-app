@@ -11,6 +11,16 @@
         android:id="@+id/readAll_btn1"
         android:layout_gravity="center_horizontal" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Registered Poojas: "
+        android:textSize="24dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible"
+        android:id="@+id/heading"
+        android:textColor="#000000"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

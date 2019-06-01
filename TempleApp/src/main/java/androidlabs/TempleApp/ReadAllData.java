@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -26,6 +27,7 @@ public class ReadAllData extends AppCompatActivity {
     private ArrayList<MyDataModel> list;
     private MyArrayAdapter adapter;
     private Button readAll;
+    private TextView heading;
 
 
     @Override
@@ -39,6 +41,7 @@ public class ReadAllData extends AppCompatActivity {
         adapter = new MyArrayAdapter(this, list);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
+        heading= (TextView)findViewById(R.id.heading);
 
         readAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,8 +162,13 @@ public class ReadAllData extends AppCompatActivity {
              */
             if (list.size() > 0) {
                 adapter.notifyDataSetChanged();
+                heading.setVisibility(TextView.VISIBLE);
+
+
             } else {
                 Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_LONG).show();
+                heading.setVisibility(TextView.INVISIBLE);
+
             }
         }
     }
