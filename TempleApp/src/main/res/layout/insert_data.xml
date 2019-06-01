@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/uid"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="45dp"
+        android:hint="User Id" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Select Pooja Type"
+        android:layout_marginLeft="45dp"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="45dp" />
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:entries="@array/pooja_types"
+        android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="45dp"
+        android:hint="Name" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="45dp"
+        android:text="PAID"
+        android:id="@+id/paid_check"/>
+
+
+
+    <Button
+        android:id="@+id/insert_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_gravity="center"
+        android:text="Insert" />
+
+</LinearLayout>
+
+</ScrollView>

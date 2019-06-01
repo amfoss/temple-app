@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/uid"
+        android:hint="User ID"
+        android:layout_marginTop="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find"
+        android:id="@+id/insert_btn"
+        android:layout_marginTop="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/uid" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_v"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/insert_btn"
+        android:layout_toEndOf="@+id/insert_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_l"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/insert_btn"
+        android:layout_toStartOf="@+id/insert_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_l"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/id_l"
+        android:layout_alignLeft="@+id/id_l"
+        android:layout_alignStart="@+id/id_l" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_v"
+        android:layout_alignTop="@+id/name_l"
+        android:layout_alignLeft="@+id/id_v"
+        android:layout_alignStart="@+id/id_v" />
+
+
+</RelativeLayout>

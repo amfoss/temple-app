@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TempleApp</string>
+    <string name="create_insert">Create / Insert</string>
+    <string name="delete">Delete</string>
+    <string name="read">Read</string>
+    <string name="read_all">Read All</string>
+    <string name="update">update</string>
+    <string name="empty">"     "</string>
+
+
+    <string-array name="pooja_types">
+        <item>Type 1</item>
+        <item>Type 2</item>
+        <item>Type 3</item>
+        <item>Type 4</item>
+    </string-array>
+</resources>
