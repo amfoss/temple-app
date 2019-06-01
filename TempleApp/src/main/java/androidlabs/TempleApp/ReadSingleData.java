@@ -84,8 +84,8 @@ public class ReadSingleData extends AppCompatActivity {
             Log.i(Controller.TAG, "Json obj " + jsonObject);
 
             try {
-                /**
-                 * Check Whether Its NULL???
+                /*
+                  Check Whether Its NULL???
                  */
                 if (jsonObject != null) {
 
@@ -110,15 +110,15 @@ public class ReadSingleData extends AppCompatActivity {
             }
 
             if (name != null) {
-                id_l.setText("ID");
-                name_l.setText("Name");
+                id_l.setText("ID: ");
+                name_l.setText("Name: ");
                 id_v.setText(id);
                 String[] str = name.split(getResources().getString(R.string.empty));
                 name_v.setText(str[1]);
                 pooja_l.setText(str[0]);
                 paid_v.setText(str[2]);
-                pooja_v.setText("Type of pooja");
-                paid_l.setText("Paid Staus");
+                pooja_v.setText("Type of pooja: ");
+                paid_l.setText("Paid Staus: ");
 
             } else
                 Toast.makeText(getApplicationContext(), "ID not found", Toast.LENGTH_LONG).show();

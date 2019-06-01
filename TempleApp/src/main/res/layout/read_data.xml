@@ -32,8 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/insert_btn"
-        android:layout_toRightOf="@+id/insert_btn"
-        android:text="hey" />
+        android:layout_toRightOf="@+id/insert_btn" />
 
     <TextView
         android:id="@+id/id_l"
@@ -41,8 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toStartOf="@+id/insert_btn"
-        android:layout_toLeftOf="@+id/insert_btn"
-        android:text="hey" />
+        android:layout_toLeftOf="@+id/insert_btn" />
 
     <TextView
         android:id="@+id/name_l"
@@ -51,8 +49,7 @@
         android:layout_below="@+id/id_l"
         android:layout_alignStart="@+id/id_l"
         android:layout_alignLeft="@+id/id_l"
-        android:layout_marginTop="31dp"
-        android:text="hey" />
+        android:layout_marginTop="31dp" />
 
     <TextView
         android:id="@+id/name_v"
@@ -60,8 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/id_v"
         android:layout_alignLeft="@+id/id_v"
-        android:layout_alignTop="@+id/name_l"
-        android:text="hey" />
+        android:layout_alignTop="@+id/name_l" />
 
     <TextView
         android:id="@+id/pooja_v"
@@ -70,8 +66,7 @@
         android:layout_below="@id/name_l"
         android:layout_alignStart="@id/name_l"
         android:layout_alignLeft="@id/name_l"
-        android:layout_marginTop="35dp"
-        android:text="hey" />
+        android:layout_marginTop="35dp" />
 
     <TextView
         android:id="@+id/pooja_l"
@@ -80,8 +75,7 @@
         android:layout_below="@id/name_v"
         android:layout_alignStart="@id/name_v"
         android:layout_alignLeft="@id/name_v"
-        android:layout_marginTop="35dp"
-        android:text="hey" />
+        android:layout_marginTop="35dp" />
 
 
     <TextView
@@ -91,8 +85,7 @@
         android:layout_below="@id/pooja_l"
         android:layout_alignStart="@id/name_l"
         android:layout_alignLeft="@id/name_l"
-        android:layout_marginTop="35dp"
-        android:text="hey" />
+        android:layout_marginTop="35dp" />
 
     <TextView
         android:id="@+id/paid_v"
@@ -101,7 +94,6 @@
         android:layout_below="@id/pooja_v"
         android:layout_alignStart="@id/name_v"
         android:layout_alignLeft="@id/name_v"
-        android:layout_marginTop="35dp"
-        android:text="hey" />
+        android:layout_marginTop="35dp" />
 
 </RelativeLayout>
