@@ -36,12 +36,12 @@ public class ReadAllData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_all);
 
-        readAll=(Button)findViewById(R.id.readAll_btn1);
+        readAll = (Button) findViewById(R.id.readAll_btn1);
         list = new ArrayList<>();
         adapter = new MyArrayAdapter(this, list);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        heading= (TextView)findViewById(R.id.heading);
+        heading = (TextView) findViewById(R.id.heading);
 
         readAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,6 @@ public class ReadAllData extends AppCompatActivity {
                 new ReadData1().execute();
             }
         });
-
 
 
     }

@@ -1,7 +1,6 @@
 package androidlabs.TempleApp;
 
 
-
 /**
  * Created by Chromicle.
  */
@@ -12,7 +11,6 @@ public class MyDataModel {
     private String name;
 
     private String id;
-
 
 
     public String getName() {
@@ -28,9 +26,8 @@ public class MyDataModel {
     }
 
     public void setCountry(String id) {
-        this.id=id;
+        this.id = id;
     }
-
 
 
 }

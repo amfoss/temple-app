@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <EditText
+        android:id="@+id/uid"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/uid"
-        android:hint="User ID"
-        android:layout_marginTop="54dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="54dp"
+        android:hint="User ID" />
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find"
         android:id="@+id/insert_btn"
-        android:layout_marginTop="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uid"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/uid" />
+        android:layout_marginTop="45dp"
+        android:text="Find" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/id_v"
-        android:text="hey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/insert_btn"
         android:layout_toRightOf="@+id/insert_btn"
-        android:layout_toEndOf="@+id/insert_btn" />
+        android:text="hey" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/id_l"
-        android:text="hey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/insert_btn"
         android:layout_toLeftOf="@+id/insert_btn"
-        android:layout_toStartOf="@+id/insert_btn" />
+        android:text="hey" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hey"
         android:id="@+id/name_l"
-        android:layout_marginTop="31dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/id_l"
+        android:layout_alignStart="@+id/id_l"
         android:layout_alignLeft="@+id/id_l"
-        android:layout_alignStart="@+id/id_l" />
+        android:layout_marginTop="31dp"
+        android:text="hey" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/name_v"
-        android:text="hey"
-        android:layout_alignTop="@+id/name_l"
-        android:layout_alignLeft="@+id/id_v"
-        android:layout_alignStart="@+id/id_v" />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/id_v"
+        android:layout_alignLeft="@+id/id_v"
+        android:layout_alignTop="@+id/name_l"
+        android:text="hey" />
+
+    <TextView
         android:id="@+id/pooja_v"
-        android:text="hey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/name_l"
         android:layout_alignStart="@id/name_l"
         android:layout_alignLeft="@id/name_l"
-        android:layout_marginTop="35dp"/>
+        android:layout_marginTop="35dp"
+        android:text="hey" />
+
     <TextView
+        android:id="@+id/pooja_l"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pooja_l"
-        android:text="hey"
+        android:layout_below="@id/name_v"
         android:layout_alignStart="@id/name_v"
         android:layout_alignLeft="@id/name_v"
         android:layout_marginTop="35dp"
-        android:layout_below="@id/name_v"/>
+        android:text="hey" />
 
 
     <TextView
+        android:id="@+id/paid_l"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/paid_l"
-        android:text="hey"
         android:layout_below="@id/pooja_l"
         android:layout_alignStart="@id/name_l"
         android:layout_alignLeft="@id/name_l"
-        android:layout_marginTop="35dp"/>
+        android:layout_marginTop="35dp"
+        android:text="hey" />
 
     <TextView
+        android:id="@+id/paid_v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/paid_v"
-        android:text="hey"
         android:layout_below="@id/pooja_v"
         android:layout_alignStart="@id/name_v"
         android:layout_alignLeft="@id/name_v"
-        android:layout_marginTop="35dp"/>
+        android:layout_marginTop="35dp"
+        android:text="hey" />
 
 </RelativeLayout>

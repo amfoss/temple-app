@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <Button
+        android:id="@+id/readAll_btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read All"
-        android:id="@+id/readAll_btn1"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:text="Read All" />
 
     <TextView
+        android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Registered Poojas: "
-        android:textSize="24dp"
         android:layout_marginBottom="20dp"
-        android:visibility="invisible"
-        android:id="@+id/heading"
-        android:textColor="#000000"/>
+        android:text="All Registered Poojas: "
+        android:textColor="#000000"
+        android:textSize="24dp"
+        android:visibility="invisible" />
 
     <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView"
         android:layout_gravity="center_horizontal"
         android:divider="@null"
-        android:dividerHeight="0dp"/>
+        android:dividerHeight="0dp" />
 </LinearLayout>

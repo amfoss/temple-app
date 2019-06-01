@@ -17,32 +17,31 @@ import org.json.JSONObject;
 /**
  * Created by Chromicle.
  */
-public class UpdateData extends AppCompatActivity{
+public class UpdateData extends AppCompatActivity {
 
     private Button update;
     String id;
     String name;
-    private EditText uid1ET,uid2,nameET;
+    private EditText uid1ET, uid2, nameET;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_data);
-        update=(Button)findViewById(R.id.update_btn1);
-        uid1ET=(EditText)findViewById(R.id.uid);
-        nameET=(EditText)findViewById(R.id.name);
+        update = (Button) findViewById(R.id.update_btn1);
+        uid1ET = (EditText) findViewById(R.id.uid);
+        nameET = (EditText) findViewById(R.id.name);
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                 id=uid1ET.getText().toString();
-                 name=nameET.getText().toString();
+                id = uid1ET.getText().toString();
+                name = nameET.getText().toString();
                 new UpdateDataActivity().execute();
             }
         });
     }
-
 
 
     class UpdateDataActivity extends AsyncTask<Void, Void, Void> {
@@ -51,7 +50,7 @@ public class UpdateData extends AppCompatActivity{
         int jIndex;
         int x;
 
-        String result=null;
+        String result = null;
 
 
         @Override
@@ -59,7 +58,7 @@ public class UpdateData extends AppCompatActivity{
             super.onPreExecute();
 
             dialog = new ProgressDialog(UpdateData.this);
-            dialog.setTitle("Hey Wait Please..."+x);
+            dialog.setTitle("Hey Wait Please..." + x);
             dialog.setMessage("I am getting your JSON");
             dialog.show();
 
@@ -68,7 +67,7 @@ public class UpdateData extends AppCompatActivity{
         @Nullable
         @Override
         protected Void doInBackground(Void... params) {
-            JSONObject jsonObject = Controller.updateData(id,name);
+            JSONObject jsonObject = Controller.updateData(id, name);
             Log.i(Controller.TAG, "Json obj ");
 
             try {
@@ -77,7 +76,7 @@ public class UpdateData extends AppCompatActivity{
                  */
                 if (jsonObject != null) {
 
-                     result=jsonObject.getString("result");
+                    result = jsonObject.getString("result");
 
                 }
             } catch (JSONException je) {
@@ -85,11 +84,12 @@ public class UpdateData extends AppCompatActivity{
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             dialog.dismiss();
-           Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
     }
 }

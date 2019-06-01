@@ -26,7 +26,7 @@ public class ReadSingleData extends AppCompatActivity {
     String id;
     String name;
     private EditText uid1ET;
-    private TextView id_l, name_l, id_v, name_v,paid_l,paid_v,pooja_l,pooja_v;
+    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v;
     View view;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +41,10 @@ public class ReadSingleData extends AppCompatActivity {
         name_v = (TextView) findViewById(R.id.name_v);
         pooja_l = (TextView) findViewById(R.id.pooja_l);
         pooja_v = (TextView) findViewById(R.id.pooja_v);
-        paid_l= (TextView) findViewById(R.id.paid_l);
-        paid_v= (TextView) findViewById(R.id.paid_v);
+        paid_l = (TextView) findViewById(R.id.paid_l);
+        paid_v = (TextView) findViewById(R.id.paid_v);
 
-         view= this.getCurrentFocus();
+        view = this.getCurrentFocus();
 
         read.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +113,7 @@ public class ReadSingleData extends AppCompatActivity {
                 id_l.setText("ID");
                 name_l.setText("Name");
                 id_v.setText(id);
-                String[] str=name.split(getResources().getString(R.string.empty));
+                String[] str = name.split(getResources().getString(R.string.empty));
                 name_v.setText(str[1]);
                 pooja_l.setText(str[0]);
                 paid_v.setText(str[2]);

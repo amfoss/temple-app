@@ -17,7 +17,7 @@ import org.json.JSONObject;
 /**
  * Created by Chromicle.
  */
-public class DeleteData extends AppCompatActivity{
+public class DeleteData extends AppCompatActivity {
 
     private Button delete;
     String id;
@@ -25,20 +25,18 @@ public class DeleteData extends AppCompatActivity{
     private EditText uid1ET;
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_data);
-        delete=(Button)findViewById(R.id.delete_btn);
-        uid1ET=(EditText)findViewById(R.id.uid);
-
+        delete = (Button) findViewById(R.id.delete_btn);
+        uid1ET = (EditText) findViewById(R.id.uid);
 
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                id=uid1ET.getText().toString();
+                id = uid1ET.getText().toString();
 
                 new DeleteDataActivity().execute();
             }
@@ -46,14 +44,12 @@ public class DeleteData extends AppCompatActivity{
     }
 
 
-
     class DeleteDataActivity extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog dialog;
         int jIndex;
         int x;
-        String result=null;
-
+        String result = null;
 
 
         @Override
@@ -70,9 +66,9 @@ public class DeleteData extends AppCompatActivity{
         @Nullable
         @Override
         protected Void doInBackground(Void... params) {
-           Log.i(Controller.TAG,"IDVALUE"+id);
+            Log.i(Controller.TAG, "IDVALUE" + id);
             JSONObject jsonObject = Controller.deleteData(id);
-            Log.i(Controller.TAG, "Json obj "+jsonObject);
+            Log.i(Controller.TAG, "Json obj " + jsonObject);
 
             try {
                 /**
@@ -80,7 +76,7 @@ public class DeleteData extends AppCompatActivity{
                  */
                 if (jsonObject != null) {
 
-                    result=jsonObject.getString("result");
+                    result = jsonObject.getString("result");
 
 
                 }
@@ -89,11 +85,12 @@ public class DeleteData extends AppCompatActivity{
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             dialog.dismiss();
-            Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
 
         }
     }

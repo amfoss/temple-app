@@ -17,9 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button read,readAll,insert,delete,update;
-
-
+    private Button read, readAll, insert, delete, update;
 
 
     @Override
@@ -28,86 +26,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
-        read=(Button)findViewById(R.id.read_btn);
-        readAll=(Button)findViewById(R.id.read_all_btn);
-        insert=(Button)findViewById(R.id.insert_btn);
-        update=(Button)findViewById(R.id.update_btn);
-        delete=(Button)findViewById(R.id.delete_btn);
-
-
+        read = (Button) findViewById(R.id.read_btn);
+        readAll = (Button) findViewById(R.id.read_all_btn);
+        insert = (Button) findViewById(R.id.insert_btn);
+        update = (Button) findViewById(R.id.update_btn);
+        delete = (Button) findViewById(R.id.delete_btn);
 
 
         readAll.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
+                                       @Override
+                                       public void onClick(View view) {
 
-                                        if (InternetConnection.checkConnection(getApplicationContext())) {
-                                            Intent intent=new Intent(getApplicationContext(),ReadAllData.class);
-                                            startActivity(intent);
+                                           if (InternetConnection.checkConnection(getApplicationContext())) {
+                                               Intent intent = new Intent(getApplicationContext(), ReadAllData.class);
+                                               startActivity(intent);
 
-                                        } else {
-                                            Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
-                                        }
-
-
+                                           } else {
+                                               Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                                           }
 
 
-
-                                    }
-                                }
+                                       }
+                                   }
         );
 
 
-     insert.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-
-             if (InternetConnection.checkConnection(getApplicationContext())) {
-                 Intent intent=new Intent(getApplicationContext(),InsertData.class);
-                 startActivity(intent);
-
-
-             } else {
-                 Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
-             }
-
-
-
-
-
-         }
-     });
-
-
-    update.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent=new Intent(getApplicationContext(),UpdateData.class);
-                startActivity(intent);
-
-
-            } else {
-                Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
-            }
-
-
-
-
-        }
-    });
-
-
-        read.setOnClickListener(new View.OnClickListener() {
+        insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (InternetConnection.checkConnection(getApplicationContext())) {
-                    Intent intent=new Intent(getApplicationContext(),ReadSingleData.class);
+                    Intent intent = new Intent(getApplicationContext(), InsertData.class);
                     startActivity(intent);
 
 
@@ -116,6 +65,41 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (InternetConnection.checkConnection(getApplicationContext())) {
+                    Intent intent = new Intent(getApplicationContext(), UpdateData.class);
+                    startActivity(intent);
+
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+        });
+
+
+        read.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (InternetConnection.checkConnection(getApplicationContext())) {
+                    Intent intent = new Intent(getApplicationContext(), ReadSingleData.class);
+                    startActivity(intent);
+
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                }
 
 
             }
@@ -126,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (InternetConnection.checkConnection(getApplicationContext())) {
-                    Intent intent=new Intent(getApplicationContext(),DeleteData.class);
+                    Intent intent = new Intent(getApplicationContext(), DeleteData.class);
                     startActivity(intent);
 
 
@@ -135,11 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
             }
         });
-
-
 
 
     }

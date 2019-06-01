@@ -55,7 +55,6 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
     }
 
 
-
     private static class ViewHolder {
         public final RelativeLayout rootView;
 

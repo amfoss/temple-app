@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/uid"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/uid"
-        android:hint="User ID"
-        android:layout_margin="45dp"/>
+        android:layout_margin="45dp"
+        android:hint="User ID" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Pooja Type"
+        android:layout_marginStart="45dp"
         android:layout_marginLeft="45dp"
-        android:textSize="15sp"
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="45dp" />
+        android:text="Select Pooja Type"
+        android:textSize="15sp" />
 
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="45dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
+        android:layout_marginBottom="45dp"
         android:entries="@array/pooja_types"
         android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
 
     <EditText
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="45dp"
-        android:id="@+id/name"
         android:hint="Name" />
 
 
-
     <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/paid_check"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="45dp"
-        android:text="PAID"
-        android:id="@+id/paid_check"/>
+        android:text="PAID" />
 
 
     <Button
+        android:id="@+id/update_btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update"
-        android:id="@+id/update_btn1"
+        android:layout_gravity="center"
         android:layout_marginTop="45dp"
-        android:layout_gravity="center" />
+        android:text="Update" />
 </LinearLayout>

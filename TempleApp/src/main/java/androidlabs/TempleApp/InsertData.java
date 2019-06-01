@@ -19,7 +19,7 @@ import org.json.JSONObject;
 /**
  * Created by Chromicle.
  */
-public class InsertData extends AppCompatActivity{
+public class InsertData extends AppCompatActivity {
 
     private Button insert;
     String id;
@@ -27,8 +27,8 @@ public class InsertData extends AppCompatActivity{
     String poojaTyp;
     String overall;
     String thinkiID;
-    String paidCheck="NOT PAID";
-    private EditText uid1ET,mPoojaName,nameET;
+    String paidCheck = "NOT PAID";
+    private EditText uid1ET, mPoojaName, nameET;
     private CheckBox paid;
     Spinner poojaType;
 
@@ -36,11 +36,11 @@ public class InsertData extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.insert_data);
-        insert=(Button)findViewById(R.id.insert_btn);
-        uid1ET=(EditText)findViewById(R.id.uid);
-        nameET=(EditText)findViewById(R.id.name);
-        paid=(CheckBox)findViewById(R.id.paid_check);
-        poojaType=(Spinner)findViewById(R.id.spinner1);
+        insert = (Button) findViewById(R.id.insert_btn);
+        uid1ET = (EditText) findViewById(R.id.uid);
+        nameET = (EditText) findViewById(R.id.name);
+        paid = (CheckBox) findViewById(R.id.paid_check);
+        poojaType = (Spinner) findViewById(R.id.spinner1);
 
 
         paid.setOnClickListener(new View.OnClickListener() {
@@ -49,11 +49,10 @@ public class InsertData extends AppCompatActivity{
             public void onClick(View v) {
                 //is chkIos checked?
                 if (((CheckBox) v).isChecked()) {
-                    paidCheck="PAID";
+                    paidCheck = "PAID";
 
-                }
-                else{
-                    paidCheck="NOT PAID";
+                } else {
+                    paidCheck = "NOT PAID";
                 }
 
             }
@@ -64,17 +63,16 @@ public class InsertData extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                 id=uid1ET.getText().toString();
-                 name=nameET.getText().toString();
-                 poojaTyp=String.valueOf(poojaType.getSelectedItem());
+                id = uid1ET.getText().toString();
+                name = nameET.getText().toString();
+                poojaTyp = String.valueOf(poojaType.getSelectedItem());
 
-                overall=poojaTyp+getResources().getString(R.string.empty)+name+getResources().getString(R.string.empty)+paidCheck;
+                overall = poojaTyp + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
 
                 new InsertDataActivity().execute();
             }
         });
     }
-
 
 
     class InsertDataActivity extends AsyncTask<Void, Void, Void> {
@@ -83,7 +81,7 @@ public class InsertData extends AppCompatActivity{
         int jIndex;
         int x;
 
-        String result=null;
+        String result = null;
 
 
         @Override
@@ -100,7 +98,7 @@ public class InsertData extends AppCompatActivity{
         @Nullable
         @Override
         protected Void doInBackground(Void... params) {
-            JSONObject jsonObject = Controller.insertData(id,overall);
+            JSONObject jsonObject = Controller.insertData(id, overall);
             Log.i(Controller.TAG, "Json obj ");
 
             try {
@@ -109,7 +107,7 @@ public class InsertData extends AppCompatActivity{
                  */
                 if (jsonObject != null) {
 
-                     result=jsonObject.getString("result");
+                    result = jsonObject.getString("result");
 
                 }
             } catch (JSONException je) {
@@ -117,11 +115,12 @@ public class InsertData extends AppCompatActivity{
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             dialog.dismiss();
-           Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
     }
 }
