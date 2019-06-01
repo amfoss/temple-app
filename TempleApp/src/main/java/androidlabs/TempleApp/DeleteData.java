@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -24,6 +26,9 @@ public class DeleteData extends AppCompatActivity {
     String name;
     private EditText uid1ET;
 
+    RadioGroup radioGroup;
+    RelativeLayout totalLayout;
+    int flag;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +36,39 @@ public class DeleteData extends AppCompatActivity {
         delete = (Button) findViewById(R.id.delete_btn);
         uid1ET = (EditText) findViewById(R.id.uid);
 
+        radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
+        totalLayout =(RelativeLayout)findViewById(R.id.total_View);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch(checkedId){
+                    case R.id.radio_donate:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag=0;
+                        Toast.makeText(getBaseContext(),"Selected To Delete Donated Money",Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.radio_pooja:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag=1;
+                        Toast.makeText(getBaseContext(),"Selected To Delete Registered Pooja",Toast.LENGTH_LONG).show();
+                        break;
+
+                }
+            }
+        });
+
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                id = uid1ET.getText().toString();
+                if (flag==1) {
+                    id ="REG"+ uid1ET.getText().toString();
+                }
+                else{
+                    id = "DON"+uid1ET.getText().toString();
+                }
 
                 new DeleteDataActivity().execute();
             }
