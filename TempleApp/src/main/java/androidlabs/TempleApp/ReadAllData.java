@@ -114,30 +114,13 @@ public class ReadAllData extends AppCompatActivity {
                                  */
                                 MyDataModel model = new MyDataModel();
 
-                                /**
-                                 * Getting Inner Object from contacts array...
-                                 * and
-                                 * From that We will get Name of that Contact
-                                 *
-                                 */
                                 JSONObject innerObject = array.getJSONObject(jIndex);
 
                                 String id = innerObject.getString("ID");
                                 String name = innerObject.getString("NAME");
-//  String image = innerObject.getString(Keys.KEY_IMAGE);
-                                /**
-                                 * Getting Object from Object "phone"
-                                 */
-                                //JSONObject phoneObject = innerObject.getJSONObject(Keys.KEY_PHONE);
-                                //String phone = phoneObject.getString(Keys.KEY_MOBILE);
 
                                 model.setName(name);
                                 model.setCountry(id);
-                                //                              model.setImage(image);
-
-                                /**
-                                 * Adding name and phone concatenation in List...
-                                 */
                                 list.add(model);
                             }
                         }

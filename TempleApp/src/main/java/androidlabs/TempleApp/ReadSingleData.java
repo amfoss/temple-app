@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +30,9 @@ public class ReadSingleData extends AppCompatActivity {
     private EditText uid1ET;
     private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v;
     View view;
+    RadioGroup radioGroup;
+    int flag;
+    RelativeLayout totalLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +51,39 @@ public class ReadSingleData extends AppCompatActivity {
 
         view = this.getCurrentFocus();
 
+
+        radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
+        totalLayout =(RelativeLayout)findViewById(R.id.total_View);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch(checkedId){
+                    case R.id.radio_donate:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag=0;
+                        Toast.makeText(getBaseContext(),"Selected To Donate Money",Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.radio_pooja:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag=1;
+                        Toast.makeText(getBaseContext(),"Selected To Register New Pooja",Toast.LENGTH_LONG).show();
+                        break;
+
+                }
+            }
+        });
+
         read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                id = uid1ET.getText().toString();
+                if (flag==1) {
+                    id ="REG"+ uid1ET.getText().toString();
+                }
+                else{
+                    id = "DON"+uid1ET.getText().toString();
+                }
 
                 new ReadDataActivity().execute();
             }
@@ -112,12 +145,24 @@ public class ReadSingleData extends AppCompatActivity {
             if (name != null) {
                 id_l.setText("ID: ");
                 name_l.setText("Name: ");
-                id_v.setText(id);
+                int flag = 0;
+                if (id.substring(0, 3).equals("DON")) {
+                    id_v.setText(id.substring(3, id.length()));
+                    flag = 1;
+                } else if (id.substring(0, 3).equals("REG")) {
+                    id_v.setText(id.substring(3, id.length()));
+                    flag = 0;
+                }
+
                 String[] str = name.split(getResources().getString(R.string.empty));
                 name_v.setText(str[1]);
                 pooja_l.setText(str[0]);
                 paid_v.setText(str[2]);
-                pooja_v.setText("Type of pooja: ");
+                if (flag == 0) {
+                    pooja_v.setText("Type of pooja: ");
+                } else {
+                    pooja_v.setText("Money Donated: ");
+                }
                 paid_l.setText("Paid Staus: ");
 
             } else
