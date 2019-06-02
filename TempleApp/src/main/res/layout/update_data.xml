@@ -2,60 +2,112 @@
 
 <!-- Created By Chromicle -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/uid"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="45dp"
-        android:hint="User ID" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginBottom="10dp"
-        android:text="Select Pooja Type"
-        android:textSize="15sp" />
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_pooja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="Update Registered for pooja Details" />
+
+                <RadioButton
+                    android:id="@+id/radio_donate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="Update the Details of Donated money" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/total_View"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/uid"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="User ID" />
 
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginBottom="45dp"
-        android:entries="@array/pooja_types"
-        android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
-
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="45dp"
-        android:hint="Name" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginBottom="10dp"
+                android:text="Select Pooja Type"
+                android:textSize="15sp" />
 
 
-    <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/paid_check"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="45dp"
-        android:text="PAID" />
+            <EditText
+                android:id="@+id/money_donated"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="Enter Money Donated" />
 
 
-    <Button
-        android:id="@+id/update_btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="45dp"
-        android:text="Update" />
-</LinearLayout>
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:layout_marginBottom="45dp"
+                android:entries="@array/pooja_types"
+                android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="Name" />
+
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/paid_check"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="45dp"
+                android:text="PAID" />
+
+
+            <Button
+                android:id="@+id/update_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="45dp"
+                android:text="Update" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
