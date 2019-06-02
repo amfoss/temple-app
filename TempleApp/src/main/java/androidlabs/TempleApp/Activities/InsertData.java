@@ -1,4 +1,4 @@
-package androidlabs.TempleApp;
+package androidlabs.TempleApp.Activities;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -11,13 +11,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import androidlabs.TempleApp.JSON_API.Controller;
+import androidlabs.TempleApp.R;
 
 /**
  * Created by Chromicle.

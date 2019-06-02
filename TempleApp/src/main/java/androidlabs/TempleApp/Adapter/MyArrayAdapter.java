@@ -1,4 +1,4 @@
-package androidlabs.TempleApp;
+package androidlabs.TempleApp.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
+
+import androidlabs.TempleApp.R;
 
 
 /**

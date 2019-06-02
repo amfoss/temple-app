@@ -1,4 +1,4 @@
-package androidlabs.TempleApp;
+package androidlabs.TempleApp.Activities;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import androidlabs.TempleApp.JSON_API.Controller;
+import androidlabs.TempleApp.R;
 
 /**
  * Created by Chromicle.

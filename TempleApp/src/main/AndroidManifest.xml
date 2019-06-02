@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="androidlabs.TempleApp.MainActivity">
+        <activity android:name="androidlabs.TempleApp.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,24 +20,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="androidlabs.TempleApp.InsertData"
-            android:parentActivityName="androidlabs.TempleApp.MainActivity"
+            android:name="androidlabs.TempleApp.Activities.InsertData"
+            android:parentActivityName="androidlabs.TempleApp.Activities.MainActivity"
             android:label="Register New pooja"/>
         <activity
-            android:name="androidlabs.TempleApp.UpdateData"
-            android:parentActivityName="androidlabs.TempleApp.MainActivity"
+            android:name="androidlabs.TempleApp.Activities.UpdateData"
+            android:parentActivityName="androidlabs.TempleApp.Activities.MainActivity"
             android:label="Update Registered Pooja"/>
         <activity
-            android:name="androidlabs.TempleApp.ReadSingleData"
-            android:parentActivityName="androidlabs.TempleApp.MainActivity"
+            android:name="androidlabs.TempleApp.Activities.ReadSingleData"
+            android:parentActivityName="androidlabs.TempleApp.Activities.MainActivity"
             android:label="Search ID"/>
         <activity
-            android:name="androidlabs.TempleApp.DeleteData"
-            android:parentActivityName="androidlabs.TempleApp.MainActivity"
+            android:name="androidlabs.TempleApp.Activities.DeleteData"
+            android:parentActivityName="androidlabs.TempleApp.Activities.MainActivity"
             android:label="Delete Registered Pooja"/>
         <activity
-            android:name="androidlabs.TempleApp.ReadAllData"
-            android:parentActivityName="androidlabs.TempleApp.MainActivity"
+            android:name="androidlabs.TempleApp.Activities.ReadAllData"
+            android:parentActivityName="androidlabs.TempleApp.Activities.MainActivity"
             android:label="Read all Registered Poojas"/>
     </application>
 
