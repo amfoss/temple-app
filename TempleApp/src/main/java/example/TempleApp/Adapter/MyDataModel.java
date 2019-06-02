@@ -1,4 +1,4 @@
-package androidlabs.TempleApp.Adapter;
+package example.TempleApp.Adapter;
 
 
 /**

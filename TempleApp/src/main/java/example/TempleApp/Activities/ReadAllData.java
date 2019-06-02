@@ -1,4 +1,4 @@
-package androidlabs.TempleApp.Activities;
+package example.TempleApp.Activities;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -18,10 +18,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import androidlabs.TempleApp.JSON_API.Controller;
-import androidlabs.TempleApp.Adapter.MyArrayAdapter;
-import androidlabs.TempleApp.Adapter.MyDataModel;
-import androidlabs.TempleApp.R;
+import example.TempleApp.JSON_API.Controller;
+import example.TempleApp.Adapter.MyArrayAdapter;
+import example.TempleApp.Adapter.MyDataModel;
+import example.TempleApp.R;
 
 /**
  * Created by Chromicle.

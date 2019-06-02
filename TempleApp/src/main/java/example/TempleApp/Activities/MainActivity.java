@@ -1,4 +1,4 @@
-package androidlabs.TempleApp.Activities;
+package example.TempleApp.Activities;
 
 //MainActivity.java
 
@@ -9,13 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidlabs.TempleApp.Activities.DeleteData;
-import androidlabs.TempleApp.Activities.InsertData;
-import androidlabs.TempleApp.Activities.ReadAllData;
-import androidlabs.TempleApp.Activities.ReadSingleData;
-import androidlabs.TempleApp.Activities.UpdateData;
-import androidlabs.TempleApp.JSON_API.InternetConnection;
-import androidlabs.TempleApp.R;
+import example.TempleApp.JSON_API.InternetConnection;
+import example.TempleApp.R;
 
 /**
  * Created by Chromicle.

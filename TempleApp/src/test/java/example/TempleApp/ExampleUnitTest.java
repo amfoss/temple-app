@@ -1,4 +1,4 @@
-package androidlabs.TempleApp;
+package example.TempleApp;
 
 import org.junit.Test;
 

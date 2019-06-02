@@ -1,4 +1,4 @@
-package androidlabs.TempleApp.JSON_API;
+package example.TempleApp.JSON_API;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
