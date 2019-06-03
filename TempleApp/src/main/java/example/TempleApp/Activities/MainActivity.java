@@ -2,8 +2,11 @@ package example.TempleApp.Activities;
 
 //MainActivity.java
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -45,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                                                startActivity(intent);
 
                                            } else {
-                                               Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                                               createNetErrorDialog();
+                                               // Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
                                            }
 
 
@@ -64,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                    createNetErrorDialog();
+                    // Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -83,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                    createNetErrorDialog();
+                    // Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -101,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                    createNetErrorDialog();
+                    // Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -118,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
+                    createNetErrorDialog();
+                    // Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -126,6 +134,32 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+
+    protected void createNetErrorDialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("You need internet connection for this app. Please turn on mobile network or Wi-Fi in Settings.")
+                .setTitle("Unable to connect")
+                .setCancelable(false)
+                .setPositiveButton("Settings",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent i = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
+                                startActivity(i);
+                            }
+                        }
+                )
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                            }
+                        }
+                );
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 }
