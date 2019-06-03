@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    
+
                     createNetErrorDialog();
                     // Toast.makeText(getApplicationContext(), "Check your internet connection", Toast.LENGTH_LONG).show();
                 }
