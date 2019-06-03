@@ -26,21 +26,15 @@ import example.TempleApp.R;
  */
 public class InsertData extends AppCompatActivity {
 
-    private Button insert;
-    String id;
-    String name;
-    String poojaTyp;
-    String overall;
-    String money;
-    String paidCheck = "NOT PAID";
-    private EditText uid1ET, mPoojaName, nameET;
-    private CheckBox paid;
+    String id,name,poojaTyp,overall,money,paidCheck = "NOT PAID";
     Spinner poojaType;
     RadioGroup radioGroup;
     LinearLayout totalLayout;
     EditText moneyDonated;
     int flag;
-
+    private Button insert;
+    private EditText uid1ET, nameET;
+    private CheckBox paid;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,30 +44,29 @@ public class InsertData extends AppCompatActivity {
         nameET = (EditText) findViewById(R.id.name);
         paid = (CheckBox) findViewById(R.id.paid_check);
         poojaType = (Spinner) findViewById(R.id.spinner1);
-        totalLayout=(LinearLayout)findViewById(R.id.total_View);
-        moneyDonated=(EditText)findViewById(R.id.money_donated);
+        totalLayout = (LinearLayout) findViewById(R.id.total_View);
+        moneyDonated = (EditText) findViewById(R.id.money_donated);
 
-        radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch(checkedId){
+                switch (checkedId) {
                     case R.id.radio_donate:
                         totalLayout.setVisibility(View.VISIBLE);
                         poojaType.setVisibility(View.GONE);
                         moneyDonated.setVisibility(View.VISIBLE);
-                        id="DON";
-                        flag=0;
-                        Toast.makeText(getBaseContext(),"Selected To Donate Money",Toast.LENGTH_LONG).show();
+                        id = "DON";
+                        flag = 0;
+                        Toast.makeText(getBaseContext(), "Selected To Donate Money", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
                         moneyDonated.setVisibility(View.GONE);
                         poojaType.setVisibility(View.VISIBLE);
-                        id="REG";
-                        flag=1;
-                        Toast.makeText(getBaseContext(),"Selected To Register New Pooja",Toast.LENGTH_LONG).show();
+                        id = "REG";
+                        flag = 1;
+                        Toast.makeText(getBaseContext(), "Selected To Register New Pooja", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -100,16 +93,15 @@ public class InsertData extends AppCompatActivity {
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                id = id+uid1ET.getText().toString();
+                id = id + uid1ET.getText().toString();
                 name = nameET.getText().toString();
-                if(flag==1) {
+                if (flag == 1) {
                     poojaTyp = String.valueOf(poojaType.getSelectedItem());
 
                     overall = poojaTyp + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
-                }
-                else {
-                    money=moneyDonated.getText().toString();
-                    overall = money+ getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
+                } else {
+                    money = moneyDonated.getText().toString();
+                    overall = money + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
                 }
 
                 new InsertDataActivity().execute();

@@ -27,15 +27,15 @@ import example.TempleApp.R;
  */
 public class ReadSingleData extends AppCompatActivity {
 
-    private Button read;
     String id;
     String name;
-    private EditText uid1ET;
-    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v;
     View view;
     RadioGroup radioGroup;
     int flag;
     RelativeLayout totalLayout;
+    private Button read;
+    private EditText uid1ET;
+    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,22 +55,21 @@ public class ReadSingleData extends AppCompatActivity {
         view = this.getCurrentFocus();
 
 
-        radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
-        totalLayout =(RelativeLayout)findViewById(R.id.total_View);
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        totalLayout = (RelativeLayout) findViewById(R.id.total_View);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch(checkedId){
+                switch (checkedId) {
                     case R.id.radio_donate:
                         totalLayout.setVisibility(View.VISIBLE);
-                        flag=0;
-                        Toast.makeText(getBaseContext(),"Selected To Donate Money",Toast.LENGTH_LONG).show();
+                        flag = 0;
+                        Toast.makeText(getBaseContext(), "Selected To Donate Money", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
-                        flag=1;
-                        Toast.makeText(getBaseContext(),"Selected To Register New Pooja",Toast.LENGTH_LONG).show();
+                        flag = 1;
+                        Toast.makeText(getBaseContext(), "Selected To Register New Pooja", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -81,11 +80,10 @@ public class ReadSingleData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (flag==1) {
-                    id ="REG"+ uid1ET.getText().toString();
-                }
-                else{
-                    id = "DON"+uid1ET.getText().toString();
+                if (flag == 1) {
+                    id = "REG" + uid1ET.getText().toString();
+                } else {
+                    id = "DON" + uid1ET.getText().toString();
                 }
 
                 new ReadDataActivity().execute();

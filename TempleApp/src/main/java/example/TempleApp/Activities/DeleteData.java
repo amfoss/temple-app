@@ -24,14 +24,13 @@ import example.TempleApp.R;
  */
 public class DeleteData extends AppCompatActivity {
 
-    private Button delete;
     String id;
     String name;
-    private EditText uid1ET;
-
     RadioGroup radioGroup;
     RelativeLayout totalLayout;
     int flag;
+    private Button delete;
+    private EditText uid1ET;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,22 +38,21 @@ public class DeleteData extends AppCompatActivity {
         delete = (Button) findViewById(R.id.delete_btn);
         uid1ET = (EditText) findViewById(R.id.uid);
 
-        radioGroup=(RadioGroup)findViewById(R.id.radiogroup);
-        totalLayout =(RelativeLayout)findViewById(R.id.total_View);
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        totalLayout = (RelativeLayout) findViewById(R.id.total_View);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch(checkedId){
+                switch (checkedId) {
                     case R.id.radio_donate:
                         totalLayout.setVisibility(View.VISIBLE);
-                        flag=0;
-                        Toast.makeText(getBaseContext(),"Selected To Delete Donated Money",Toast.LENGTH_LONG).show();
+                        flag = 0;
+                        Toast.makeText(getBaseContext(), "Selected To Delete Donated Money", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
-                        flag=1;
-                        Toast.makeText(getBaseContext(),"Selected To Delete Registered Pooja",Toast.LENGTH_LONG).show();
+                        flag = 1;
+                        Toast.makeText(getBaseContext(), "Selected To Delete Registered Pooja", Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -66,11 +64,10 @@ public class DeleteData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (flag==1) {
-                    id ="REG"+ uid1ET.getText().toString();
-                }
-                else{
-                    id = "DON"+uid1ET.getText().toString();
+                if (flag == 1) {
+                    id = "REG" + uid1ET.getText().toString();
+                } else {
+                    id = "DON" + uid1ET.getText().toString();
                 }
 
                 new DeleteDataActivity().execute();

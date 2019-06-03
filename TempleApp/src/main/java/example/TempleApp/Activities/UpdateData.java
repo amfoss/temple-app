@@ -26,7 +26,6 @@ import example.TempleApp.R;
  */
 public class UpdateData extends AppCompatActivity {
 
-    private Button update;
     String id;
     String name;
     RadioGroup radioGroup;
@@ -36,6 +35,7 @@ public class UpdateData extends AppCompatActivity {
     CheckBox paid;
     EditText moneyDonated;
     String paidCheck, poojaTyp, overall, money;
+    private Button update;
     private EditText uid1ET, uid2, nameET;
 
 
