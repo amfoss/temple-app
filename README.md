@@ -59,3 +59,7 @@ Google Sheets provides us with an already familiar interface to create, edit, an
 - [junit:4.12](https://mvnrepository.com/artifact/junit/junit/4.12)
 - [okhttp](https://square.github.io/okhttp/)
 - [cardview-v7:28.0.0](https://mvnrepository.com/artifact/com.android.support/cardview-v7/28.0.0-alpha1)
+
+## License
+
+This project is currently licensed under the MIT License. A copy of [LICENSE](https://github.com/amfoss/TempleApp/blob/master/LICENSE) is to be present along with the source code. To obtain the software under a different license, please contact [FOSS@Amrita](https://amfoss.in/).
