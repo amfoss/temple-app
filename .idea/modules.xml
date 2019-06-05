@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TempleApp/TempleApp.iml" filepath="$PROJECT_DIR$/TempleApp/TempleApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/crud.iml" filepath="$PROJECT_DIR$/crud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gsheet_crud_android-master.iml" filepath="$PROJECT_DIR$/gsheet_crud_android-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-TempleApp.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-TempleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TempleApp/TempleApp-TempleApp.iml" filepath="$PROJECT_DIR$/TempleApp/TempleApp-TempleApp.iml" />
     </modules>
   </component>
 </project>

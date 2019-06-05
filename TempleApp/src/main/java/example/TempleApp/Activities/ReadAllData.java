@@ -8,7 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,9 +20,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import example.TempleApp.JSON_API.Controller;
 import example.TempleApp.Adapter.MyArrayAdapter;
 import example.TempleApp.Adapter.MyDataModel;
+import example.TempleApp.JSON_API.Controller;
 import example.TempleApp.R;
 
 /**
@@ -28,12 +30,15 @@ import example.TempleApp.R;
  */
 public class ReadAllData extends AppCompatActivity {
 
+    RadioGroup radioGroup;
+    LinearLayout totalLayout;
+    LinearLayout radioButtonView;
+    private int flag;
     private ListView listView;
     private ArrayList<MyDataModel> list;
     private MyArrayAdapter adapter;
     private Button readAll;
     private TextView heading;
-
 
     @Override
 
@@ -41,17 +46,54 @@ public class ReadAllData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_all);
 
-        readAll = (Button) findViewById(R.id.readAll_btn1);
+        readAll = findViewById(R.id.readAll_btn1);
         list = new ArrayList<>();
         adapter = new MyArrayAdapter(this, list);
-        listView = (ListView) findViewById(R.id.listView);
+        listView =  findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        heading = (TextView) findViewById(R.id.heading);
+        heading =  findViewById(R.id.heading);
+        radioButtonView = findViewById(R.id.radiogroup_view);
 
         readAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new ReadData1().execute();
+                radioButtonView.setVisibility(View.GONE);
+                readAll.setVisibility(View.GONE);
+            }
+        });
+
+        totalLayout =  findViewById(R.id.total_View);
+
+
+        radioGroup = findViewById(R.id.radiogroup);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.donate_paid:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag = 1;
+                        heading.setText("List of all Donations who paid only");
+                        break;
+                    case R.id.donate_not_paid:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag = 2;
+                        heading.setText("List of all Donations who not paid only");
+                        break;
+                    case R.id.pooja_paid:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag = 3;
+                        heading.setText("List of all registrations who paid only");
+                        break;
+
+                    case R.id.pooja_not_paid:
+                        totalLayout.setVisibility(View.VISIBLE);
+                        flag = 4;
+                        heading.setText("List of all registrations who not paid only");
+                        break;
+
+                }
             }
         });
 
@@ -124,9 +166,38 @@ public class ReadAllData extends AppCompatActivity {
                                 String id = innerObject.getString("ID");
                                 String name = innerObject.getString("NAME");
 
-                                model.setName(name);
-                                model.setCountry(id);
-                                list.add(model);
+                                String[] str = name.split(getResources().getString(R.string.empty));
+
+                                if (flag == 1) {
+                                    if (id.substring(0, 3).equals("DON") && str[2].equals("PAID")) {
+                                        model.setName(name);
+                                        model.setCountry(id.substring(3, id.length()));
+                                        list.add(model);
+                                    }
+                                } else if (flag == 2) {
+                                    if (id.substring(0, 3).equals("DON") && str[2].equals("NOT PAID")) {
+                                        model.setName(name);
+                                        model.setCountry(id.substring(3, id.length()));
+                                        list.add(model);
+
+                                    }
+                                } else if (flag == 3) {
+                                    if (id.substring(0, 3).equals("REG") && str[2].equals("PAID")) {
+                                        model.setName(name);
+                                        model.setCountry(id.substring(3, id.length()));
+                                        list.add(model);
+
+                                    }
+                                } else if (flag == 4) {
+                                    if (id.substring(0, 3).equals("DON") && str[2].equals("NOT PAID")) {
+                                        model.setName(name);
+                                        model.setCountry(id.substring(3, id.length()));
+                                        list.add(model);
+
+                                    }
+                                }
+
+
                             }
                         }
                     }
