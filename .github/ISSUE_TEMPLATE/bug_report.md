@@ -32,7 +32,4 @@ If applicable, add screenshots to help explain your problem.
 **Additional context**
 Add any other context about the problem here.
 
-**Would you like to work on the issue?**
-<!-- Please let us know if you can work on it or the issue should be assigned to someone else. -->
-- [ ] Yes
-- [ ] No
+**Would you like to work on the issue?** (Yes/No)
