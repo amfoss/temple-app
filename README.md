@@ -30,9 +30,14 @@ https://github.com/YOUR-GITHUB-USERNAME/TempleApp
 
 Open the project in the folder of your clone from Android Studio and build the project. If there are any missing dependencies, install them first by clicking on the links provided by Android studio. Once the project is built successfully, run the project by clicking on the green arrow at the top of the screen.
 
-## Deployment
+## How it Works?
 
-Google Sheets provides us with an already familiar interface to create, edit, and view all our data in columns. We can search, order, and even do bulk operations. Also, Google provides an API to use these sheets in a programmatic way, which we are going to use for this application. Then by using OKHTTP, values of each columns are parsed and using list view all the registered things are shown. In this application, there are two options- one to *register for a new pooja* and another option is for *making donations* to the temple and the user can select either of the option. If registering for new pooja option is selected then the values added for the registration will be added to the google sheet and if details of certain user have to be read , read option can be selected and id of the user should be given so that the details of the user will be searched from the sheet and will be shown. Also, any registration can be deleted by giving the ID of the user whose registration is to be deleted. If the user has to make some donations to the temple, there is an option to enter the amount of money they wish to donate. After the user makes all the selections, it will be printed on a form of a receipt and will be handed over to them. The app has a login interface and only certain people(temple authorities) can log in to it and can view details of all the registrations or donations.
+Google Sheets provides us with an already familiar interface to create, edit, and view all our data in columns. We can search, order, and even do bulk operations. Also, Google provides an API to use these sheets in a programmatic way, which we are going to use for this application. 
+
+Then by using OKHTTP, values of each columns are parsed and using list view all the registered things are shown. In this application, there are two options- one to *register for a new pooja* and another option is for *making donations* to the temple and the user can select either of the option. 
+If registering for new pooja option is selected then the values added for the registration will be added to the google sheet and if details of certain user have to be read, read option can be selected and id of the user should be given so that the details of the user will be searched from the sheet and will be shown. 
+
+Also, any registration can be deleted by giving the ID of the user whose registration is to be deleted. If the user has to make some donations to the temple, there is an option to enter the amount of money they wish to donate. After the user makes all the selections, it will be printed on a form of a receipt and will be handed over to them. The app has a login interface and only certain people(temple authorities) can log in to it and can view details of all the registrations or donations.
 
 #### Workflow of the app
 
@@ -61,5 +66,4 @@ Google Sheets provides us with an already familiar interface to create, edit, an
 - [cardview-v7:28.0.0](https://mvnrepository.com/artifact/com.android.support/cardview-v7/28.0.0-alpha1)
 
 ## License
-
-This project is currently licensed under the MIT License. A copy of [LICENSE](https://github.com/amfoss/TempleApp/blob/master/LICENSE) is to be present along with the source code. To obtain the software under a different license, please contact [FOSS@Amrita](https://amfoss.in/).
+This project is licensed under the [MIT LICENSE](https://github.com/amfoss/TempleApp/blob/master/LICENSE).
