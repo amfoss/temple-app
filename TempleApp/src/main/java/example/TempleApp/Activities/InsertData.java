@@ -113,8 +113,6 @@ public class InsertData extends AppCompatActivity {
     class InsertDataActivity extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog dialog;
-        int jIndex;
-        int x;
 
         String result = null;
 

@@ -122,8 +122,6 @@ public class UpdateData extends AppCompatActivity {
     class UpdateDataActivity extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog dialog;
-        int jIndex;
-        int x;
 
         String result = null;
 
@@ -133,7 +131,7 @@ public class UpdateData extends AppCompatActivity {
             super.onPreExecute();
 
             dialog = new ProgressDialog(UpdateData.this);
-            dialog.setTitle("Hey Wait Please..." + x);
+            dialog.setTitle("Hey Wait Please...");
             dialog.setMessage("I am getting your JSON");
             dialog.show();
 

@@ -95,8 +95,7 @@ public class ReadSingleData extends AppCompatActivity {
     class ReadDataActivity extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog dialog;
-        int jIndex;
-        int x;
+
 
 
         @Override

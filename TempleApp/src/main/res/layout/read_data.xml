@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Peopele Who Registered for Pooja" />
+                android:text="People Who Registered For Pooja" />
 
             <RadioButton
                 android:id="@+id/radio_donate"

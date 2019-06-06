@@ -80,7 +80,7 @@ public class ReadAllData extends AppCompatActivity {
                 jIndex = x;
 
             dialog = new ProgressDialog(ReadAllData.this);
-            dialog.setTitle("Hey Wait Please..." + x);
+            dialog.setTitle("Hey Wait Please..." );
             dialog.setMessage("Fetching all the Values");
             dialog.show();
         }
