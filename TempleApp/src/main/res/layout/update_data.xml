@@ -29,14 +29,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="Update Registered pooja Details" />
+                    android:text="Update Registered Pooja Details" />
 
                 <RadioButton
                     android:id="@+id/radio_donate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="Update the Details of Donated money" />
+                    android:text="Update The Details Of Donated Money" />
             </RadioGroup>
         </LinearLayout>
 
