@@ -5,87 +5,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <LinearLayout
-        android:id="@+id/radiogroup_view"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/readAll_btn1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="center_horizontal"
+        android:text="Read All" />
 
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="All Registered Poojas: "
+        android:textColor="#000000"
+        android:textSize="24dp"
+        android:visibility="invisible" />
 
-        <RadioGroup
-            android:id="@+id/radiogroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/donate_paid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="List Of Donated People: who paid only" />
-
-            <RadioButton
-                android:id="@+id/donate_not_paid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="List Of Donated People: who not paid only" />
-
-
-            <RadioButton
-                android:id="@+id/pooja_paid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="List Of Registered Poojas: people who paid only" />
-
-
-            <RadioButton
-                android:id="@+id/pooja_not_paid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="List Of Registered Poojas: who not paid only" />
-        </RadioGroup>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/total_View"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:weightSum="1">
-
-        <Button
-            android:id="@+id/readAll_btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Read All" />
-
-        <TextView
-            android:id="@+id/heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="All Registered Poojas: "
-            android:textColor="#000000"
-            android:textSize="24dp"
-            android:visibility="invisible" />
-
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:divider="@null"
-            android:dividerHeight="0dp" />
-    </LinearLayout>
-
-
+        android:layout_gravity="center_horizontal"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
 </LinearLayout>
