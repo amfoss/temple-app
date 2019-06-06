@@ -95,8 +95,6 @@ public class ReadSingleData extends AppCompatActivity {
     class ReadDataActivity extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog dialog;
-        int jIndex;
-        int x;
 
 
         @Override
@@ -105,7 +103,7 @@ public class ReadSingleData extends AppCompatActivity {
 
             dialog = new ProgressDialog(ReadSingleData.this);
             dialog.setTitle("Hey Wait Please...");
-            dialog.setMessage("Fetching your values");
+            dialog.setMessage("Fetching Your Values");
             dialog.show();
 
         }

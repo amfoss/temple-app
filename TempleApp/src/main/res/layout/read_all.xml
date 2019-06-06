@@ -26,14 +26,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List of Donated people: who paid only" />
+                android:text="List Of Donated People: who paid only" />
 
             <RadioButton
                 android:id="@+id/donate_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List of Donated people: who Not paid only" />
+                android:text="List Of Donated People: who not paid only" />
 
 
             <RadioButton
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List of Registered poojas: people who paid only" />
+                android:text="List Of Registered Poojas: people who paid only" />
 
 
             <RadioButton
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List of Registered poojas: who not paid only" />
+                android:text="List Of Registered Poojas: who not paid only" />
         </RadioGroup>
     </LinearLayout>
 

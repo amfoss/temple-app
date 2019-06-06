@@ -79,8 +79,6 @@ public class DeleteData extends AppCompatActivity {
     class DeleteDataActivity extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog dialog;
-        int jIndex;
-        int x;
         String result = null;
 
 
