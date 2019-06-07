@@ -58,7 +58,22 @@ Also, any registration can be deleted by giving the ID of the user whose registr
     ├── Controller.java
     └── InternetConnection.java 
  ```
- 
+
+#### Screenshots
+
+<table>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/43814992/59095046-2d6e8300-8935-11e9-8cdf-5646353246ad.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/43814992/59095110-50993280-8935-11e9-8e35-1faa939cc111.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/43814992/59095377-ee8cfd00-8935-11e9-9b67-a85faa3a7460.png" height = "480" width="270"></td>
+  </tr>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/43814992/59095468-357af280-8936-11e9-8449-9276066f8ea8.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/43814992/59155368-79d8d080-8aa5-11e9-9b3b-9fa402d86aa4.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/43814992/59095744-db2e6180-8936-11e9-8d6f-80ab44bbc3f4.png" height = "480" width="270"></td>
+  </tr>
+</table>
+
 ## Dependencies
 - [appcompat-v7:28.0.0](https://mvnrepository.com/artifact/com.android.support/appcompat-v7/28.0.0-alpha1)
 - [junit:4.12](https://mvnrepository.com/artifact/junit/junit/4.12)
