@@ -95,7 +95,7 @@ public class InsertData extends AppCompatActivity {
             public void onClick(View view) {
                 id = id + uid1ET.getText().toString();
                 name = nameET.getText().toString();
-                if (id.length() == 0) {
+                if (id.length() == 3) {
                     uid1ET.setError("Please enter a valid user ID");
                 }
                 else {
