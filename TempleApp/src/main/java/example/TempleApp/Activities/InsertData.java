@@ -93,23 +93,18 @@ public class InsertData extends AppCompatActivity {
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                id = uid1ET.getText().toString();
+                id = id + uid1ET.getText().toString();
                 name = nameET.getText().toString();
-                if (id.length() == 0) {
-                    uid1ET.setError("Please enter a valid user ID");
-                }
-                else {
-                    if (flag == 1) {
-                        poojaTyp = String.valueOf(poojaType.getSelectedItem());
+                if (flag == 1) {
+                    poojaTyp = String.valueOf(poojaType.getSelectedItem());
 
-                        overall = poojaTyp + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
-                        new InsertDataActivity().execute();
-                    } else {
-                        money = moneyDonated.getText().toString();
-                        overall = money + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
-                        new InsertDataActivity().execute();
-                    }
+                    overall = poojaTyp + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
+                } else {
+                    money = moneyDonated.getText().toString();
+                    overall = money + getResources().getString(R.string.empty) + name + getResources().getString(R.string.empty) + paidCheck;
                 }
+
+                new InsertDataActivity().execute();
             }
         });
     }
