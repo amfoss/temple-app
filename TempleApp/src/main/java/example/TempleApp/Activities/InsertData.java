@@ -96,7 +96,7 @@ public class InsertData extends AppCompatActivity {
                 id = uid1ET.getText().toString();
                 name = nameET.getText().toString();
                 if (id.length() == 0) {
-                    Toast.makeText(getBaseContext(), "Please enter a valid user ID", Toast.LENGTH_LONG).show();
+                    uid1ET.setError("Please enter a valid user ID");
                 }
                 else {
                     if (flag == 1) {
