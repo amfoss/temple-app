@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 /**
- * Created by Chromicle.
+ * @author Chromicle.
  */
 
 public class Controller {

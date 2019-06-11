@@ -20,7 +20,7 @@ import example.TempleApp.JSON_API.Controller;
 import example.TempleApp.R;
 
 /**
- * Created by Chromicle.
+ * @author Chromicle.
  */
 public class DeleteData extends AppCompatActivity {
 

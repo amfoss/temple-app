@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-TempleApp.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-TempleApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/TempleApp/TempleApp-TempleApp.iml" filepath="$PROJECT_DIR$/TempleApp/TempleApp-TempleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/temple-TempleApp.iml" filepath="$PROJECT_DIR$/temple-TempleApp.iml" />
     </modules>
   </component>
 </project>

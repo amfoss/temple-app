@@ -16,7 +16,7 @@ import example.TempleApp.JSON_API.InternetConnection;
 import example.TempleApp.R;
 
 /**
- * Created by Chromicle.
+ * @author Chromicle.
  */
 
 
