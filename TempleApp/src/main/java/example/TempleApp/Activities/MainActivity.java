@@ -141,10 +141,10 @@ public class MainActivity extends AppCompatActivity {
     protected void createNetErrorDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("You need internet connection for this app. Please turn on mobile network or Wi-Fi in Settings.")
-                .setTitle("Unable to connect")
+        builder.setMessage(getString(R.string.internet_warn))
+                .setTitle(getString(R.string.unable_to_connect))
                 .setCancelable(false)
-                .setPositiveButton("Settings",
+                .setPositiveButton(getString(R.string.settings),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Intent i = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                 )
-                .setNegativeButton("Cancel",
+                .setNegativeButton(getString(R.string.Cancel),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 finish();

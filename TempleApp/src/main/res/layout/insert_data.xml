@@ -30,14 +30,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="Register For New Pooja" />
+                    android:text="@string/register_for_new_pooja" />
 
                 <RadioButton
                     android:id="@+id/radio_donate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="Donate Money To Temple" />
+                    android:text="@string/donate_money_to_temple" />
             </RadioGroup>
         </LinearLayout>
 
@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="45dp"
-                android:hint="User Id" />
+                android:hint="@string/user_id" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                 android:layout_marginStart="45dp"
                 android:layout_marginLeft="45dp"
                 android:layout_marginBottom="10dp"
-                android:text="Select Pooja Type"
+                android:text="@string/select_pooja_type"
                 android:textSize="15sp" />
 
             <EditText
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="45dp"
-                android:hint="Enter Money Donated"/>
+                android:hint="@string/enter_money_donated"/>
 
             <Spinner
                 android:id="@+id/spinner1"
@@ -87,14 +87,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="45dp"
-                android:hint="Name" />
+                android:hint="@string/name" />
 
             <android.support.v7.widget.AppCompatCheckBox
                 android:id="@+id/paid_check"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="45dp"
-                android:text="PAID" />
+                android:text="@string/PAID" />
 
 
             <Button
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="45dp"
-                android:text="Insert" />
+                android:text="@string/insert_" />
         </LinearLayout>
 
 

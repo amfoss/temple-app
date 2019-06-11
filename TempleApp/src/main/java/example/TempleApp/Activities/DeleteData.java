@@ -47,12 +47,12 @@ public class DeleteData extends AppCompatActivity {
                     case R.id.radio_donate:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 0;
-                        Toast.makeText(getBaseContext(), "Selected To Delete Donated Money", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.delete_donated), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 1;
-                        Toast.makeText(getBaseContext(), "Selected To Delete Registered Pooja", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.delete_pooja), Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -65,9 +65,9 @@ public class DeleteData extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (flag == 1) {
-                    id = "REG" + uid1ET.getText().toString();
+                    id = getString(R.string.REG) + uid1ET.getText().toString();
                 } else {
-                    id = "DON" + uid1ET.getText().toString();
+                    id = getString(R.string.DON) + uid1ET.getText().toString();
                 }
 
                 new DeleteDataActivity().execute();
@@ -87,8 +87,8 @@ public class DeleteData extends AppCompatActivity {
             super.onPreExecute();
 
             dialog = new ProgressDialog(DeleteData.this);
-            dialog.setTitle("Hey Wait Please...");
-            dialog.setMessage("Deleting... ");
+            dialog.setTitle(getString(R.string.wait));
+            dialog.setMessage(getString(R.string.deleting));
             dialog.show();
 
         }
@@ -96,9 +96,9 @@ public class DeleteData extends AppCompatActivity {
         @Nullable
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(Controller.TAG, "IDVALUE" + id);
+            Log.i(Controller.TAG, getString(R.string.id_value) + id);
             JSONObject jsonObject = Controller.deleteData(id);
-            Log.i(Controller.TAG, "Json obj " + jsonObject);
+            Log.i(Controller.TAG, getString(R.string.json_obj) + jsonObject);
 
             try {
                 /**
@@ -106,7 +106,7 @@ public class DeleteData extends AppCompatActivity {
                  */
                 if (jsonObject != null) {
 
-                    result = jsonObject.getString("result");
+                    result = jsonObject.getString(getString(R.string.result));
 
 
                 }
