@@ -2,7 +2,7 @@ package example.TempleApp.Adapter;
 
 
 /**
- * Created by Chromicle.
+ * @author Chromicle.
  */
 
 
