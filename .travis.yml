@@ -3,10 +3,10 @@ language: android
 jdk: oraclejdk8
 android:
     components:
-        - platform-tools
-        - tools
-        - build-tools-28.0.3
-        - "android-28\n- extra-android-support\n- extra-android-m2repository\n- extra-google-google_play_services\n- extra-google-m2repository"
+    - tools
+    - android-28
+    - build-tools-28.0.3
+    - platform-tools
 before_cache:
     - 'rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock'
     - 'rm -fr $HOME/.gradle/caches/*/plugin-resolution/'
