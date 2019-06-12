@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 
 
 /**
- * Created by Chromicle.
+ * @author Chromicle.
  */
 
 public class InternetConnection {
