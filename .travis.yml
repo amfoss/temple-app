@@ -16,8 +16,9 @@ cache:
       - "${TRAVIS_BUILD_DIR}/gradle/wrapper/dists/"
       - "$HOME/.gradle/caches/"
       - "$HOME/.gradle/wrapper/"
+install:
+  - echo yes | ${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-28"
 script:
     - 'chmod +x ./gradlew'
     - './gradlew clean'
     - './gradlew assembleDebug assembleRelease'
-    - './gradlew checkstyle'
