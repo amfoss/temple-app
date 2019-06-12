@@ -1,35 +1,24 @@
 sudo: required
 language: android
 jdk: oraclejdk8
-
 android:
-  components:
-  - platform-tools
-  - tools
-  - build-tools-28.0.3
-  - android-28
-# Support library
-    - extra-android-support
-    - extra-android-m2repository
-    - extra-google-google_play_services
-    - extra-google-m2repository
-
+    components:
+        - platform-tools
+        - tools
+        - build-tools-28.0.3
+        - "android-28\n- extra-android-support\n- extra-android-m2repository\n- extra-google-google_play_services\n- extra-google-m2repository"
 before_cache:
-- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+    - 'rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock'
+    - 'rm -fr $HOME/.gradle/caches/*/plugin-resolution/'
 cache:
-  directories:
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-  - $HOME/.android/build-cache
-
-
+    directories:
+        - $HOME/.gradle/caches/
+        - $HOME/.gradle/wrapper/
+        - $HOME/.android/build-cache
 before_script:
-- cd Android
-  - chmod +x gradlew
+    - "cd Android\n- chmod +x gradlew"
 script:
-- chmod +x ./gradlew
-- ./gradlew clean
-- ./gradlew assembleDebug assembleRelease
-- ./gradlew checkstyle
-
+    - 'chmod +x ./gradlew'
+    - './gradlew clean'
+    - './gradlew assembleDebug assembleRelease'
+    - './gradlew checkstyle'
