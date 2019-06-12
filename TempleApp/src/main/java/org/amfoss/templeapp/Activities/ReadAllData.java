@@ -1,4 +1,4 @@
-package example.TempleApp.Activities;
+package org.amfoss.templeapp.Activities;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -14,16 +14,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.amfoss.templeapp.Adapter.MyArrayAdapter;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import example.TempleApp.Adapter.MyArrayAdapter;
-import example.TempleApp.Adapter.MyDataModel;
-import example.TempleApp.JSON_API.Controller;
-import example.TempleApp.R;
+import org.amfoss.templeapp.Adapter.MyDataModel;
+import org.amfoss.templeapp.JSON_API.Controller;
+import org.amfoss.templeapp.R;
 
 /**
  * @author Chromicle.

@@ -1,4 +1,4 @@
-package example.TempleApp.Adapter;
+package org.amfoss.templeapp.Adapter;
 
 
 /**

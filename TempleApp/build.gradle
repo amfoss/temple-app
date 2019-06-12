@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "example.TempleApp"
+        applicationId "org.amfoss.templeapp"
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1

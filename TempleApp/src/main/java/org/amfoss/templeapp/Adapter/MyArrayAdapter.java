@@ -1,4 +1,4 @@
-package example.TempleApp.Adapter;
+package org.amfoss.templeapp.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,23 +8,24 @@ import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import example.TempleApp.R;
+import org.amfoss.templeapp.R;
 
 
 /**
  * @author Chromicle.
  */
 
-public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
+public class MyArrayAdapter extends ArrayAdapter<org.amfoss.templeapp.Adapter.MyDataModel> {
 
-    List<MyDataModel> modelList;
+    List<org.amfoss.templeapp.Adapter.MyDataModel> modelList;
     Context context;
     private LayoutInflater mInflater;
 
     // Constructors
-    public MyArrayAdapter(Context context, List<MyDataModel> objects) {
+    public MyArrayAdapter(Context context, ArrayList<MyDataModel> objects) {
         super(context, 0, objects);
         this.context = context;
         this.mInflater = LayoutInflater.from(context);
@@ -32,7 +33,7 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
     }
 
     @Override
-    public MyDataModel getItem(int position) {
+    public org.amfoss.templeapp.Adapter.MyDataModel getItem(int position) {
         return modelList.get(position);
     }
 
@@ -47,7 +48,7 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
             vh = (ViewHolder) convertView.getTag();
         }
 
-        MyDataModel item = getItem(position);
+        org.amfoss.templeapp.Adapter.MyDataModel item = getItem(position);
 
         vh.textViewId.setText(item.getId());
         vh.textViewName.setText(item.getName());

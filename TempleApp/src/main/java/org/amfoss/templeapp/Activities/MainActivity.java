@@ -1,4 +1,4 @@
-package example.TempleApp.Activities;
+package org.amfoss.templeapp.Activities;
 
 //MainActivity.java
 
@@ -10,10 +10,9 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import example.TempleApp.JSON_API.InternetConnection;
-import example.TempleApp.R;
+import org.amfoss.templeapp.JSON_API.InternetConnection;
+import org.amfoss.templeapp.R;
 
 /**
  * @author Chromicle.
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (InternetConnection.checkConnection(getApplicationContext())) {
-                    Intent intent = new Intent(getApplicationContext(), UpdateData.class);
+                    Intent intent = new Intent(getApplicationContext(), org.amfoss.templeapp.Activities.UpdateData.class);
                     startActivity(intent);
 
 
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (InternetConnection.checkConnection(getApplicationContext())) {
-                    Intent intent = new Intent(getApplicationContext(), ReadSingleData.class);
+                    Intent intent = new Intent(getApplicationContext(), org.amfoss.templeapp.Activities.ReadSingleData.class);
                     startActivity(intent);
 
 

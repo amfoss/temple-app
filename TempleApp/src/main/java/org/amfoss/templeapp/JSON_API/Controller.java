@@ -1,4 +1,4 @@
-package example.TempleApp.JSON_API;
+package org.amfoss.templeapp.JSON_API;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
