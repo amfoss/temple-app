@@ -26,14 +26,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List Of Donated People: who paid only" />
+                android:text="@string/list_of_donated_people_who_paid_only" />
 
             <RadioButton
                 android:id="@+id/donate_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List Of Donated People: who not paid only" />
+                android:text="@string/list_of_donated_people_who_not_paid_only" />
 
 
             <RadioButton
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List Of Registered Poojas: people who paid only" />
+                android:text="@string/list_of_registered_poojas_people_who_paid_only" />
 
 
             <RadioButton
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="List Of Registered Poojas: who not paid only" />
+                android:text="@string/list_of_registered_poojas_who_not_paid_only" />
         </RadioGroup>
     </LinearLayout>
 
@@ -66,14 +66,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Read All" />
+            android:text="@string/read_all" />
 
         <TextView
             android:id="@+id/heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="All Registered Poojas: "
+            android:text="@string/people_who_registered_for_pooja"
             android:textColor="#000000"
             android:textSize="24dp"
             android:visibility="invisible" />
