@@ -26,7 +26,7 @@ import example.TempleApp.R;
  */
 public class InsertData extends AppCompatActivity {
 
-    String id,name,poojaTyp,overall,money,paidCheck = "NOT PAID";
+    String id,name,poojaTyp,overall,money,paidCheck ="NOT PAID";
     Spinner poojaType;
     RadioGroup radioGroup;
     LinearLayout totalLayout;
@@ -56,17 +56,17 @@ public class InsertData extends AppCompatActivity {
                         totalLayout.setVisibility(View.VISIBLE);
                         poojaType.setVisibility(View.GONE);
                         moneyDonated.setVisibility(View.VISIBLE);
-                        id = "DON";
+                        id = getResources().getString(R.string.DON);
                         flag = 0;
-                        Toast.makeText(getBaseContext(), "Selected To Donate Money", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
                         moneyDonated.setVisibility(View.GONE);
                         poojaType.setVisibility(View.VISIBLE);
-                        id = "REG";
+                        id = getString(R.string.REG);
                         flag = 1;
-                        Toast.makeText(getBaseContext(), "Selected To Register New Pooja", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -80,10 +80,10 @@ public class InsertData extends AppCompatActivity {
             public void onClick(View v) {
                 //is chkIos checked?
                 if (((CheckBox) v).isChecked()) {
-                    paidCheck = "PAID";
+                    paidCheck = getString(R.string.PAID);
 
                 } else {
-                    paidCheck = "NOT PAID";
+                    paidCheck = getString(R.string.NOT_PAID);
                 }
 
             }
@@ -96,7 +96,7 @@ public class InsertData extends AppCompatActivity {
                 id = id + uid1ET.getText().toString();
                 name = nameET.getText().toString();
                 if (id.length() == 3) {
-                    uid1ET.setError("Please enter a valid user ID");
+                    uid1ET.setError(getString(R.string.valid_ID));
                 }
                 else {
                     if (flag == 1) {
@@ -129,8 +129,8 @@ public class InsertData extends AppCompatActivity {
             super.onPreExecute();
 
             dialog = new ProgressDialog(InsertData.this);
-            dialog.setTitle("Hey Wait Please...");
-            dialog.setMessage("Inserting your values..");
+            dialog.setTitle(getString(R.string.wait));
+            dialog.setMessage(getString(R.string.insert));
             dialog.show();
 
         }
@@ -139,7 +139,7 @@ public class InsertData extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             JSONObject jsonObject = Controller.insertData(id, overall);
-            Log.i(Controller.TAG, "Json obj ");
+            Log.i(Controller.TAG, getString(R.string.json_obj));
 
             try {
                 /**
@@ -147,11 +147,11 @@ public class InsertData extends AppCompatActivity {
                  */
                 if (jsonObject != null) {
 
-                    result = jsonObject.getString("result");
+                    result = jsonObject.getString(getString(R.string.result));
 
                 }
             } catch (JSONException je) {
-                Log.i(Controller.TAG, "exception" + je.getLocalizedMessage());
+                Log.i(Controller.TAG, getString(R.string.exception) + je.getLocalizedMessage());
             }
             return null;
         }
