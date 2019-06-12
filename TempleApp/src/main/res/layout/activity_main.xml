@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/create_insert" />
+        android:text="@string/insert_" />
 
     <Button
         android:id="@+id/delete_btn"

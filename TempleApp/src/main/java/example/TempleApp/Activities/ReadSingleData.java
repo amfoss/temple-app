@@ -64,12 +64,12 @@ public class ReadSingleData extends AppCompatActivity {
                     case R.id.radio_donate:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 0;
-                        Toast.makeText(getBaseContext(), "Selected To Donate Money", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 1;
-                        Toast.makeText(getBaseContext(), "Selected To Register New Pooja", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -81,9 +81,9 @@ public class ReadSingleData extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (flag == 1) {
-                    id = "REG" + uid1ET.getText().toString();
+                    id = getString(R.string.REG) + uid1ET.getText().toString();
                 } else {
-                    id = "DON" + uid1ET.getText().toString();
+                    id = getString(R.string.DON) + uid1ET.getText().toString();
                 }
 
                 new ReadDataActivity().execute();
@@ -102,8 +102,8 @@ public class ReadSingleData extends AppCompatActivity {
             super.onPreExecute();
 
             dialog = new ProgressDialog(ReadSingleData.this);
-            dialog.setTitle("Hey Wait Please...");
-            dialog.setMessage("Fetching Your Values");
+            dialog.setTitle(getString(R.string.wait));
+            dialog.setMessage(getString(R.string.fetch));
             dialog.show();
 
         }
@@ -111,9 +111,9 @@ public class ReadSingleData extends AppCompatActivity {
         @Nullable
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(Controller.TAG, "IDVALUE" + id);
+            Log.i(Controller.TAG, getString(R.string.ID_value) + id);
             JSONObject jsonObject = Controller.readData(id);
-            Log.i(Controller.TAG, "Json obj " + jsonObject);
+            Log.i(Controller.TAG, getString(R.string.json_obj) + jsonObject);
 
             try {
                 /*
@@ -121,8 +121,8 @@ public class ReadSingleData extends AppCompatActivity {
                  */
                 if (jsonObject != null) {
 
-                    JSONObject user = jsonObject.getJSONObject("user");
-                    name = user.getString("name");
+                    JSONObject user = jsonObject.getJSONObject(getString(R.string.user));
+                    name = user.getString(getString(R.string.name_));
 
                 }
             } catch (JSONException je) {
@@ -142,30 +142,30 @@ public class ReadSingleData extends AppCompatActivity {
             }
 
             if (name != null) {
-                id_l.setText("ID: ");
-                name_l.setText("Name: ");
+                id_l.setText(getString(R.string.ID));
+                name_l.setText(getString(R.string.name));
                 int flag = 0;
-                if (id.substring(0, 3).equals("DON")) {
+                if (id.substring(0, 3).equals(getString(R.string.DON))) {
                     id_v.setText(id.substring(3, id.length()));
                     flag = 1;
-                } else if (id.substring(0, 3).equals("REG")) {
+                } else if (id.substring(0, 3).equals(getString(R.string.REG))) {
                     id_v.setText(id.substring(3, id.length()));
                     flag = 0;
                 }
 
-                String[] str = name.split(getResources().getString(R.string.empty));
+                String[] str = name.split(getString(R.string.empty));
                 name_v.setText(str[1]);
                 pooja_l.setText(str[0]);
                 paid_v.setText(str[2]);
                 if (flag == 0) {
-                    pooja_v.setText("Type of pooja: ");
+                    pooja_v.setText(getString(R.string.type_of_pooja));
                 } else {
-                    pooja_v.setText("Money Donated: ");
+                    pooja_v.setText(getString(R.string.money_donated));
                 }
-                paid_l.setText("Paid Staus: ");
+                paid_l.setText(getString(R.string.paid_status));
 
             } else
-                Toast.makeText(getApplicationContext(), "ID not found", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.id_not_found), Toast.LENGTH_LONG).show();
         }
     }
 }

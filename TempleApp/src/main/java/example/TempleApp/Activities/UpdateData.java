@@ -64,17 +64,17 @@ public class UpdateData extends AppCompatActivity {
                         totalLayout.setVisibility(View.VISIBLE);
                         poojaType.setVisibility(View.GONE);
                         moneyDonated.setVisibility(View.VISIBLE);
-                        id = "DON";
+                        id = getString(R.string.DON);
                         flag = 0;
-                        Toast.makeText(getBaseContext(), "Selected To update donated money details", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.UPDATE), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
                         moneyDonated.setVisibility(View.GONE);
                         poojaType.setVisibility(View.VISIBLE);
-                        id = "REG";
+                        id = getString(R.string.REG);
                         flag = 1;
-                        Toast.makeText(getBaseContext(), "Selected To update Registered Pooja details", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(R.string.update_pooja), Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -88,10 +88,10 @@ public class UpdateData extends AppCompatActivity {
             public void onClick(View v) {
                 //is chkIos checked?
                 if (((CheckBox) v).isChecked()) {
-                    paidCheck = "PAID";
+                    paidCheck = getString(R.string.PAID);
 
                 } else {
-                    paidCheck = "NOT PAID";
+                    paidCheck = getString(R.string.NOT_PAID);
                 }
 
             }
@@ -131,8 +131,8 @@ public class UpdateData extends AppCompatActivity {
             super.onPreExecute();
 
             dialog = new ProgressDialog(UpdateData.this);
-            dialog.setTitle("Hey Wait Please...");
-            dialog.setMessage("I am getting your JSON");
+            dialog.setTitle(getString(R.string.wait));
+            dialog.setMessage(getString(R.string.JSON));
             dialog.show();
 
         }
@@ -141,7 +141,7 @@ public class UpdateData extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             JSONObject jsonObject = Controller.updateData(id, overall);
-            Log.i(Controller.TAG, "Json obj ");
+            Log.i(Controller.TAG, getString(R.string.json_obj));
 
             try {
                 /**
@@ -149,7 +149,7 @@ public class UpdateData extends AppCompatActivity {
                  */
                 if (jsonObject != null) {
 
-                    result = jsonObject.getString("result");
+                    result = jsonObject.getString(getString(R.string.result));
 
                 }
             } catch (JSONException je) {

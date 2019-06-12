@@ -74,23 +74,23 @@ public class ReadAllData extends AppCompatActivity {
                     case R.id.donate_paid:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 1;
-                        heading.setText("List of all Donations who paid only");
+                        heading.setText(getString(R.string.list_of_donated_people_who_paid_only));
                         break;
                     case R.id.donate_not_paid:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 2;
-                        heading.setText("List of all Donations who not paid only");
+                        heading.setText(getString(R.string.list_of_donated_people_who_not_paid_only));
                         break;
                     case R.id.pooja_paid:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 3;
-                        heading.setText("List of all registrations who paid only");
+                        heading.setText(getString(R.string.list_of_registered_poojas_people_who_paid_only));
                         break;
 
                     case R.id.pooja_not_paid:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 4;
-                        heading.setText("List of all registrations who not paid only");
+                        heading.setText(getString(R.string.list_of_registered_poojas_who_not_paid_only));
                         break;
 
                 }
@@ -122,8 +122,8 @@ public class ReadAllData extends AppCompatActivity {
                 jIndex = x;
 
             dialog = new ProgressDialog(ReadAllData.this);
-            dialog.setTitle("Hey Wait Please...");
-            dialog.setMessage("Fetching all the Values");
+            dialog.setTitle(getString(R.string.wait));
+            dialog.setMessage(getString(R.string.fetch));
             dialog.show();
         }
 
@@ -143,7 +143,7 @@ public class ReadAllData extends AppCompatActivity {
                         /**
                          * Getting Array named "contacts" From MAIN Json Object
                          */
-                        JSONArray array = jsonObject.getJSONArray("records");
+                        JSONArray array = jsonObject.getJSONArray(getString(R.string.records));
 
                         /**
                          * Check Length of Array...
@@ -163,33 +163,33 @@ public class ReadAllData extends AppCompatActivity {
 
                                 JSONObject innerObject = array.getJSONObject(jIndex);
 
-                                String id = innerObject.getString("ID");
-                                String name = innerObject.getString("NAME");
+                                String id = innerObject.getString(getString(R.string.ID_));
+                                String name = innerObject.getString(getString(R.string.name_));
 
                                 String[] str = name.split(getResources().getString(R.string.empty));
 
                                 if (flag == 1) {
-                                    if (id.substring(0, 3).equals("DON") && str[2].equals("PAID")) {
+                                    if (id.substring(0, 3).equals(getString(R.string.DON)) && str[2].equals(getString(R.string.PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
                                     }
                                 } else if (flag == 2) {
-                                    if (id.substring(0, 3).equals("DON") && str[2].equals("NOT PAID")) {
+                                    if (id.substring(0, 3).equals(getString(R.string.DON)) && str[2].equals(getString(R.string.NOT_PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
 
                                     }
                                 } else if (flag == 3) {
-                                    if (id.substring(0, 3).equals("REG") && str[2].equals("PAID")) {
+                                    if (id.substring(0, 3).equals(getString(R.string.REG)) && str[2].equals(getString(R.string.PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
 
                                     }
                                 } else if (flag == 4) {
-                                    if (id.substring(0, 3).equals("DON") && str[2].equals("NOT PAID")) {
+                                    if (id.substring(0, 3).equals(getString(R.string.REG)) && str[2].equals(getString(R.string.NOT_PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
@@ -224,7 +224,7 @@ public class ReadAllData extends AppCompatActivity {
 
 
             } else {
-                Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.no_data), Toast.LENGTH_LONG).show();
                 heading.setVisibility(TextView.INVISIBLE);
 
             }
