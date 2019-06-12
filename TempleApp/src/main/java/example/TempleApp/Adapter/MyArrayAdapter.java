@@ -14,7 +14,7 @@ import example.TempleApp.R;
 
 
 /**
- * Created by Chromicle.
+ * @author Chromicle.
  */
 
 public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
