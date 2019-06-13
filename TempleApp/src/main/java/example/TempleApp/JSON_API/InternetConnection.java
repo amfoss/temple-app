@@ -5,9 +5,7 @@ import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 
 
-/**
- * @author Chromicle.
- */
+
 
 public class InternetConnection {
 

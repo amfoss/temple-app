@@ -13,9 +13,6 @@ import java.util.List;
 import example.TempleApp.R;
 
 
-/**
- * @author Chromicle.
- */
 
 public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
 

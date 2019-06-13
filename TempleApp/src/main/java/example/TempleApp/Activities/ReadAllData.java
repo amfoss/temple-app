@@ -25,9 +25,7 @@ import example.TempleApp.Adapter.MyDataModel;
 import example.TempleApp.JSON_API.Controller;
 import example.TempleApp.R;
 
-/**
- * @author Chromicle.
- */
+
 public class ReadAllData extends AppCompatActivity {
 
     RadioGroup radioGroup;
