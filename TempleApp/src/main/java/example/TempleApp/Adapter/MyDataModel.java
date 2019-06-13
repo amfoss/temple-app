@@ -1,9 +1,6 @@
 package example.TempleApp.Adapter;
 
 
-/**
- * @author Chromicle.
- */
 
 
 public class MyDataModel {

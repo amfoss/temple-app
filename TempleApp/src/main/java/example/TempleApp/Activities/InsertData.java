@@ -21,9 +21,7 @@ import org.json.JSONObject;
 import example.TempleApp.JSON_API.Controller;
 import example.TempleApp.R;
 
-/**
- * Created by Chromicle.
- */
+
 public class InsertData extends AppCompatActivity {
 
     String id,name,poojaTyp,overall,money,paidCheck ="NOT PAID";

@@ -22,9 +22,7 @@ import org.json.JSONObject;
 import example.TempleApp.JSON_API.Controller;
 import example.TempleApp.R;
 
-/**
- * @author Chromicle
- */
+
 
 public class ReadSingleData extends AppCompatActivity {
 

@@ -15,9 +15,6 @@ import android.widget.Toast;
 import example.TempleApp.JSON_API.InternetConnection;
 import example.TempleApp.R;
 
-/**
- * @author Chromicle.
- */
 
 
 public class MainActivity extends AppCompatActivity {
