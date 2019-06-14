@@ -30,5 +30,7 @@ dependencies {
     implementation 'com.squareup.okhttp:okhttp:2.7.5'
     implementation 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
 
-
+    // for Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 }
