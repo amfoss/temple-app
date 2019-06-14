@@ -61,6 +61,7 @@ public interface Api {
      * @param remarks
      * @return
      */
+    @GET("dev")
     Call<Result> updatePooja(
             @Query("sheet") String sheet,       // sheet = "pooja"
             @Query("action") String action,     // action = "update"
@@ -80,6 +81,7 @@ public interface Api {
      * @param billno
      * @return
      */
+    @GET("dev")
     Call<Result> deletePooja(
             @Query("sheet") String sheet,       // sheet = "pooja"
             @Query("action") String action,     // action = "delete"
@@ -93,6 +95,7 @@ public interface Api {
      * @param billno
      * @return
      */
+    @GET("dev")
     Call<PoojaResult> getPooja(
             @Query("sheet") String sheet,       // sheet = "pooja"
             @Query("action") String action,     // action = "billno"
@@ -105,6 +108,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllPoojaResult> getAllPooja(
             @Query("sheet") String sheet,       // sheet = "pooja"
             @Query("action") String action      // action = "readall"
@@ -149,6 +153,7 @@ public interface Api {
      * @param remarks
      * @return
      */
+    @GET("dev")
     Call<Result> updateDonation(
             @Query("sheet") String sheet,       // sheet = "donation"
             @Query("action") String action,     // action = "update"
@@ -168,6 +173,7 @@ public interface Api {
      * @param billno
      * @return
      */
+    @GET("dev")
     Call<Result> deleteDonation(
             @Query("sheet") String sheet,       // sheet = "donation"
             @Query("action") String action,     // action = "delete"
@@ -181,6 +187,7 @@ public interface Api {
      * @param Integer
      * @return
      */
+    @GET("dev")
     Call<DonationResult> getDonation(
             @Query("sheet") String sheet,       // sheet = "donation"
             @Query("action") String action,     // action = "billno"
@@ -193,6 +200,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllDonationResult> getAllDonation(
             @Query("sheet") String sheet,       // sheet = "donation"
             @Query("action") String action      // action = "readall"
@@ -240,6 +248,7 @@ public interface Api {
      * @param remarks
      * @return
      */
+    @GET("dev")
     Call<Result> updateDMY(
             @Query("sheet") String sheet,       // sheet = "dmy"
             @Query("action") String action,     // action = "update"
@@ -260,6 +269,7 @@ public interface Api {
      * @param billno
      * @return
      */
+    @GET("dev")
     Call<Result> deleteDMY(
             @Query("sheet") String sheet,       // sheet = "dmy"
             @Query("action") String action,     // action = "delete"
@@ -273,6 +283,7 @@ public interface Api {
      * @param billno
      * @return
      */
+    @GET("dev")
     Call<DMYResult> getDMY(
             @Query("sheet") String sheet,       // sheet = "dmy"
             @Query("action") String action,     // action = "billno"
@@ -285,6 +296,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllDMYResult> getAllDMY(
             @Query("sheet") String sheet,       // sheet = "dmy"
             @Query("action") String action      // action = "readall"
@@ -323,6 +335,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<Result> updateIE(
             @Query("sheet") String sheet,       // sheet = "ie"
             @Query("action") String action,     // action = "update"
@@ -340,6 +353,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<Result> deleteIE(
             @Query("sheet") String sheet,       // sheet = "ie"
             @Query("action") String action,     // action = "delete"
@@ -353,6 +367,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<IEResult> getIE(
             @Query("sheet") String sheet,       // sheet = "ie"
             @Query("action") String action,     // action = "id"
@@ -365,6 +380,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllIEResult> getAllIE(
             @Query("sheet") String sheet,       // sheet = "ie"
             @Query("action") String action      // action = "readall"
@@ -406,6 +422,7 @@ public interface Api {
      * @param date
      * @return
      */
+    @GET("dev")
     Call<Result> updateMWB(
             @Query("sheet") String sheet,       // sheet = "mwb"
             @Query("action") String action,     // action = "update"
@@ -424,6 +441,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<Result> deleteMWB(
             @Query("sheet") String sheet,       // sheet = "mwb"
             @Query("action") String action,     // action = "delete"
@@ -437,6 +455,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<MWBResult> getMWB(
             @Query("sheet") String sheet,       // sheet = "mwb"
             @Query("action") String action,     // action = "id"
@@ -449,6 +468,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllMWBResult> getAllMWB(
             @Query("sheet") String sheet,       // sheet = "mwb"
             @Query("action") String action      // action = "readall"
@@ -484,6 +504,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<Result> updateAsset(
             @Query("sheet") String sheet,       // sheet = "assets"
             @Query("action") String action,     // action = "update"
@@ -500,6 +521,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<Result> deleteAsset(
             @Query("sheet") String sheet,       // sheet = "assets"
             @Query("action") String action,     // action = "delete"
@@ -513,6 +535,7 @@ public interface Api {
      * @param id
      * @return
      */
+    @GET("dev")
     Call<AssetsResult> getAsset(
             @Query("sheet") String sheet,       // sheet = "assets"
             @Query("action") String action,     // action = "id"
@@ -525,6 +548,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllAssetsResult> getAllAssets(
             @Query("sheet") String sheet,       // sheet = "assets"
             @Query("action") String action      // action = "readall"
@@ -569,6 +593,7 @@ public interface Api {
      * @param name
      * @return
      */
+    @GET("dev")
     Call<Result> updateFD(
             @Query("sheet") String sheet,       // sheet = "fd"
             @Query("action") String action,     // action = "update"
@@ -588,6 +613,7 @@ public interface Api {
      * @param fdno
      * @return
      */
+    @GET("dev")
     Call<Result> deleteFD(
             @Query("sheet") String sheet,       // sheet = "fd"
             @Query("action") String action,     // action = "delete"
@@ -601,6 +627,7 @@ public interface Api {
      * @param fdno
      * @return
      */
+    @GET("dev")
     Call<FDResult> getFD(
             @Query("sheet") String sheet,       // sheet = "fd"
             @Query("action") String action,     // action = "fdno"
@@ -613,6 +640,7 @@ public interface Api {
      * @param action
      * @return
      */
+    @GET("dev")
     Call<AllFDResult> getAllFD(
             @Query("sheet") String sheet,       // sheet = "fd"
             @Query("action") String action      // action = "readall"
