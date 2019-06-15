@@ -1,4 +1,4 @@
-<resources>
+ <resources>
     <string name="app_name">TempleApp</string>
     <string name="read">Read</string>
     <string name="read_all">Read All</string>
@@ -56,8 +56,11 @@
     <string name="update_registered_pooja_details">Update Registered Pooja Details</string>
     <string name="update_the_details_of_donated_money">Update The Details Of Donated Money</string>
     <string name="update">Update</string>
-
-
+    <string name="fetching">Fetching Your Values</string>
+    <string name="Json_obj">Json obj</string>
+    <string name="Name">name</string>
+    <string name="amt">Amount:    Rs.</string>
+    <string name="paidstatus">Paid Status: </string>
 
 
     <string-array name="pooja_types">
@@ -65,5 +68,6 @@
         <item>Type 2</item>
         <item>Type 3</item>
         <item>Type 4</item>
+        <item>Custom Pooja</item>
     </string-array>
 </resources>

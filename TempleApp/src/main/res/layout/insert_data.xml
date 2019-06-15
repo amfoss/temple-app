@@ -83,11 +83,25 @@
                 android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
 
             <EditText
+                android:id="@+id/custompuja"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="custompuja" />
+
+            <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="45dp"
                 android:hint="@string/name" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="amount" />
 
             <android.support.v7.widget.AppCompatCheckBox
                 android:id="@+id/paid_check"

@@ -34,7 +34,7 @@ public class ReadSingleData extends AppCompatActivity {
     RelativeLayout totalLayout;
     private Button read;
     private EditText uid1ET;
-    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v;
+    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v, am;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +50,7 @@ public class ReadSingleData extends AppCompatActivity {
         pooja_v = (TextView) findViewById(R.id.pooja_v);
         paid_l = (TextView) findViewById(R.id.paid_l);
         paid_v = (TextView) findViewById(R.id.paid_v);
+        am = (TextView) findViewById(R.id.am);
 
         view = this.getCurrentFocus();
 
@@ -63,12 +64,12 @@ public class ReadSingleData extends AppCompatActivity {
                     case R.id.radio_donate:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 0;
-                        Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(example.TempleApp.R.string.selected_donate), Toast.LENGTH_LONG).show();
                         break;
                     case R.id.radio_pooja:
                         totalLayout.setVisibility(View.VISIBLE);
                         flag = 1;
-                        Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(), getString(example.TempleApp.R.string.selected_register), Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -80,11 +81,10 @@ public class ReadSingleData extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (flag == 1) {
-                    id = getString(R.string.REG) + uid1ET.getText().toString();
+                    id = getString(example.TempleApp.R.string.REG) + uid1ET.getText().toString();
                 } else {
-                    id = getString(R.string.DON) + uid1ET.getText().toString();
+                    id = getString(example.TempleApp.R.string.DON) + uid1ET.getText().toString();
                 }
-
                 new ReadDataActivity().execute();
             }
         });
@@ -101,8 +101,8 @@ public class ReadSingleData extends AppCompatActivity {
             super.onPreExecute();
 
             dialog = new ProgressDialog(ReadSingleData.this);
-            dialog.setTitle(getString(R.string.wait));
-            dialog.setMessage(getString(R.string.fetch));
+            dialog.setTitle(getString(example.TempleApp.R.string.wait));
+            dialog.setMessage(getString(example.TempleApp.R.string.fetching));
             dialog.show();
 
         }
@@ -110,9 +110,9 @@ public class ReadSingleData extends AppCompatActivity {
         @Nullable
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(Controller.TAG, getString(R.string.ID_value) + id);
+            Log.i(Controller.TAG, getString(example.TempleApp.R.string.ID_value) + id);
             JSONObject jsonObject = Controller.readData(id);
-            Log.i(Controller.TAG, getString(R.string.json_obj) + jsonObject);
+            Log.i(Controller.TAG, getString(example.TempleApp.R.string.Json_obj) + jsonObject);
 
             try {
                 /*
@@ -120,8 +120,8 @@ public class ReadSingleData extends AppCompatActivity {
                  */
                 if (jsonObject != null) {
 
-                    JSONObject user = jsonObject.getJSONObject(getString(R.string.user));
-                    name = user.getString(getString(R.string.name_));
+                    JSONObject user = jsonObject.getJSONObject(getString(example.TempleApp.R.string.user));
+                    name = user.getString(getString(example.TempleApp.R.string.Name));
 
                 }
             } catch (JSONException je) {
@@ -141,30 +141,31 @@ public class ReadSingleData extends AppCompatActivity {
             }
 
             if (name != null) {
-                id_l.setText(getString(R.string.ID));
-                name_l.setText(getString(R.string.name));
+                id_l.setText(getString(example.TempleApp.R.string.ID));
+                name_l.setText(getString(example.TempleApp.R.string.name));
                 int flag = 0;
-                if (id.substring(0, 3).equals(getString(R.string.DON))) {
+                if (id.substring(0, 3).equals(getString(example.TempleApp.R.string.DON))) {
                     id_v.setText(id.substring(3, id.length()));
                     flag = 1;
-                } else if (id.substring(0, 3).equals(getString(R.string.REG))) {
+                } else if (id.substring(0, 3).equals(getString(example.TempleApp.R.string.REG))) {
                     id_v.setText(id.substring(3, id.length()));
                     flag = 0;
                 }
 
-                String[] str = name.split(getString(R.string.empty));
-                name_v.setText(str[1]);
+                String[] str = name.split(getResources().getString(R.string.empty));
+                name_v.setText(str[2]);
+                am.setText(getString(example.TempleApp.R.string.amt)+str[1]);
                 pooja_l.setText(str[0]);
-                paid_v.setText(str[2]);
+                paid_v.setText(str[3]);
                 if (flag == 0) {
-                    pooja_v.setText(getString(R.string.type_of_pooja));
+                    pooja_v.setText(getString(example.TempleApp.R.string.type_of_pooja));
                 } else {
-                    pooja_v.setText(getString(R.string.money_donated));
+                    pooja_v.setText(getString(example.TempleApp.R.string.money_donated));
                 }
-                paid_l.setText(getString(R.string.paid_status));
+                paid_l.setText(getString(example.TempleApp.R.string.paidstatus));
 
             } else
-                Toast.makeText(getApplicationContext(), getString(R.string.id_not_found), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(example.TempleApp.R.string.id_not_found), Toast.LENGTH_LONG).show();
         }
     }
 }

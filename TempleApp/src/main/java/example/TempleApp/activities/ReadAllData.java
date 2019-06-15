@@ -92,7 +92,6 @@ public class ReadAllData extends AppCompatActivity {
                         flag = 4;
                         heading.setText(getString(R.string.list_of_registered_poojas_who_not_paid_only));
                         break;
-
                 }
             }
         });
@@ -183,14 +182,14 @@ public class ReadAllData extends AppCompatActivity {
 
                                     }
                                 } else if (flag == 3) {
-                                    if (id.substring(0, 3).equals(getString(R.string.REG)) && str[2].equals(getString(R.string.PAID))) {
+                                    if (id.substring(0, 3).equals(getString(R.string.REG)) && str[3].equals(getString(R.string.PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
 
                                     }
                                 } else if (flag == 4) {
-                                    if (id.substring(0, 3).equals(getString(R.string.REG)) && str[2].equals(getString(R.string.NOT_PAID))) {
+                                    if (id.substring(0, 3).equals(getString(R.string.REG)) && str[3].equals(getString(R.string.NOT_PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
