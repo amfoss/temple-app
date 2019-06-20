@@ -1,4 +1,4 @@
-package example.TempleApp.Activities;
+package example.TempleApp.activities;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -20,9 +20,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import example.TempleApp.Adapter.MyArrayAdapter;
-import example.TempleApp.Adapter.MyDataModel;
-import example.TempleApp.JSON_API.Controller;
+import example.TempleApp.adapter.MyArrayAdapter;
+import example.TempleApp.adapter.MyDataModel;
+import example.TempleApp.json_api.Controller;
 import example.TempleApp.R;
 
 

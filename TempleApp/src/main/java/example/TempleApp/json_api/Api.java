@@ -1,4 +1,4 @@
-package example.TempleApp.JSON_API;
+package example.TempleApp.json_api;
 
 import example.TempleApp.classes.Result;
 import example.TempleApp.classes.assets.AllAssetsResult;
