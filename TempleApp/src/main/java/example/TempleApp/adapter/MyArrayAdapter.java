@@ -1,4 +1,4 @@
-package example.TempleApp.Adapter;
+package example.TempleApp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

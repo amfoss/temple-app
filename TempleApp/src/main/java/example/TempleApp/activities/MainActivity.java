@@ -1,4 +1,4 @@
-package example.TempleApp.Activities;
+package example.TempleApp.activities;
 
 //MainActivity.java
 
@@ -10,9 +10,8 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import example.TempleApp.JSON_API.InternetConnection;
+import example.TempleApp.json_api.InternetConnection;
 import example.TempleApp.R;
 
 

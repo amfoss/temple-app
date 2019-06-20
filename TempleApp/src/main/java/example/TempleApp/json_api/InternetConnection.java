@@ -1,4 +1,4 @@
-package example.TempleApp.JSON_API;
+package example.TempleApp.json_api;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

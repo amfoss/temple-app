@@ -1,4 +1,4 @@
-package example.TempleApp.Activities;
+package example.TempleApp.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -19,7 +19,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import example.TempleApp.JSON_API.Controller;
+import example.TempleApp.json_api.Controller;
 import example.TempleApp.R;
 
 
