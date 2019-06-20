@@ -22,3 +22,4 @@ script:
     - 'chmod +x ./gradlew'
     - './gradlew clean'
     - './gradlew assembleDebug assembleRelease'
+    - './gradlew check'
