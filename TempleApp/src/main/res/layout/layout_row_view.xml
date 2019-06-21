@@ -17,23 +17,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textViewId"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textAppearance="?android:textAppearanceLarge"
-                tools:text="TextView" />
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textAppearance="?android:textAppearanceMedium"
-                tools:text="TextView" />
+                <TextView
+                    android:id="@+id/textViewId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    tools:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    tools:text="TextView" />
+
+            </LinearLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="6dp">
+
+                <ImageView
+                    android:id="@+id/circle"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/ic_circle" />
+
+                <TextView
+                    android:id="@+id/imageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/circle"
+                    android:layout_alignTop="@id/circle"
+                    android:layout_alignRight="@id/circle"
+                    android:layout_alignBottom="@id/circle"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#ffffff"
+                    android:textSize="35dp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

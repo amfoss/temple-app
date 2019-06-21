@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
@@ -30,6 +31,7 @@ public class ReadAllData extends AppCompatActivity {
 
     RadioGroup radioGroup;
     LinearLayout totalLayout;
+    ImageView icon;
     LinearLayout radioButtonView;
     private int flag;
     private ListView listView;
@@ -47,9 +49,9 @@ public class ReadAllData extends AppCompatActivity {
         readAll = findViewById(R.id.readAll_btn1);
         list = new ArrayList<>();
         adapter = new MyArrayAdapter(this, list);
-        listView =  findViewById(R.id.listView);
+        listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        heading =  findViewById(R.id.heading);
+        heading = findViewById(R.id.heading);
         radioButtonView = findViewById(R.id.radiogroup_view);
 
         readAll.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +63,7 @@ public class ReadAllData extends AppCompatActivity {
             }
         });
 
-        totalLayout =  findViewById(R.id.total_View);
+        totalLayout = findViewById(R.id.total_View);
 
 
         radioGroup = findViewById(R.id.radiogroup);
@@ -169,6 +171,7 @@ public class ReadAllData extends AppCompatActivity {
                                 if (flag == 1) {
                                     if (id.substring(0, 3).equals(getString(R.string.DON)) && str[2].equals(getString(R.string.PAID))) {
                                         model.setName(name);
+
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
                                     }

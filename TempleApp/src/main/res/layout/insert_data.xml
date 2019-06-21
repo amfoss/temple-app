@@ -28,14 +28,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="@string/register_for_new_pooja" />
+                    android:text="@string/register_for_new_pooja"
+                    android:theme="@style/radioButton" />
 
                 <RadioButton
                     android:id="@+id/radio_donate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="@string/donate_money_to_temple" />
+                    android:text="@string/donate_money_to_temple"
+                    android:theme="@style/radioButton" />
             </RadioGroup>
         </LinearLayout>
 
@@ -68,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="45dp"
-                android:hint="@string/enter_money_donated"/>
+                android:hint="@string/enter_money_donated" />
 
             <Spinner
                 android:id="@+id/spinner1"
@@ -97,11 +99,15 @@
 
             <Button
                 android:id="@+id/insert_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="45dp"
-                android:text="@string/insert_" />
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button_animated"
+                android:text="@string/insert_"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
         </LinearLayout>
 
 

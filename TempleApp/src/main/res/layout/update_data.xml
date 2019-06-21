@@ -27,22 +27,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="@string/update_registered_pooja_details" />
+                    android:text="@string/update_registered_pooja_details"
+                    android:theme="@style/radioButton" />
 
                 <RadioButton
                     android:id="@+id/radio_donate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="@string/update_the_details_of_donated_money" />
+                    android:text="@string/update_the_details_of_donated_money"
+                    android:theme="@style/radioButton" />
             </RadioGroup>
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/total_View"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:id="@+id/total_View"
             android:visibility="gone">
 
             <EditText
@@ -99,11 +101,15 @@
 
             <Button
                 android:id="@+id/update_btn1"
-                android:layout_width="wrap_content"
+                android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="45dp"
-                android:text="@string/update" />
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button_animated"
+                android:text="@string/update"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
         </LinearLayout>
 
     </LinearLayout>
