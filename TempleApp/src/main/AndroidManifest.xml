@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="example.TempleApp">
+    package="org.amfoss.templeapp.TempleApp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="example.TempleApp.activities.MainActivity">
+        <activity android:name="org.amfoss.templeapp.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,24 +20,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="example.TempleApp.activities.InsertData"
-            android:parentActivityName="example.TempleApp.activities.MainActivity"
+            android:name="org.amfoss.templeapp.activities.InsertData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Register New pooja"/>
         <activity
-            android:name="example.TempleApp.activities.UpdateData"
-            android:parentActivityName="example.TempleApp.activities.MainActivity"
+            android:name="org.amfoss.templeapp.activities.UpdateData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Update Registered Pooja"/>
         <activity
-            android:name="example.TempleApp.activities.ReadSingleData"
-            android:parentActivityName="example.TempleApp.activities.MainActivity"
+            android:name="org.amfoss.templeapp.activities.ReadSingleData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Search ID"/>
         <activity
-            android:name="example.TempleApp.activities.DeleteData"
-            android:parentActivityName="example.TempleApp.activities.MainActivity"
+            android:name="org.amfoss.templeapp.activities.DeleteData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Delete Registered Pooja"/>
         <activity
-            android:name="example.TempleApp.activities.ReadAllData"
-            android:parentActivityName="example.TempleApp.activities.MainActivity"
+            android:name="org.amfoss.templeapp.activities.ReadAllData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Read all Registered Poojas"/>
     </application>
 
