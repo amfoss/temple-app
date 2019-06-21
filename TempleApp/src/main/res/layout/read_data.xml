@@ -21,21 +21,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="@string/people_who_registered_for_pooja" />
+                android:text="@string/people_who_registered_for_pooja"
+                android:theme="@style/radioButton" />
 
             <RadioButton
                 android:id="@+id/radio_donate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="@string/people_who_donated_money_for_temple" />
+                android:text="@string/people_who_donated_money_for_temple"
+                android:theme="@style/radioButton" />
         </RadioGroup>
     </LinearLayout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/total_View"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/total_View"
         android:visibility="gone">
 
         <EditText
@@ -51,12 +53,16 @@
 
         <Button
             android:id="@+id/insert_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/uid"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="@string/find" />
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_animated"
+            android:text="@string/find"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/id_v"

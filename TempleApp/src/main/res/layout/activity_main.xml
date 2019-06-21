@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="#eee"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -38,7 +38,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1.0"
-            android:background="#E65100"
+            android:background="@color/orange"
             android:drawableTop="@android:drawable/ic_menu_add"
             android:drawablePadding="0dp"
             android:drawableTint="#fff"
@@ -65,7 +65,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1.0"
-            android:background="#E65100"
+            android:background="@color/orange"
             android:drawableTop="@android:drawable/ic_menu_search"
             android:drawablePadding="0dp"
             android:drawableTint="#fff"
@@ -83,7 +83,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1.0"
-            android:background="#E65100"
+            android:background="@color/orange"
             android:drawableTop="@android:drawable/ic_menu_view"
             android:drawablePadding="0dp"
             android:drawableTint="#fff"
@@ -111,7 +111,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1.0"
-            android:background="#E65100"
+            android:background="@color/orange"
             android:drawableTop="@android:drawable/ic_menu_edit"
             android:drawablePadding="0dp"
             android:drawableTint="#fff"
@@ -129,7 +129,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1.0"
-            android:background="#E65100"
+            android:background="@color/orange"
             android:drawableTop="@android:drawable/ic_menu_delete"
             android:drawablePadding="0dp"
             android:drawableTint="#fff"

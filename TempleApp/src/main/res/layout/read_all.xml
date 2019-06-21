@@ -24,14 +24,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="@string/list_of_donated_people_who_paid_only" />
+                android:text="@string/list_of_donated_people_who_paid_only"
+                android:theme="@style/radioButton" />
 
             <RadioButton
                 android:id="@+id/donate_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="@string/list_of_donated_people_who_not_paid_only" />
+                android:text="@string/list_of_donated_people_who_not_paid_only"
+                android:theme="@style/radioButton" />
 
 
             <RadioButton
@@ -39,7 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="@string/list_of_registered_poojas_people_who_paid_only" />
+                android:text="@string/list_of_registered_poojas_people_who_paid_only"
+                android:theme="@style/radioButton" />
 
 
             <RadioButton
@@ -47,7 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="@string/list_of_registered_poojas_who_not_paid_only" />
+                android:text="@string/list_of_registered_poojas_who_not_paid_only"
+                android:theme="@style/radioButton" />
         </RadioGroup>
     </LinearLayout>
 
@@ -61,10 +65,14 @@
 
         <Button
             android:id="@+id/readAll_btn1"
-            android:layout_width="wrap_content"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/read_all" />
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_animated"
+            android:text="@string/read_all"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/heading"
@@ -84,6 +92,4 @@
             android:divider="@null"
             android:dividerHeight="0dp" />
     </LinearLayout>
-
-
 </LinearLayout>
