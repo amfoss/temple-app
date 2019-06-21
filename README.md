@@ -1,6 +1,16 @@
 # TempleApp
+[![Watchers](https://img.shields.io/github/watchers/amfoss/TempleApp.svg?style=social&label=Watchers&maxAge=2592000)](https://GitHub.com/amfoss/TempleApp/watchers/)
+[![Star Gazers](https://img.shields.io/github/stars/amfoss/TempleApp.svg?style=social&label=Stars&maxAge=2592000)](https://GitHub.com/amfoss/TempleApp/stargazers/)
+[![Forks](https://img.shields.io/github/forks/amfoss/TempleApp.svg?style=social&label=Forks&maxAge=2592000)](https://GitHub.com/amfoss/TempleApp/network/members/)
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-1f425f.svg)](https://opensource.org/licenses/MIT)
 [![Gitter](https://badges.gitter.im/amfoss/TempleApp.svg)](https://gitter.im/amfoss/TempleApp)
+[![Code of Conduct](https://img.shields.io/badge/%E2%9D%A4-code%20of%20conduct-e04545.svg?style=flat)](https://github.com/amfoss/TempleApp/blob/master/CODE_OF_CONDUCT.md)
 [![Travis CI](https://travis-ci.com/amfoss/TempleApp.svg?branch=master)](https://travis-ci.com/amfoss/TempleApp)
+[![Open Issues](https://img.shields.io/github/issues/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/issues/)
+[![PRs](https://img.shields.io/github/issues-pr/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/pulls/)
+[![Contributors](https://img.shields.io/github/contributors/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/graphs/contributors/)
 
 This app is a cost-efficient way of maintaining records of poojas, donations made by people and also all the financial records in temples. Using this app, people in the temple counter will be able to enter all the details regarding the poojas they want or some donations they want to do for the temple. This app is connected to a printer so that it will print the details of pooja registrations of users.
 
@@ -22,7 +32,7 @@ These instructions will get you a copy of the project up and be running on your 
 
 - Clone your fork of the project locally. At the command line:
     ```
-    git clone https://github.com/YOUR-GITHUB-USERNAME/TempleApp
+    $ git clone https://github.com/YOUR-GITHUB-USERNAME/TempleApp
     ```
 
 If you prefer not to use the command line, you can use Android Studio to create a new project from version control using 
@@ -46,22 +56,22 @@ Also, any registration can be deleted by giving the ID of the user whose registr
 ```
 .......
 │   
-├── Activities
+├── activities
 │   ├── DeleteData.java
 │   ├── InsertData.java
 │   ├── MainActivity.java
 │   ├── ReadAllData.java
 │   ├── ReadSingleData.java
 │   └── UpdateData.java
-├── Adapter
+├── adapter
 │   ├── MyArrayAdapter.java
 │   ├── MyDataModel.java
-└── Json_API
+└── json_api
     ├── Controller.java
     └── InternetConnection.java 
  ```
 
-#### Screenshots
+## Screenshots
 
 <table>
   <tr>
