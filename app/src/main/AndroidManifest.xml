@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.amfoss.templeapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="org.amfoss.templeapp.activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.amfoss.templeapp.activities.InsertData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
+            android:label="Register New pooja"/>
+        <activity
+            android:name="org.amfoss.templeapp.activities.UpdateData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
+            android:label="Update Registered Pooja"/>
+        <activity
+            android:name="org.amfoss.templeapp.activities.ReadSingleData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
+            android:label="Search ID"/>
+        <activity
+            android:name="org.amfoss.templeapp.activities.DeleteData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
+            android:label="Delete Registered Pooja"/>
+        <activity
+            android:name="org.amfoss.templeapp.activities.ReadAllData"
+            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
+            android:label="Read all Registered Poojas"/>
+    </application>
+
+</manifest>
