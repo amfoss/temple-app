@@ -1,4 +1,3 @@
-
 package org.amfoss.templeapp.classes.fd;
 
 import com.google.gson.annotations.Expose;
@@ -6,110 +5,117 @@ import com.google.gson.annotations.SerializedName;
 
 public class FD {
 
-    @SerializedName("date")
-    @Expose
-    private Integer date;
-    @SerializedName("bank")
-    @Expose
-    private String bank;
-    @SerializedName("fdno")
-    @Expose
-    private String fdno;
-    @SerializedName("maturitydate")
-    @Expose
-    private Integer maturitydate;
-    @SerializedName("amount")
-    @Expose
-    private Integer amount;
-    @SerializedName("value")
-    @Expose
-    private Integer value;
-    @SerializedName("name")
-    @Expose
-    private String name;
+  @SerializedName("date")
+  @Expose
+  private Integer date;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public FD() {
-    }
+  @SerializedName("bank")
+  @Expose
+  private String bank;
 
-    /**
-     *
-     * @param amount
-     * @param maturitydate
-     * @param fdno
-     * @param name
-     * @param value
-     * @param bank
-     * @param date
-     */
-    public FD(Integer date, String bank, String fdno, Integer maturitydate, Integer amount, Integer value, String name) {
-        super();
-        this.date = date;
-        this.bank = bank;
-        this.fdno = fdno;
-        this.maturitydate = maturitydate;
-        this.amount = amount;
-        this.value = value;
-        this.name = name;
-    }
+  @SerializedName("fdno")
+  @Expose
+  private String fdno;
 
-    public Integer getDate() {
-        return date;
-    }
+  @SerializedName("maturitydate")
+  @Expose
+  private Integer maturitydate;
 
-    public void setDate(Integer date) {
-        this.date = date;
-    }
+  @SerializedName("amount")
+  @Expose
+  private Integer amount;
 
-    public String getBank() {
-        return bank;
-    }
+  @SerializedName("value")
+  @Expose
+  private Integer value;
 
-    public void setBank(String bank) {
-        this.bank = bank;
-    }
+  @SerializedName("name")
+  @Expose
+  private String name;
 
-    public String getFdno() {
-        return fdno;
-    }
+  /** No args constructor for use in serialization */
+  public FD() {}
 
-    public void setFdno(String fdno) {
-        this.fdno = fdno;
-    }
+  /**
+   * @param amount
+   * @param maturitydate
+   * @param fdno
+   * @param name
+   * @param value
+   * @param bank
+   * @param date
+   */
+  public FD(
+      Integer date,
+      String bank,
+      String fdno,
+      Integer maturitydate,
+      Integer amount,
+      Integer value,
+      String name) {
+    super();
+    this.date = date;
+    this.bank = bank;
+    this.fdno = fdno;
+    this.maturitydate = maturitydate;
+    this.amount = amount;
+    this.value = value;
+    this.name = name;
+  }
 
-    public Integer getMaturitydate() {
-        return maturitydate;
-    }
+  public Integer getDate() {
+    return date;
+  }
 
-    public void setMaturitydate(Integer maturitydate) {
-        this.maturitydate = maturitydate;
-    }
+  public void setDate(Integer date) {
+    this.date = date;
+  }
 
-    public Integer getAmount() {
-        return amount;
-    }
+  public String getBank() {
+    return bank;
+  }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
+  public void setBank(String bank) {
+    this.bank = bank;
+  }
 
-    public Integer getValue() {
-        return value;
-    }
+  public String getFdno() {
+    return fdno;
+  }
 
-    public void setValue(Integer value) {
-        this.value = value;
-    }
+  public void setFdno(String fdno) {
+    this.fdno = fdno;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public Integer getMaturitydate() {
+    return maturitydate;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setMaturitydate(Integer maturitydate) {
+    this.maturitydate = maturitydate;
+  }
 
+  public Integer getAmount() {
+    return amount;
+  }
+
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  public void setValue(Integer value) {
+    this.value = value;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

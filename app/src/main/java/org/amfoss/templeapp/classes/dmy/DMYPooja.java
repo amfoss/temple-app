@@ -5,123 +5,132 @@ import com.google.gson.annotations.SerializedName;
 
 public class DMYPooja {
 
-    @SerializedName("type")
-    @Expose
-    private String type;
-    @SerializedName("date")
-    @Expose
-    private Integer date;
-    @SerializedName("poojatype")
-    @Expose
-    private String poojatype;
-    @SerializedName("billno")
-    @Expose
-    private Integer billno;
-    @SerializedName("name")
-    @Expose
-    private String name;
-    @SerializedName("address")
-    @Expose
-    private String address;
-    @SerializedName("amount")
-    @Expose
-    private Integer amount;
-    @SerializedName("remarks")
-    @Expose
-    private String remarks;
+  @SerializedName("type")
+  @Expose
+  private String type;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public DMYPooja() {
-    }
+  @SerializedName("date")
+  @Expose
+  private Integer date;
 
-    /**
-     *
-     * @param amount
-     * @param poojatype
-     * @param address
-     * @param name
-     * @param remarks
-     * @param billno
-     * @param date
-     * @param type
-     */
-    public DMYPooja(String type, Integer date, String poojatype, Integer billno, String name, String address, Integer amount, String remarks) {
-        super();
-        this.type = type;
-        this.date = date;
-        this.poojatype = poojatype;
-        this.billno = billno;
-        this.name = name;
-        this.address = address;
-        this.amount = amount;
-        this.remarks = remarks;
-    }
+  @SerializedName("poojatype")
+  @Expose
+  private String poojatype;
 
-    public String getType() {
-        return type;
-    }
+  @SerializedName("billno")
+  @Expose
+  private Integer billno;
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  @SerializedName("name")
+  @Expose
+  private String name;
 
-    public Integer getDate() {
-        return date;
-    }
+  @SerializedName("address")
+  @Expose
+  private String address;
 
-    public void setDate(Integer date) {
-        this.date = date;
-    }
+  @SerializedName("amount")
+  @Expose
+  private Integer amount;
 
-    public String getPoojatype() {
-        return poojatype;
-    }
+  @SerializedName("remarks")
+  @Expose
+  private String remarks;
 
-    public void setPoojatype(String poojatype) {
-        this.poojatype = poojatype;
-    }
+  /** No args constructor for use in serialization */
+  public DMYPooja() {}
 
-    public Integer getBillno() {
-        return billno;
-    }
+  /**
+   * @param amount
+   * @param poojatype
+   * @param address
+   * @param name
+   * @param remarks
+   * @param billno
+   * @param date
+   * @param type
+   */
+  public DMYPooja(
+      String type,
+      Integer date,
+      String poojatype,
+      Integer billno,
+      String name,
+      String address,
+      Integer amount,
+      String remarks) {
+    super();
+    this.type = type;
+    this.date = date;
+    this.poojatype = poojatype;
+    this.billno = billno;
+    this.name = name;
+    this.address = address;
+    this.amount = amount;
+    this.remarks = remarks;
+  }
 
-    public void setBillno(Integer billno) {
-        this.billno = billno;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public Integer getDate() {
+    return date;
+  }
 
-    public String getAddress() {
-        return address;
-    }
+  public void setDate(Integer date) {
+    this.date = date;
+  }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public String getPoojatype() {
+    return poojatype;
+  }
 
-    public Integer getAmount() {
-        return amount;
-    }
+  public void setPoojatype(String poojatype) {
+    this.poojatype = poojatype;
+  }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
+  public Integer getBillno() {
+    return billno;
+  }
 
-    public String getRemarks() {
-        return remarks;
-    }
+  public void setBillno(Integer billno) {
+    this.billno = billno;
+  }
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
+  public String getName() {
+    return name;
+  }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public Integer getAmount() {
+    return amount;
+  }
+
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
+
+  public String getRemarks() {
+    return remarks;
+  }
+
+  public void setRemarks(String remarks) {
+    this.remarks = remarks;
+  }
 }

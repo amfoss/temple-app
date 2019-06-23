@@ -24,6 +24,7 @@ android {
 
 spotless {
     java {
+        googleJavaFormat()
         target '**/*.java'
         removeUnusedImports()
     }

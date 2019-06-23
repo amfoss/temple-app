@@ -5,84 +5,82 @@ import com.google.gson.annotations.SerializedName;
 
 public class IE {
 
-    @SerializedName("date")
-    @Expose
-    private Integer date;
-    @SerializedName("type")
-    @Expose
-    private String type;
-    @SerializedName("amount")
-    @Expose
-    private Integer amount;
-    @SerializedName("remarks")
-    @Expose
-    private String remarks;
-    @SerializedName("id")
-    @Expose
-    private Integer id;
+  @SerializedName("date")
+  @Expose
+  private Integer date;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public IE() {
-    }
+  @SerializedName("type")
+  @Expose
+  private String type;
 
-    /**
-     *
-     * @param id
-     * @param amount
-     * @param remarks
-     * @param type
-     * @param date
-     */
-    public IE(Integer date, String type, Integer amount, String remarks, Integer id) {
-        super();
-        this.date = date;
-        this.type = type;
-        this.amount = amount;
-        this.remarks = remarks;
-        this.id = id;
-    }
+  @SerializedName("amount")
+  @Expose
+  private Integer amount;
 
-    public Integer getDate() {
-        return date;
-    }
+  @SerializedName("remarks")
+  @Expose
+  private String remarks;
 
-    public void setDate(Integer date) {
-        this.date = date;
-    }
+  @SerializedName("id")
+  @Expose
+  private Integer id;
 
-    public String getType() {
-        return type;
-    }
+  /** No args constructor for use in serialization */
+  public IE() {}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  /**
+   * @param id
+   * @param amount
+   * @param remarks
+   * @param type
+   * @param date
+   */
+  public IE(Integer date, String type, Integer amount, String remarks, Integer id) {
+    super();
+    this.date = date;
+    this.type = type;
+    this.amount = amount;
+    this.remarks = remarks;
+    this.id = id;
+  }
 
-    public Integer getAmount() {
-        return amount;
-    }
+  public Integer getDate() {
+    return date;
+  }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
+  public void setDate(Integer date) {
+    this.date = date;
+  }
 
-    public String getRemarks() {
-        return remarks;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public Integer getId() {
-        return id;
-    }
+  public Integer getAmount() {
+    return amount;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
 
+  public String getRemarks() {
+    return remarks;
+  }
+
+  public void setRemarks(String remarks) {
+    this.remarks = remarks;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
 }
