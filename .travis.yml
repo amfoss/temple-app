@@ -24,3 +24,4 @@ script:
     - './gradlew assembleDebug assembleRelease'
     - './gradlew check'
     - './gradlew build'
+    - './gradlew spotlessCheck'

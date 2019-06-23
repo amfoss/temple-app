@@ -5,97 +5,97 @@ import com.google.gson.annotations.SerializedName;
 
 public class MWB {
 
-    @SerializedName("type")
-    @Expose
-    private String type;
-    @SerializedName("innertype")
-    @Expose
-    private String innertype;
-    @SerializedName("amount")
-    @Expose
-    private Integer amount;
-    @SerializedName("remarks")
-    @Expose
-    private String remarks;
-    @SerializedName("id")
-    @Expose
-    private Integer id;
-    @SerializedName("date")
-    @Expose
-    private Integer date;
+  @SerializedName("type")
+  @Expose
+  private String type;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public MWB() {
-    }
+  @SerializedName("innertype")
+  @Expose
+  private String innertype;
 
-    /**
-     *
-     * @param id
-     * @param amount
-     * @param innertype
-     * @param remarks
-     * @param date
-     * @param type
-     */
-    public MWB(String type, String innertype, Integer amount, String remarks, Integer id, Integer date) {
-        super();
-        this.type = type;
-        this.innertype = innertype;
-        this.amount = amount;
-        this.remarks = remarks;
-        this.id = id;
-        this.date = date;
-    }
+  @SerializedName("amount")
+  @Expose
+  private Integer amount;
 
-    public String getType() {
-        return type;
-    }
+  @SerializedName("remarks")
+  @Expose
+  private String remarks;
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  @SerializedName("id")
+  @Expose
+  private Integer id;
 
-    public String getInnertype() {
-        return innertype;
-    }
+  @SerializedName("date")
+  @Expose
+  private Integer date;
 
-    public void setInnertype(String innertype) {
-        this.innertype = innertype;
-    }
+  /** No args constructor for use in serialization */
+  public MWB() {}
 
-    public Integer getAmount() {
-        return amount;
-    }
+  /**
+   * @param id
+   * @param amount
+   * @param innertype
+   * @param remarks
+   * @param date
+   * @param type
+   */
+  public MWB(
+      String type, String innertype, Integer amount, String remarks, Integer id, Integer date) {
+    super();
+    this.type = type;
+    this.innertype = innertype;
+    this.amount = amount;
+    this.remarks = remarks;
+    this.id = id;
+    this.date = date;
+  }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public String getRemarks() {
-        return remarks;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
+  public String getInnertype() {
+    return innertype;
+  }
 
-    public Integer getId() {
-        return id;
-    }
+  public void setInnertype(String innertype) {
+    this.innertype = innertype;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public Integer getAmount() {
+    return amount;
+  }
 
-    public Integer getDate() {
-        return date;
-    }
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
 
-    public void setDate(Integer date) {
-        this.date = date;
-    }
+  public String getRemarks() {
+    return remarks;
+  }
 
+  public void setRemarks(String remarks) {
+    this.remarks = remarks;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public Integer getDate() {
+    return date;
+  }
+
+  public void setDate(Integer date) {
+    this.date = date;
+  }
 }

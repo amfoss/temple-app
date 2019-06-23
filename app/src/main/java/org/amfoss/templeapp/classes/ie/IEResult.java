@@ -5,32 +5,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class IEResult {
 
-    @SerializedName("ie")
-    @Expose
-    private IE ie;
+  @SerializedName("ie")
+  @Expose
+  private IE ie;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public IEResult() {
-    }
+  /** No args constructor for use in serialization */
+  public IEResult() {}
 
-    /**
-     *
-     * @param ie
-     */
-    public IEResult(IE ie) {
-        super();
-        this.ie = ie;
-    }
+  /** @param ie */
+  public IEResult(IE ie) {
+    super();
+    this.ie = ie;
+  }
 
-    public IE getIE() {
-        return ie;
-    }
+  public IE getIE() {
+    return ie;
+  }
 
-    public void setIE(IE ie) {
-        this.ie = ie;
-    }
-
+  public void setIE(IE ie) {
+    this.ie = ie;
+  }
 }

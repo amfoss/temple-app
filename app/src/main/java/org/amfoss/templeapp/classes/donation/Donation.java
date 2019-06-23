@@ -5,110 +5,117 @@ import com.google.gson.annotations.SerializedName;
 
 public class Donation {
 
-    @SerializedName("date")
-    @Expose
-    private Integer date;
-    @SerializedName("type")
-    @Expose
-    private String type;
-    @SerializedName("billno")
-    @Expose
-    private Integer billno;
-    @SerializedName("name")
-    @Expose
-    private String name;
-    @SerializedName("address")
-    @Expose
-    private String address;
-    @SerializedName("amount")
-    @Expose
-    private Integer amount;
-    @SerializedName("remarks")
-    @Expose
-    private String remarks;
+  @SerializedName("date")
+  @Expose
+  private Integer date;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public Donation() {
-    }
+  @SerializedName("type")
+  @Expose
+  private String type;
 
-    /**
-     *
-     * @param amount
-     * @param address
-     * @param name
-     * @param remarks
-     * @param billno
-     * @param type
-     * @param date
-     */
-    public Donation(Integer date, String type, Integer billno, String name, String address, Integer amount, String remarks) {
-        super();
-        this.date = date;
-        this.type = type;
-        this.billno = billno;
-        this.name = name;
-        this.address = address;
-        this.amount = amount;
-        this.remarks = remarks;
-    }
+  @SerializedName("billno")
+  @Expose
+  private Integer billno;
 
-    public Integer getDate() {
-        return date;
-    }
+  @SerializedName("name")
+  @Expose
+  private String name;
 
-    public void setDate(Integer date) {
-        this.date = date;
-    }
+  @SerializedName("address")
+  @Expose
+  private String address;
 
-    public String getType() {
-        return type;
-    }
+  @SerializedName("amount")
+  @Expose
+  private Integer amount;
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  @SerializedName("remarks")
+  @Expose
+  private String remarks;
 
-    public Integer getBillno() {
-        return billno;
-    }
+  /** No args constructor for use in serialization */
+  public Donation() {}
 
-    public void setBillno(Integer billno) {
-        this.billno = billno;
-    }
+  /**
+   * @param amount
+   * @param address
+   * @param name
+   * @param remarks
+   * @param billno
+   * @param type
+   * @param date
+   */
+  public Donation(
+      Integer date,
+      String type,
+      Integer billno,
+      String name,
+      String address,
+      Integer amount,
+      String remarks) {
+    super();
+    this.date = date;
+    this.type = type;
+    this.billno = billno;
+    this.name = name;
+    this.address = address;
+    this.amount = amount;
+    this.remarks = remarks;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public Integer getDate() {
+    return date;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setDate(Integer date) {
+    this.date = date;
+  }
 
-    public String getAddress() {
-        return address;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public Integer getAmount() {
-        return amount;
-    }
+  public Integer getBillno() {
+    return billno;
+  }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
+  public void setBillno(Integer billno) {
+    this.billno = billno;
+  }
 
-    public String getRemarks() {
-        return remarks;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public Integer getAmount() {
+    return amount;
+  }
+
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
+
+  public String getRemarks() {
+    return remarks;
+  }
+
+  public void setRemarks(String remarks) {
+    this.remarks = remarks;
+  }
 }
