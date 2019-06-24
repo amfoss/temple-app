@@ -19,7 +19,7 @@
             android:layout_margin="20dp"
             android:orientation="vertical">
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/donate_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                 android:text="@string/list_of_donated_people_who_paid_only"
                 android:theme="@style/radioButton" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/donate_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
                 android:theme="@style/radioButton" />
 
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/pooja_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:theme="@style/radioButton" />
 
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/pooja_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
