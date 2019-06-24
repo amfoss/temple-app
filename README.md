@@ -12,6 +12,9 @@
 [![PRs](https://img.shields.io/github/issues-pr/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/pulls/)
 [![Contributors](https://img.shields.io/github/contributors/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/graphs/contributors/)
 
+![Android Studio](https://img.shields.io/badge/android%20studio-v3.4.1-blue.svg?cacheSeconds=2592000)
+![Gradle](https://img.shields.io/badge/gradle-v5.1.1-green.svg?cacheSeconds=2592000)
+
 This app is a cost-efficient way of maintaining records of poojas, donations made by people and also all the financial records in temples. Using this app, people in the temple counter will be able to enter all the details regarding the poojas they want or some donations they want to do for the temple. This app is connected to a printer so that it will print the details of pooja registrations of users.
 
 The app has a login interface and only some people like General secretary, president and treasurer of the temple can log in and be able to access the complete database.
