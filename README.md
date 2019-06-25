@@ -78,14 +78,14 @@ Also, any registration can be deleted by giving the ID of the user whose registr
 
 <table>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/43814992/59095046-2d6e8300-8935-11e9-8cdf-5646353246ad.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/43814992/59095110-50993280-8935-11e9-8e35-1faa939cc111.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/43814992/59095377-ee8cfd00-8935-11e9-9b67-a85faa3a7460.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/48018942/60021845-579f9f00-96b0-11e9-8fac-5071ce9625b9.jpg" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/48018942/60021988-9c2b3a80-96b0-11e9-89f8-8a8783c85ab7.jpg" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/48018942/60022072-be24bd00-96b0-11e9-9297-e8fb129d5c95.jpg" height = "480" width="270"></td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/43814992/59095468-357af280-8936-11e9-8449-9276066f8ea8.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/43814992/59155368-79d8d080-8aa5-11e9-9b3b-9fa402d86aa4.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/43814992/59095744-db2e6180-8936-11e9-8d6f-80ab44bbc3f4.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/48018942/60022102-d1d02380-96b0-11e9-8ba7-246a0a84737b.jpg" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/48018942/60022167-eb716b00-96b0-11e9-9e86-50b465eff671.jpg" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/48018942/60022233-09d76680-96b1-11e9-9f66-9b7056234d44.jpg" height = "480" width="270"></td>
   </tr>
 </table>
 
