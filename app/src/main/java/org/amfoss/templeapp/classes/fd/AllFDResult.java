@@ -6,24 +6,24 @@ import java.util.List;
 
 public class AllFDResult {
 
-  @SerializedName("fds")
-  @Expose
-  private List<FD> fds = null;
+    @SerializedName("fds")
+    @Expose
+    private List<FD> fds = null;
 
-  /** No args constructor for use in serialization */
-  public AllFDResult() {}
+    /** No args constructor for use in serialization */
+    public AllFDResult() {}
 
-  /** @param fds */
-  public AllFDResult(List<FD> fds) {
-    super();
-    this.fds = fds;
-  }
+    /** @param fds */
+    public AllFDResult(List<FD> fds) {
+        super();
+        this.fds = fds;
+    }
 
-  public List<FD> getFDs() {
-    return fds;
-  }
+    public List<FD> getFDs() {
+        return fds;
+    }
 
-  public void setFDs(List<FD> fds) {
-    this.fds = fds;
-  }
+    public void setFDs(List<FD> fds) {
+        this.fds = fds;
+    }
 }

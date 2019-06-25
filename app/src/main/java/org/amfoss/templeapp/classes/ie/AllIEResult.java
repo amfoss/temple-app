@@ -6,24 +6,24 @@ import java.util.List;
 
 public class AllIEResult {
 
-  @SerializedName("ies")
-  @Expose
-  private List<IE> ies = null;
+    @SerializedName("ies")
+    @Expose
+    private List<IE> ies = null;
 
-  /** No args constructor for use in serialization */
-  public AllIEResult() {}
+    /** No args constructor for use in serialization */
+    public AllIEResult() {}
 
-  /** @param ies */
-  public AllIEResult(List<IE> ies) {
-    super();
-    this.ies = ies;
-  }
+    /** @param ies */
+    public AllIEResult(List<IE> ies) {
+        super();
+        this.ies = ies;
+    }
 
-  public List<IE> getIEs() {
-    return ies;
-  }
+    public List<IE> getIEs() {
+        return ies;
+    }
 
-  public void setIEs(List<IE> ies) {
-    this.ies = ies;
-  }
+    public void setIEs(List<IE> ies) {
+        this.ies = ies;
+    }
 }

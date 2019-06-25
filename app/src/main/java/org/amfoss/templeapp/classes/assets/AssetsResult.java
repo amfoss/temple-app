@@ -5,24 +5,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class AssetsResult {
 
-  @SerializedName("asset")
-  @Expose
-  private Asset asset;
+    @SerializedName("asset")
+    @Expose
+    private Asset asset;
 
-  /** No args constructor for use in serialization */
-  public AssetsResult() {}
+    /** No args constructor for use in serialization */
+    public AssetsResult() {}
 
-  /** @param asset */
-  public AssetsResult(Asset asset) {
-    super();
-    this.asset = asset;
-  }
+    /** @param asset */
+    public AssetsResult(Asset asset) {
+        super();
+        this.asset = asset;
+    }
 
-  public Asset getAsset() {
-    return asset;
-  }
+    public Asset getAsset() {
+        return asset;
+    }
 
-  public void setAsset(Asset asset) {
-    this.asset = asset;
-  }
+    public void setAsset(Asset asset) {
+        this.asset = asset;
+    }
 }

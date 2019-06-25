@@ -6,24 +6,24 @@ import java.util.List;
 
 public class AllPoojaResult {
 
-  @SerializedName("poojas")
-  @Expose
-  private List<Pooja> poojas = null;
+    @SerializedName("poojas")
+    @Expose
+    private List<Pooja> poojas = null;
 
-  /** No args constructor for use in serialization */
-  public AllPoojaResult() {}
+    /** No args constructor for use in serialization */
+    public AllPoojaResult() {}
 
-  /** @param poojas */
-  public AllPoojaResult(List<Pooja> poojas) {
-    super();
-    this.poojas = poojas;
-  }
+    /** @param poojas */
+    public AllPoojaResult(List<Pooja> poojas) {
+        super();
+        this.poojas = poojas;
+    }
 
-  public List<Pooja> getPoojas() {
-    return poojas;
-  }
+    public List<Pooja> getPoojas() {
+        return poojas;
+    }
 
-  public void setPoojas(List<Pooja> poojas) {
-    this.poojas = poojas;
-  }
+    public void setPoojas(List<Pooja> poojas) {
+        this.poojas = poojas;
+    }
 }

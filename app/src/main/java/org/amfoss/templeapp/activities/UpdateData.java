@@ -21,145 +21,140 @@ import org.json.JSONObject;
 
 public class UpdateData extends AppCompatActivity {
 
-  String id;
-  String name;
-  RadioGroup radioGroup;
-  LinearLayout totalLayout;
-  int flag;
-  Spinner poojaType;
-  CheckBox paid;
-  EditText moneyDonated;
-  String paidCheck, poojaTyp, overall, money;
-  private Button update;
-  private EditText uid1ET, uid2, nameET;
+    String id;
+    String name;
+    RadioGroup radioGroup;
+    LinearLayout totalLayout;
+    int flag;
+    Spinner poojaType;
+    CheckBox paid;
+    EditText moneyDonated;
+    String paidCheck, poojaTyp, overall, money;
+    private Button update;
+    private EditText uid1ET, nameET;
 
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.update_data);
-    update = (Button) findViewById(R.id.update_btn1);
-    uid1ET = (EditText) findViewById(R.id.uid);
-    nameET = (EditText) findViewById(R.id.name);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.update_data);
+        update = findViewById(R.id.update_btn1);
+        uid1ET = findViewById(R.id.uid);
+        nameET = findViewById(R.id.name);
+        paid = findViewById(R.id.paid_check);
+        poojaType = findViewById(R.id.spinner1);
+        totalLayout = findViewById(R.id.total_View);
+        moneyDonated = findViewById(R.id.money_donated);
 
-    paid = (CheckBox) findViewById(R.id.paid_check);
-    poojaType = (Spinner) findViewById(R.id.spinner1);
-    totalLayout = (LinearLayout) findViewById(R.id.total_View);
-    moneyDonated = (EditText) findViewById(R.id.money_donated);
+        radioGroup = findViewById(R.id.radiogroup);
+        totalLayout = findViewById(R.id.total_View);
 
-    radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
-    totalLayout = (LinearLayout) findViewById(R.id.total_View);
+        radioGroup.setOnCheckedChangeListener(
+                new RadioGroup.OnCheckedChangeListener() {
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        switch (checkedId) {
+                            case R.id.radio_donate:
+                                totalLayout.setVisibility(View.VISIBLE);
+                                poojaType.setVisibility(View.GONE);
+                                moneyDonated.setVisibility(View.VISIBLE);
+                                id = getString(R.string.DON);
+                                flag = 0;
+                                Toast.makeText(getBaseContext(), getString(R.string.UPDATE), Toast.LENGTH_LONG)
+                                        .show();
+                                break;
+                            case R.id.radio_pooja:
+                                totalLayout.setVisibility(View.VISIBLE);
+                                moneyDonated.setVisibility(View.GONE);
+                                poojaType.setVisibility(View.VISIBLE);
+                                id = getString(R.string.REG);
+                                flag = 1;
+                                Toast.makeText(
+                                                getBaseContext(), getString(R.string.update_pooja), Toast.LENGTH_LONG)
+                                        .show();
+                                break;
+                        }
+                    }
+                });
 
-    radioGroup.setOnCheckedChangeListener(
-        new RadioGroup.OnCheckedChangeListener() {
-          public void onCheckedChanged(RadioGroup group, int checkedId) {
-            switch (checkedId) {
-              case R.id.radio_donate:
-                totalLayout.setVisibility(View.VISIBLE);
-                poojaType.setVisibility(View.GONE);
-                moneyDonated.setVisibility(View.VISIBLE);
-                id = getString(R.string.DON);
-                flag = 0;
-                Toast.makeText(getBaseContext(), getString(R.string.UPDATE), Toast.LENGTH_LONG)
-                    .show();
-                break;
-              case R.id.radio_pooja:
-                totalLayout.setVisibility(View.VISIBLE);
-                moneyDonated.setVisibility(View.GONE);
-                poojaType.setVisibility(View.VISIBLE);
-                id = getString(R.string.REG);
-                flag = 1;
-                Toast.makeText(
-                        getBaseContext(), getString(R.string.update_pooja), Toast.LENGTH_LONG)
-                    .show();
-                break;
-            }
-          }
-        });
+        paid.setOnClickListener(
+                new View.OnClickListener() {
 
-    paid.setOnClickListener(
-        new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // is chkIos checked?
+                        if (((CheckBox) v).isChecked()) {
+                            paidCheck = getString(R.string.PAID);
+                        } else {
+                            paidCheck = getString(R.string.NOT_PAID);
+                        }
+                    }
+                });
 
-          @Override
-          public void onClick(View v) {
-            // is chkIos checked?
-            if (((CheckBox) v).isChecked()) {
-              paidCheck = getString(R.string.PAID);
+        update.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        id = id + uid1ET.getText().toString();
+                        name = nameET.getText().toString();
+                        if (flag == 1) {
+                            poojaTyp = String.valueOf(poojaType.getSelectedItem());
 
-            } else {
-              paidCheck = getString(R.string.NOT_PAID);
-            }
-          }
-        });
-
-    update.setOnClickListener(
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-
-            id = id + uid1ET.getText().toString();
-            name = nameET.getText().toString();
-
-            if (flag == 1) {
-              poojaTyp = String.valueOf(poojaType.getSelectedItem());
-
-              overall =
-                  poojaTyp
-                      + getResources().getString(R.string.empty)
-                      + name
-                      + getResources().getString(R.string.empty)
-                      + paidCheck;
-            } else {
-              money = moneyDonated.getText().toString();
-              overall =
-                  money
-                      + getResources().getString(R.string.empty)
-                      + name
-                      + getResources().getString(R.string.empty)
-                      + paidCheck;
-            }
-            new UpdateDataActivity().execute();
-          }
-        });
-  }
-
-  class UpdateDataActivity extends AsyncTask<Void, Void, Void> {
-
-    ProgressDialog dialog;
-
-    String result = null;
-
-    @Override
-    protected void onPreExecute() {
-      super.onPreExecute();
-
-      dialog = new ProgressDialog(UpdateData.this);
-      dialog.setTitle(getString(R.string.wait));
-      dialog.setMessage(getString(R.string.JSON));
-      dialog.show();
+                            overall =
+                                    poojaTyp
+                                            + getResources().getString(R.string.empty)
+                                            + name
+                                            + getResources().getString(R.string.empty)
+                                            + paidCheck;
+                        } else {
+                            money = moneyDonated.getText().toString();
+                            overall =
+                                    money
+                                            + getResources().getString(R.string.empty)
+                                            + name
+                                            + getResources().getString(R.string.empty)
+                                            + paidCheck;
+                        }
+                        new UpdateDataActivity().execute();
+                    }
+                });
     }
 
-    @Nullable
-    @Override
-    protected Void doInBackground(Void... params) {
-      JSONObject jsonObject = Controller.updateData(id, overall);
-      Log.i(Controller.TAG, getString(R.string.json_obj));
+    class UpdateDataActivity extends AsyncTask<Void, Void, Void> {
 
-      try {
-        /** Check Whether Its NULL??? */
-        if (jsonObject != null) {
+        ProgressDialog dialog;
 
-          result = jsonObject.getString(getString(R.string.result));
+        String result = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            dialog = new ProgressDialog(UpdateData.this);
+            dialog.setTitle(getString(R.string.wait));
+            dialog.setMessage(getString(R.string.JSON));
+            dialog.show();
         }
-      } catch (JSONException je) {
-        Log.i(Controller.TAG, "" + je.getLocalizedMessage());
-      }
-      return null;
-    }
 
-    @Override
-    protected void onPostExecute(Void aVoid) {
-      super.onPostExecute(aVoid);
-      dialog.dismiss();
-      Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+        @Nullable
+        @Override
+        protected Void doInBackground(Void... params) {
+            JSONObject jsonObject = Controller.updateData(id, overall);
+            Log.i(Controller.TAG, getString(R.string.json_obj));
+
+            try {
+                /* Check Whether Its NULL??? */
+                if (jsonObject != null) {
+                    result = jsonObject.getString(getString(R.string.result));
+                }
+            } catch (JSONException je) {
+                Log.i(Controller.TAG, "" + je.getLocalizedMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            dialog.dismiss();
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+        }
     }
-  }
 }

@@ -25,7 +25,10 @@ android {
 spotless {
     java {
         googleJavaFormat()
+        indentWithTabs(2)
+        indentWithSpaces(4)
         target '**/*.java'
+        trimTrailingWhitespace()
         removeUnusedImports()
     }
 }
