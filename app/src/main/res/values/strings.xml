@@ -56,8 +56,7 @@
     <string name="update_registered_pooja_details">Update Registered Pooja Details</string>
     <string name="update_the_details_of_donated_money">Update The Details Of Donated Money</string>
     <string name="update">Update</string>
-
-
+    <string name="error_notSelected">Please select any option</string>
 
 
     <string-array name="pooja_types">
