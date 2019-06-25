@@ -6,24 +6,24 @@ import java.util.List;
 
 public class AllDMYResult {
 
-  @SerializedName("dmypoojas")
-  @Expose
-  private List<DMYPooja> dmypoojas = null;
+    @SerializedName("dmypoojas")
+    @Expose
+    private List<DMYPooja> dmypoojas = null;
 
-  /** No args constructor for use in serialization */
-  public AllDMYResult() {}
+    /** No args constructor for use in serialization */
+    public AllDMYResult() {}
 
-  /** @param dmypoojas */
-  public AllDMYResult(List<DMYPooja> dmypoojas) {
-    super();
-    this.dmypoojas = dmypoojas;
-  }
+    /** @param dmypoojas */
+    public AllDMYResult(List<DMYPooja> dmypoojas) {
+        super();
+        this.dmypoojas = dmypoojas;
+    }
 
-  public List<DMYPooja> getDMYPoojas() {
-    return dmypoojas;
-  }
+    public List<DMYPooja> getDMYPoojas() {
+        return dmypoojas;
+    }
 
-  public void setDMYPoojas(List<DMYPooja> dmypoojas) {
-    this.dmypoojas = dmypoojas;
-  }
+    public void setDMYPoojas(List<DMYPooja> dmypoojas) {
+        this.dmypoojas = dmypoojas;
+    }
 }

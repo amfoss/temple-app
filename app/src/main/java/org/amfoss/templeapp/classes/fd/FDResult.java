@@ -5,24 +5,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class FDResult {
 
-  @SerializedName("fd")
-  @Expose
-  private FD fd;
+    @SerializedName("fd")
+    @Expose
+    private FD fd;
 
-  /** No args constructor for use in serialization */
-  public FDResult() {}
+    /** No args constructor for use in serialization */
+    public FDResult() {}
 
-  /** @param fd */
-  public FDResult(FD fd) {
-    super();
-    this.fd = fd;
-  }
+    /** @param fd */
+    public FDResult(FD fd) {
+        super();
+        this.fd = fd;
+    }
 
-  public FD getFD() {
-    return fd;
-  }
+    public FD getFD() {
+        return fd;
+    }
 
-  public void setFD(FD fd) {
-    this.fd = fd;
-  }
+    public void setFD(FD fd) {
+        this.fd = fd;
+    }
 }
