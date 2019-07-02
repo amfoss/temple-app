@@ -16,14 +16,14 @@
             android:id="@+id/radiogroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/margin_20"
             android:orientation="vertical">
 
             <CheckBox
                 android:id="@+id/donate_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="@dimen/margin_15"
                 android:text="@string/list_of_donated_people_who_paid_only"
                 android:theme="@style/radioButton" />
 
@@ -31,7 +31,7 @@
                 android:id="@+id/donate_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="@dimen/margin_15"
                 android:text="@string/list_of_donated_people_who_not_paid_only"
                 android:theme="@style/radioButton" />
 
@@ -40,7 +40,7 @@
                 android:id="@+id/pooja_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="@dimen/margin_15"
                 android:text="@string/list_of_registered_poojas_people_who_paid_only"
                 android:theme="@style/radioButton" />
 
@@ -49,7 +49,7 @@
                 android:id="@+id/pooja_not_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="@dimen/margin_15"
                 android:text="@string/list_of_registered_poojas_who_not_paid_only"
                 android:theme="@style/radioButton" />
         </RadioGroup>
@@ -65,23 +65,23 @@
 
         <Button
             android:id="@+id/readAll_btn1"
-            android:layout_width="175dp"
+            android:layout_width="@dimen/weight_175"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="@dimen/margin_24"
             android:background="@drawable/button_animated"
             android:text="@string/read_all"
             android:textColor="#ffffff"
-            android:textSize="18sp" />
+            android:textSize="@dimen/text_18sp" />
 
         <TextView
             android:id="@+id/heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/margin_20"
             android:text="@string/people_who_registered_for_pooja"
             android:textColor="#000000"
-            android:textSize="24dp"
+            android:textSize="@dimen/text_24"
             android:visibility="invisible" />
 
         <ListView
@@ -90,6 +90,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:divider="@null"
-            android:dividerHeight="0dp" />
+            android:dividerHeight="@dimen/height_0" />
     </LinearLayout>
 </LinearLayout>

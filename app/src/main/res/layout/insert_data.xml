@@ -20,14 +20,14 @@
                 android:id="@+id/radiogroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="@dimen/margin_20"
                 android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/radio_pooja"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
+                    android:layout_margin="@dimen/margin_15"
                     android:text="@string/register_for_new_pooja"
                     android:theme="@style/radioButton" />
 
@@ -35,7 +35,7 @@
                     android:id="@+id/radio_donate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
+                    android:layout_margin="@dimen/margin_15"
                     android:text="@string/donate_money_to_temple"
                     android:theme="@style/radioButton" />
             </RadioGroup>
@@ -52,62 +52,62 @@
             <EditText
                 android:id="@+id/uid"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="45dp"
+                android:layout_height="@dimen/height_50"
+                android:layout_margin="@dimen/margin_45"
                 android:hint="@string/user_id" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="45dp"
-                android:layout_marginLeft="45dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/margin_45"
+                android:layout_marginLeft="@dimen/margin_45"
+                android:layout_marginBottom="@dimen/margin_10"
                 android:text="@string/select_pooja_type"
-                android:textSize="15sp" />
+                android:textSize="@dimen/text_15" />
 
             <EditText
                 android:id="@+id/money_donated"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="45dp"
+                android:layout_height="@dimen/height_50"
+                android:layout_margin="@dimen/margin_45"
                 android:hint="@string/enter_money_donated" />
 
             <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="45dp"
-                android:layout_marginRight="45dp"
-                android:layout_marginBottom="45dp"
+                android:layout_height="@dimen/height_50"
+                android:layout_marginLeft="@dimen/margin_45"
+                android:layout_marginRight="@dimen/margin_45"
+                android:layout_marginBottom="@dimen/margin_45"
                 android:entries="@array/pooja_types"
                 android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
 
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="45dp"
+                android:layout_height="@dimen/height_50"
+                android:layout_margin="@dimen/margin_45"
                 android:hint="@string/name" />
 
             <android.support.v7.widget.AppCompatCheckBox
                 android:id="@+id/paid_check"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="45dp"
+                android:layout_height="@dimen/height_40"
+                android:layout_margin="@dimen/margin_45"
                 android:text="@string/PAID" />
 
 
             <Button
                 android:id="@+id/insert_btn"
-                android:layout_width="175dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/width_175"
+                android:layout_height="@dimen/height_50"
                 android:layout_gravity="center"
-                android:layout_marginTop="45dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginTop="@dimen/margin_45"
+                android:layout_marginBottom="@dimen/margin_24"
                 android:background="@drawable/button_animated"
                 android:text="@string/insert_"
                 android:textColor="#ffffff"
-                android:textSize="18dp" />
+                android:textSize="@dimen/text_18" />
         </LinearLayout>
 
 
