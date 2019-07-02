@@ -1,6 +1,7 @@
 package org.amfoss.templeapp.activities;
 
 import android.app.ProgressDialog;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,141 +16,124 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.databinding.InsertDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class InsertData extends AppCompatActivity {
 
+    InsertDataBinding insertDataBinding;
+
     String id, name, poojaTyp, overall, money, paidCheck = "NOT PAID", amnt;
     Spinner poojaType;
-    RadioGroup radioGroup;
-    LinearLayout totalLayout;
-    EditText moneyDonated;
-    EditText custompooja;
-    EditText amount;
+
     int flag;
-    private Button insert;
-    private EditText uid1ET, nameET;
-    private CheckBox paid;
+
+    public class Onclick {
+        public void insertButton(View view) {
+            id = id + insertDataBinding.editTextId.getText().toString();
+            String sp = String.valueOf(poojaType.getSelectedItem());
+            name = insertDataBinding.name.getText().toString();
+            if (id.length() == 3) {
+                insertDataBinding.editTextId.setError(getString(R.string.valid_ID));
+            } else {
+                if (flag == 1) {
+                    if (sp.contentEquals(getString(R.string.custompooja))) {
+                        String name = insertDataBinding.custompooja.getText().toString();
+                        poojaTyp = name;
+                        amnt = insertDataBinding.amount.getText().toString();
+                    } else {
+                        poojaTyp = String.valueOf(poojaType.getSelectedItem());
+                        amnt = insertDataBinding.amount.getText().toString();
+                    }
+                    overall =
+                            poojaTyp
+                                    + getResources().getString(R.string.empty)
+                                    + amnt
+                                    + getResources().getString(R.string.empty)
+                                    + name
+                                    + getResources().getString(R.string.empty)
+                                    + paidCheck;
+                    new InsertDataActivity().execute();
+                } else {
+                    money = insertDataBinding.moneyDonated.getText().toString();
+                    overall =
+                            money
+                                    + getResources().getString(R.string.empty)
+                                    + name
+                                    + getResources().getString(R.string.empty)
+                                    + paidCheck;
+                    new InsertDataActivity().execute();
+                }
+            }
+        }
+
+
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            switch (checkedId) {
+                case R.id.radio_donate:
+                    insertDataBinding.totalView.setVisibility(View.VISIBLE);
+                    poojaType.setVisibility(View.GONE);
+                    insertDataBinding.moneyDonated.setVisibility(View.VISIBLE);
+                    id = getResources().getString(R.string.DON);
+                    flag = 0;
+                    Toast.makeText(
+                            getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
+                            .show();
+                    break;
+
+                case R.id.radio_pooja:
+                    insertDataBinding.totalView.setVisibility(View.VISIBLE);
+                    insertDataBinding.moneyDonated.setVisibility(View.GONE);
+                    poojaType.setVisibility(View.VISIBLE);
+                    id = getString(R.string.REG);
+                    flag = 1;
+                    Toast.makeText(
+                            getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
+                            .show();
+                    break;
+            }
+        }
+
+
+        public void onClick(View v) {
+            if (((CheckBox) v).isChecked()) {
+                paidCheck = getString(R.string.PAID);
+            } else {
+                paidCheck = getString(R.string.NOT_PAID);
+            }
+        }
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.insert_data);
-        insert = findViewById(R.id.insert_btn);
-        uid1ET = findViewById(R.id.uid);
-        nameET = findViewById(R.id.name);
-        custompooja = findViewById(R.id.custompooja);
-        amount = findViewById(R.id.amount);
-        paid = findViewById(R.id.paid_check);
-        poojaType = findViewById(R.id.spinner1);
-        totalLayout = findViewById(R.id.total_View);
-        moneyDonated = findViewById(R.id.money_donated);
-        radioGroup = findViewById(R.id.radiogroup);
-        custompooja.setVisibility(View.GONE);
-        amount.setVisibility(View.GONE);
 
-        radioGroup.setOnCheckedChangeListener(
-                new RadioGroup.OnCheckedChangeListener() {
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        switch (checkedId) {
-                            case R.id.radio_donate:
-                                totalLayout.setVisibility(View.VISIBLE);
-                                poojaType.setVisibility(View.GONE);
-                                moneyDonated.setVisibility(View.VISIBLE);
-                                id = getResources().getString(R.string.DON);
-                                flag = 0;
-                                Toast.makeText(
-                                                getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
-                                        .show();
-                                break;
-                            case R.id.radio_pooja:
-                                totalLayout.setVisibility(View.VISIBLE);
-                                moneyDonated.setVisibility(View.GONE);
-                                poojaType.setVisibility(View.VISIBLE);
-                                id = getString(R.string.REG);
-                                flag = 1;
-                                Toast.makeText(
-                                                getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
-                                        .show();
-                                break;
-                        }
-                    }
-                });
+        insertDataBinding = DataBindingUtil.setContentView(this, R.layout.insert_data);
+        insertDataBinding.setOnclick(new Onclick());
+
+        poojaType = findViewById(R.id.spinner1);
+
         poojaType.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                         if (i == 4) {
-                            custompooja.setVisibility(View.VISIBLE);
-                            amount.setVisibility(View.VISIBLE);
+                            insertDataBinding.custompooja.setVisibility(View.VISIBLE);
+                            insertDataBinding.amount.setVisibility(View.VISIBLE);
                         } else {
-                            custompooja.setVisibility(View.GONE);
-                            amount.setVisibility(View.VISIBLE);
+                            insertDataBinding.custompooja.setVisibility(View.GONE);
+                            insertDataBinding.amount.setVisibility(View.VISIBLE);
                         }
                     }
 
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
                         Log.i(getString(R.string.insert_data), getString(R.string.nothingselected));
-                    }
-                });
-
-        paid.setOnClickListener(
-                new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View v) {
-                        // is chkIos checked?
-                        if (((CheckBox) v).isChecked()) {
-                            paidCheck = getString(R.string.PAID);
-                        } else {
-                            paidCheck = getString(R.string.NOT_PAID);
-                        }
-                    }
-                });
-
-        insert.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        id = id + uid1ET.getText().toString();
-                        String sp = String.valueOf(poojaType.getSelectedItem());
-                        name = nameET.getText().toString();
-                        if (id.length() == 3) {
-                            uid1ET.setError(getString(R.string.valid_ID));
-                        } else {
-                            if (flag == 1) {
-                                if (sp.contentEquals(getString(R.string.custompooja))) {
-                                    String name = custompooja.getText().toString();
-                                    poojaTyp = name;
-                                    amnt = amount.getText().toString();
-                                } else {
-                                    poojaTyp = String.valueOf(poojaType.getSelectedItem());
-                                    amnt = amount.getText().toString();
-                                }
-                                overall =
-                                        poojaTyp
-                                                + getResources().getString(R.string.empty)
-                                                + amnt
-                                                + getResources().getString(R.string.empty)
-                                                + name
-                                                + getResources().getString(R.string.empty)
-                                                + paidCheck;
-                                new InsertDataActivity().execute();
-                            } else {
-                                money = moneyDonated.getText().toString();
-                                overall =
-                                        money
-                                                + getResources().getString(R.string.empty)
-                                                + name
-                                                + getResources().getString(R.string.empty)
-                                                + paidCheck;
-                                new InsertDataActivity().execute();
-                            }
-                        }
                     }
                 });
     }
