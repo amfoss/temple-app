@@ -1,144 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#eee"
-    android:orientation="vertical"
-    tools:context=".activities.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="162dp"
-        android:layout_gravity="top"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="15dp"
-        android:background="#E7CDDA"
-        android:padding="0dp"
-        android:scaleType="fitXY"
-        android:tint="#6F000000"
-        app:srcCompat="@drawable/temple_default_cover" />
+    <data>
 
+        <variable
+            name="Presenter"
+            type="org.amfoss.templeapp.activities.MainActivity.Presenter" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:background="#eee"
+        android:orientation="vertical"
+        tools:context=".activities.MainActivity">
 
-        <Button
-            android:id="@+id/insert_btn"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_height="162dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="15dp"
+            android:background="#E7CDDA"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:tint="#6F000000"
+            app:srcCompat="@drawable/temple_default_cover" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1.0"
-            android:background="@color/orange"
-            android:drawableTop="@android:drawable/ic_menu_add"
-            android:drawablePadding="0dp"
-            android:drawableTint="#fff"
-            android:padding="20dp"
-            android:text="Add Pooja/Dontation"
-            android:textAllCaps="false"
-            android:textColor="#fff" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="@{Presenter.onInsertClick}"
+                android:layout_weight="1.0"
+                android:background="@color/orange"
+                android:drawableTop="@android:drawable/ic_menu_add"
+                android:drawablePadding="0dp"
+                android:drawableTint="#fff"
+                android:padding="20dp"
+                android:text="Add Pooja/Dontation"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="@{Presenter.onReadSingleData}"
+                android:layout_weight="1.0"
+                android:background="@color/orange"
+                android:drawableTop="@android:drawable/ic_menu_search"
+                android:drawablePadding="0dp"
+                android:drawableTint="#fff"
+                android:padding="20dp"
+                android:text="Search Pooja/Donation"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="1.0"
+                android:onClick="@{Presenter.onReadAllClick}"
+                android:background="@color/orange"
+                android:drawableTop="@android:drawable/ic_menu_view"
+                android:drawablePadding="0dp"
+                android:drawableTint="#fff"
+                android:padding="20dp"
+                android:text="View All Pooja/Donation"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="1.0"
+                android:onClick="@{Presenter.onUpdateClick}"
+                android:background="@color/orange"
+                android:drawableTop="@android:drawable/ic_menu_edit"
+                android:drawablePadding="0dp"
+                android:drawableTint="#fff"
+                android:padding="20dp"
+                android:text="Edit Pooja/Donation"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="1.0"
+                android:background="@color/orange"
+                android:drawableTop="@android:drawable/ic_menu_delete"
+                android:drawablePadding="0dp"
+                android:drawableTint="#fff"
+                android:padding="20dp"
+                android:onClick="@{Presenter.onDeleteClick}"
+                android:text="Delete Pooja/Donation"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-
-        <Button
-            android:id="@+id/read_btn"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1.0"
-            android:background="@color/orange"
-            android:drawableTop="@android:drawable/ic_menu_search"
-            android:drawablePadding="0dp"
-            android:drawableTint="#fff"
-            android:padding="20dp"
-            android:text="Search Pooja/Donation"
-            android:textAllCaps="false"
-            android:textColor="#fff" />
-
-        <Button
-            android:id="@+id/read_all_btn"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1.0"
-            android:background="@color/orange"
-            android:drawableTop="@android:drawable/ic_menu_view"
-            android:drawablePadding="0dp"
-            android:drawableTint="#fff"
-            android:padding="20dp"
-            android:text="View All Pooja/Donation"
-            android:textAllCaps="false"
-            android:textColor="#fff" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-
-
-        <Button
-            android:id="@+id/update_btn"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1.0"
-            android:background="@color/orange"
-            android:drawableTop="@android:drawable/ic_menu_edit"
-            android:drawablePadding="0dp"
-            android:drawableTint="#fff"
-            android:padding="20dp"
-            android:text="Edit Pooja/Donation"
-            android:textAllCaps="false"
-            android:textColor="#fff" />
-
-        <Button
-            android:id="@+id/delete_btn"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1.0"
-            android:background="@color/orange"
-            android:drawableTop="@android:drawable/ic_menu_delete"
-            android:drawablePadding="0dp"
-            android:drawableTint="#fff"
-            android:padding="20dp"
-            android:text="Delete Pooja/Donation"
-            android:textAllCaps="false"
-            android:textColor="#fff" />
-
-
-    </LinearLayout>
-
-</LinearLayout>
+</layout>
