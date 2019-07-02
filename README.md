@@ -8,12 +8,10 @@
 [![Gitter](https://badges.gitter.im/amfoss/TempleApp.svg)](https://gitter.im/amfoss/TempleApp)
 [![Code of Conduct](https://img.shields.io/badge/%E2%9D%A4-code%20of%20conduct-e04545.svg?style=flat)](https://github.com/amfoss/TempleApp/blob/master/CODE_OF_CONDUCT.md)
 [![Travis CI](https://travis-ci.com/amfoss/TempleApp.svg?branch=master)](https://travis-ci.com/amfoss/TempleApp)
-[![Open Issues](https://img.shields.io/github/issues/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/issues/)
-[![PRs](https://img.shields.io/github/issues-pr/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/pulls/)
-[![Contributors](https://img.shields.io/github/contributors/amfoss/TempleApp.svg)](https://GitHub.com/amfoss/TempleApp/graphs/contributors/)
 
-![Android Studio](https://img.shields.io/badge/android%20studio-v3.4.1-blue.svg?cacheSeconds=2592000)
-![Gradle](https://img.shields.io/badge/gradle-v5.1.1-green.svg?cacheSeconds=2592000)
+
+[![Android Studio](https://img.shields.io/badge/android%20studio-v3.4.1-blue.svg?cacheSeconds=2592000)](https://developer.android.com/studio/?gclid=Cj0KCQjwgezoBRDNARIsAGzEfe58cXcPjI00Y3vzUdGlJ6FzVv6gzdmO_xCuI8kEBGCXwlnePyBOk6gaAvMXEALw_wcB)
+[![Gradle](https://img.shields.io/badge/gradle-v5.1.1-green.svg?cacheSeconds=2592000)](https://docs.gradle.org/5.1.1/release-notes.html)
 
 This app is a cost-efficient way of maintaining records of poojas, donations made by people and also all the financial records in temples. Using this app, people in the temple counter will be able to enter all the details regarding the poojas they want or some donations they want to do for the temple. This app is connected to a printer so that it will print the details of pooja registrations of users.
 
