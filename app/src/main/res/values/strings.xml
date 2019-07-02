@@ -57,6 +57,10 @@
     <string name="update_the_details_of_donated_money">Update The Details Of Donated Money</string>
     <string name="update">Update</string>
     <string name="error_notSelected">Please select any option</string>
+    <string name="fetch_name">name</string>
+    <string name="insert_data">Insert Data</string>
+    <string name="nothingselected">Nothing selected</string>
+    <string name="custompooja">Custom Pooja</string>
 
 
     <string-array name="pooja_types">
@@ -64,5 +68,6 @@
         <item>Type 2</item>
         <item>Type 3</item>
         <item>Type 4</item>
+        <item>Custom Pooja</item>
     </string-array>
 </resources>

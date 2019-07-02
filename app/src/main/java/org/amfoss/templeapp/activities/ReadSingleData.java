@@ -30,7 +30,7 @@ public class ReadSingleData extends AppCompatActivity {
     RelativeLayout totalLayout;
     private Button read;
     private EditText uid1ET;
-    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v;
+    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v, am;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +46,7 @@ public class ReadSingleData extends AppCompatActivity {
         pooja_v = findViewById(R.id.pooja_v);
         paid_l = findViewById(R.id.paid_l);
         paid_v = findViewById(R.id.paid_v);
+        am = findViewById(R.id.am);
 
         view = this.getCurrentFocus();
 
@@ -115,7 +116,7 @@ public class ReadSingleData extends AppCompatActivity {
                 */
                 if (jsonObject != null) {
                     JSONObject user = jsonObject.getJSONObject(getString(R.string.user));
-                    name = user.getString(getString(R.string.name_));
+                    name = user.getString(getString(R.string.fetch_name));
                 }
             } catch (JSONException je) {
                 Log.i(Controller.TAG, "" + je.getLocalizedMessage());
@@ -147,9 +148,10 @@ public class ReadSingleData extends AppCompatActivity {
                 }
 
                 String[] str = name.split(getString(R.string.empty));
-                name_v.setText(str[1]);
+                name_v.setText(str[2]);
+                am.setText("Amount:                                         Rs." + str[1]);
                 pooja_l.setText(str[0]);
-                paid_v.setText(str[2]);
+                paid_v.setText(str[3]);
                 if (flag == 0) {
                     pooja_v.setText(getString(R.string.type_of_pooja));
                 } else {
