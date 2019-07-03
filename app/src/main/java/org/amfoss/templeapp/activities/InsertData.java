@@ -32,6 +32,36 @@ public class InsertData extends AppCompatActivity {
 
     int flag;
 
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.insert_data);
+
+        insertDataBinding = DataBindingUtil.setContentView(this, R.layout.insert_data);
+        insertDataBinding.setOnclick(new Onclick());
+
+        poojaType = findViewById(R.id.spinner1);
+
+        poojaType.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        if (i == 4) {
+                            insertDataBinding.custompooja.setVisibility(View.VISIBLE);
+                            insertDataBinding.amount.setVisibility(View.VISIBLE);
+                        } else {
+                            insertDataBinding.custompooja.setVisibility(View.GONE);
+                            insertDataBinding.amount.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+                        Log.i(getString(R.string.insert_data), getString(R.string.nothingselected));
+                    }
+                });
+    }
+
     public class Onclick {
         public void insertButton(View view) {
             id = id + insertDataBinding.editTextId.getText().toString();
@@ -106,36 +136,6 @@ public class InsertData extends AppCompatActivity {
                 paidCheck = getString(R.string.NOT_PAID);
             }
         }
-    }
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.insert_data);
-
-        insertDataBinding = DataBindingUtil.setContentView(this, R.layout.insert_data);
-        insertDataBinding.setOnclick(new Onclick());
-
-        poojaType = findViewById(R.id.spinner1);
-
-        poojaType.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                        if (i == 4) {
-                            insertDataBinding.custompooja.setVisibility(View.VISIBLE);
-                            insertDataBinding.amount.setVisibility(View.VISIBLE);
-                        } else {
-                            insertDataBinding.custompooja.setVisibility(View.GONE);
-                            insertDataBinding.amount.setVisibility(View.VISIBLE);
-                        }
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-                        Log.i(getString(R.string.insert_data), getString(R.string.nothingselected));
-                    }
-                });
     }
 
     class InsertDataActivity extends AsyncTask<Void, Void, Void> {

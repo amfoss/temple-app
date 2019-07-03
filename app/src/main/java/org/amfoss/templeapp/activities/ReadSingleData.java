@@ -2,6 +2,7 @@ package org.amfoss.templeapp.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,84 +10,62 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.databinding.ReadDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ReadSingleData extends AppCompatActivity {
 
-    String id;
-    String name;
+    ReadDataBinding binding;
+
+    String id, name;
     View view;
-    RadioGroup radioGroup;
     int flag;
-    RelativeLayout totalLayout;
-    private Button read;
-    private EditText uid1ET;
-    private TextView id_l, name_l, id_v, name_v, paid_l, paid_v, pooja_l, pooja_v, am;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.read_data);
-        read = findViewById(R.id.insert_btn);
-        uid1ET = findViewById(R.id.uid);
 
-        id_l = findViewById(R.id.id_l);
-        name_l = findViewById(R.id.name_l);
-        id_v = findViewById(R.id.id_v);
-        name_v = findViewById(R.id.name_v);
-        pooja_l = findViewById(R.id.pooja_l);
-        pooja_v = findViewById(R.id.pooja_v);
-        paid_l = findViewById(R.id.paid_l);
-        paid_v = findViewById(R.id.paid_v);
-        am = findViewById(R.id.am);
-
+        binding = DataBindingUtil.setContentView(this, R.layout.read_data);
+        binding.setRead(new Read());
         view = this.getCurrentFocus();
+    }
 
-        radioGroup = findViewById(R.id.radiogroup);
-        totalLayout = findViewById(R.id.total_View);
+    public class Read {
 
-        radioGroup.setOnCheckedChangeListener(
-                new RadioGroup.OnCheckedChangeListener() {
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        switch (checkedId) {
-                            case R.id.radio_donate:
-                                totalLayout.setVisibility(View.VISIBLE);
-                                flag = 0;
-                                Toast.makeText(
-                                                getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
-                                        .show();
-                                break;
-                            case R.id.radio_pooja:
-                                totalLayout.setVisibility(View.VISIBLE);
-                                flag = 1;
-                                Toast.makeText(
-                                                getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
-                                        .show();
-                                break;
-                        }
-                    }
-                });
+        public void readButton(View view) {
+            if (flag == 1) {
+                id = getString(R.string.REG) + binding.editTextId.getText().toString();
+            } else {
+                id = getString(R.string.DON) + binding.editTextId.getText().toString();
+            }
+            new ReadDataActivity().execute();
+        }
 
-        read.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (flag == 1) {
-                            id = getString(R.string.REG) + uid1ET.getText().toString();
-                        } else {
-                            id = getString(R.string.DON) + uid1ET.getText().toString();
-                        }
-                        new ReadDataActivity().execute();
-                    }
-                });
+
+        public void radioGroup(RadioGroup group, int checkedId) {
+            switch (checkedId) {
+                case R.id.radio_donate:
+                    binding.totalView.setVisibility(View.VISIBLE);
+                    flag = 0;
+                    Toast.makeText(
+                            getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
+                            .show();
+                    break;
+                case R.id.radio_pooja:
+                    binding.totalView.setVisibility(View.VISIBLE);
+                    flag = 1;
+                    Toast.makeText(
+                            getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
+                            .show();
+                    break;
+            }
+        }
+
     }
 
     class ReadDataActivity extends AsyncTask<Void, Void, Void> {
@@ -136,28 +115,28 @@ public class ReadSingleData extends AppCompatActivity {
             }
 
             if (name != null) {
-                id_l.setText(getString(R.string.ID));
-                name_l.setText(getString(R.string.name));
+                binding.idL.setText(getString(R.string.ID));
+                binding.nameL.setText(getString(R.string.name));
                 int flag = 0;
                 if (id.substring(0, 3).equals(getString(R.string.DON))) {
-                    id_v.setText(id.substring(3, id.length()));
+                    binding.idV.setText(id.substring(3, id.length()));
                     flag = 1;
                 } else if (id.substring(0, 3).equals(getString(R.string.REG))) {
-                    id_v.setText(id.substring(3, id.length()));
+                    binding.idV.setText(id.substring(3, id.length()));
                     flag = 0;
                 }
 
                 String[] str = name.split(getString(R.string.empty));
-                name_v.setText(str[2]);
-                am.setText("Amount:                                         Rs." + str[1]);
-                pooja_l.setText(str[0]);
-                paid_v.setText(str[3]);
+                binding.nameV.setText(str[2]);
+                binding.am.setText(getString(R.string.amount_inRs) + str[1]);
+                binding.poojaL.setText(str[0]);
+                binding.paidV.setText(str[3]);
                 if (flag == 0) {
-                    pooja_v.setText(getString(R.string.type_of_pooja));
+                    binding.poojaV.setText(getString(R.string.type_of_pooja));
                 } else {
-                    pooja_v.setText(getString(R.string.money_donated));
+                    binding.poojaV.setText(getString(R.string.money_donated));
                 }
-                paid_l.setText(getString(R.string.paid_status));
+                binding.paidL.setText(getString(R.string.paid_status));
 
             } else
                 Toast.makeText(getApplicationContext(), getString(R.string.id_not_found), Toast.LENGTH_LONG)

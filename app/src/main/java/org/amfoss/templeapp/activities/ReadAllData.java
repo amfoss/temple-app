@@ -8,14 +8,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.ArrayList;
+
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.adapter.MyArrayAdapter;
 import org.amfoss.templeapp.adapter.MyDataModel;
@@ -25,11 +20,28 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class ReadAllData extends AppCompatActivity {
 
     ReadAllBinding readAllBinding;
+    private int flag;
+    private ArrayList<MyDataModel> list;
+    private MyArrayAdapter adapter;
 
-    public class ReadAll{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        readAllBinding = DataBindingUtil.setContentView(this, R.layout.read_all);
+        readAllBinding.setReadAll(new ReadAll());
+
+        readAllBinding.listView.setAdapter(adapter);
+        list = new ArrayList<>();
+        adapter = new MyArrayAdapter(this, list);
+    }
+
+    public class ReadAll {
 
         public void donatePaid(View view) {
             readAllBinding.totalView.setVisibility(View.VISIBLE);
@@ -91,25 +103,6 @@ public class ReadAllData extends AppCompatActivity {
             }
         }
 
-    }
-
-
-    private int flag;
-    private ArrayList<MyDataModel> list;
-    private MyArrayAdapter adapter;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.read_all);
-
-        readAllBinding = DataBindingUtil.setContentView(this, R.layout.read_all);
-        readAllBinding.setReadAll(new ReadAll());
-
-        readAllBinding.listView.setAdapter(adapter);
-        list = new ArrayList<>();
-        adapter = new MyArrayAdapter(this, list);
     }
 
     class ReadData1 extends AsyncTask<Void, Void, Void> {

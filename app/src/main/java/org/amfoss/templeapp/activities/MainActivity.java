@@ -8,66 +8,17 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.ActivityMainBinding;
 import org.amfoss.templeapp.json_api.InternetConnection;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding mainBinding;
-
-
-    public class Presenter {
-        public void onInsertClick(View view){
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), InsertData.class);
-                startActivity(intent);
-            } else {
-                createNetErrorDialog();
-            }
-        }
-
-        public void onReadAllClick(View view){
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), ReadAllData.class);
-                startActivity(intent);
-            } else {
-                createNetErrorDialog();
-            }
-        }
-
-        public void onUpdateClick(View view){
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), UpdateData.class);
-                startActivity(intent);
-            } else {
-                createNetErrorDialog();
-            }
-        }
-
-        public void onReadSingleData(View view){
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), ReadSingleData.class);
-                startActivity(intent);
-            } else {
-                createNetErrorDialog();
-            }
-        }
-
-        public void onDeleteClick(View view){
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), DeleteData.class);
-                startActivity(intent);
-            } else {
-                createNetErrorDialog();
-            }
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainBinding.setPresenter(new Presenter());
     }
 
@@ -95,5 +46,52 @@ public class MainActivity extends AppCompatActivity {
                         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    public class Presenter {
+        public void onInsertClick(View view) {
+            if (InternetConnection.checkConnection(getApplicationContext())) {
+                Intent intent = new Intent(getApplicationContext(), InsertData.class);
+                startActivity(intent);
+            } else {
+                createNetErrorDialog();
+            }
+        }
+
+        public void onReadAllClick(View view) {
+            if (InternetConnection.checkConnection(getApplicationContext())) {
+                Intent intent = new Intent(getApplicationContext(), ReadAllData.class);
+                startActivity(intent);
+            } else {
+                createNetErrorDialog();
+            }
+        }
+
+        public void onUpdateClick(View view) {
+            if (InternetConnection.checkConnection(getApplicationContext())) {
+                Intent intent = new Intent(getApplicationContext(), UpdateData.class);
+                startActivity(intent);
+            } else {
+                createNetErrorDialog();
+            }
+        }
+
+        public void onReadSingleData(View view) {
+            if (InternetConnection.checkConnection(getApplicationContext())) {
+                Intent intent = new Intent(getApplicationContext(), ReadSingleData.class);
+                startActivity(intent);
+            } else {
+                createNetErrorDialog();
+            }
+        }
+
+        public void onDeleteClick(View view) {
+            if (InternetConnection.checkConnection(getApplicationContext())) {
+                Intent intent = new Intent(getApplicationContext(), DeleteData.class);
+                startActivity(intent);
+            } else {
+                createNetErrorDialog();
+            }
+        }
     }
 }
