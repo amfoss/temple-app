@@ -1,6 +1,7 @@
 package org.amfoss.templeapp.activities;
 
 import android.app.ProgressDialog;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +13,10 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.databinding.ActivityMainBinding;
+import org.amfoss.templeapp.databinding.DeleteDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,55 +24,44 @@ import org.json.JSONObject;
 public class DeleteData extends AppCompatActivity {
 
     String id;
-    RadioGroup radioGroup;
-    RelativeLayout totalLayout;
     int flag;
-    private Button delete;
-    private EditText uid1ET;
+    DeleteDataBinding binding;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_data);
-        delete = findViewById(R.id.delete_btn);
-        uid1ET = findViewById(R.id.uid);
+        binding = DataBindingUtil.setContentView(this, R.layout.delete_data);
+        binding.setDelete(new Delete());
+    }
 
-        radioGroup = findViewById(R.id.radiogroup);
-        totalLayout = findViewById(R.id.total_View);
+    public class Delete {
+        public void deleteButton(View view) {
+            if (flag == 1) {
+                id = getString(R.string.REG) + binding.uid.getText().toString();
+            } else {
+                id = getString(R.string.DON) + binding.uid.getText().toString();
+            }
+            new DeleteDataActivity().execute();
+        }
 
-        radioGroup.setOnCheckedChangeListener(
-                new RadioGroup.OnCheckedChangeListener() {
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        switch (checkedId) {
-                            case R.id.radio_donate:
-                                totalLayout.setVisibility(View.VISIBLE);
-                                flag = 0;
-                                Toast.makeText(
-                                                getBaseContext(), getString(R.string.delete_donated), Toast.LENGTH_LONG)
-                                        .show();
-                                break;
-                            case R.id.radio_pooja:
-                                totalLayout.setVisibility(View.VISIBLE);
-                                flag = 1;
-                                Toast.makeText(
-                                                getBaseContext(), getString(R.string.delete_pooja), Toast.LENGTH_LONG)
-                                        .show();
-                                break;
-                        }
-                    }
-                });
+        public void radioGroupOnCheckedChanged(RadioGroup group, int checkedId) {
+            switch (checkedId) {
+                case R.id.radio_donate:
+                    binding.totalView.setVisibility(View.VISIBLE);
+                    flag = 0;
+                    Toast.makeText(
+                            getBaseContext(), getString(R.string.delete_donated), Toast.LENGTH_LONG)
+                            .show();
+                    break;
+                case R.id.radio_pooja:
+                    binding.totalView.setVisibility(View.VISIBLE);
+                    flag = 1;
+                    Toast.makeText(
+                            getBaseContext(), getString(R.string.delete_pooja), Toast.LENGTH_LONG)
+                            .show();
+                    break;
+            }
+        }
 
-        delete.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (flag == 1) {
-                            id = getString(R.string.REG) + uid1ET.getText().toString();
-                        } else {
-                            id = getString(R.string.DON) + uid1ET.getText().toString();
-                        }
-                        new DeleteDataActivity().execute();
-                    }
-                });
     }
 
     class DeleteDataActivity extends AsyncTask<Void, Void, Void> {
