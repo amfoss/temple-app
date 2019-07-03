@@ -9,12 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.amfoss.templeapp.R;
@@ -28,7 +24,6 @@ public class InsertData extends AppCompatActivity {
     InsertDataBinding insertDataBinding;
 
     String id, name, poojaTyp, overall, money, paidCheck = "NOT PAID", amnt;
-    Spinner poojaType;
 
     int flag;
 
@@ -38,34 +33,12 @@ public class InsertData extends AppCompatActivity {
 
         insertDataBinding = DataBindingUtil.setContentView(this, R.layout.insert_data);
         insertDataBinding.setOnclick(new Onclick());
-
-        poojaType = findViewById(R.id.spinner1);
-
-        poojaType.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                        if (i == 4) {
-                            insertDataBinding.custompooja.setVisibility(View.VISIBLE);
-                            insertDataBinding.amount.setVisibility(View.VISIBLE);
-                        } else {
-                            insertDataBinding.custompooja.setVisibility(View.GONE);
-                            insertDataBinding.amount.setVisibility(View.VISIBLE);
-                        }
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-                        Log.i(getString(R.string.insert_data), getString(R.string.nothingselected));
-                    }
-                });
     }
 
     public class Onclick {
         public void insertButton(View view) {
             id = id + insertDataBinding.editTextId.getText().toString();
-            String sp = String.valueOf(poojaType.getSelectedItem());
+            String sp = String.valueOf(insertDataBinding.spinner1.getSelectedItem());
             name = insertDataBinding.name.getText().toString();
             if (id.length() == 3) {
                 insertDataBinding.editTextId.setError(getString(R.string.valid_ID));
@@ -76,7 +49,7 @@ public class InsertData extends AppCompatActivity {
                         poojaTyp = name;
                         amnt = insertDataBinding.amount.getText().toString();
                     } else {
-                        poojaTyp = String.valueOf(poojaType.getSelectedItem());
+                        poojaTyp = String.valueOf(insertDataBinding.spinner1.getSelectedItem());
                         amnt = insertDataBinding.amount.getText().toString();
                     }
                     overall =
@@ -106,7 +79,7 @@ public class InsertData extends AppCompatActivity {
             switch (checkedId) {
                 case R.id.radio_donate:
                     insertDataBinding.totalView.setVisibility(View.VISIBLE);
-                    poojaType.setVisibility(View.GONE);
+                    insertDataBinding.spinner1.setVisibility(View.GONE);
                     insertDataBinding.moneyDonated.setVisibility(View.VISIBLE);
                     id = getResources().getString(R.string.DON);
                     flag = 0;
@@ -118,7 +91,7 @@ public class InsertData extends AppCompatActivity {
                 case R.id.radio_pooja:
                     insertDataBinding.totalView.setVisibility(View.VISIBLE);
                     insertDataBinding.moneyDonated.setVisibility(View.GONE);
-                    poojaType.setVisibility(View.VISIBLE);
+                    insertDataBinding.spinner1.setVisibility(View.VISIBLE);
                     id = getString(R.string.REG);
                     flag = 1;
                     Toast.makeText(
@@ -134,6 +107,17 @@ public class InsertData extends AppCompatActivity {
                 paidCheck = getString(R.string.PAID);
             } else {
                 paidCheck = getString(R.string.NOT_PAID);
+            }
+        }
+
+        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            if (i == 4) {
+                insertDataBinding.custompooja.setVisibility(View.VISIBLE);
+                insertDataBinding.amount.setVisibility(View.VISIBLE);
+            } else {
+                insertDataBinding.custompooja.setVisibility(View.GONE);
+                insertDataBinding.amount.setVisibility(View.VISIBLE);
             }
         }
     }
