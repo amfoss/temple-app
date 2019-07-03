@@ -181,7 +181,7 @@ public class ReadAllData extends AppCompatActivity {
                                 String id = innerObject.getString(getString(R.string.ID_));
                                 String name = innerObject.getString(getString(R.string.name_));
 
-                                String[] str = name.split(getResources().getString(R.string.empty));
+                                String[] str = name.split(getString(R.string.empty));
 
                                 if (flag == 1) {
                                     if (id.substring(0, 3).equals(getString(R.string.DON))
@@ -200,14 +200,14 @@ public class ReadAllData extends AppCompatActivity {
                                     }
                                 } else if (flag == 3) {
                                     if (id.substring(0, 3).equals(getString(R.string.REG))
-                                            && str[2].equals(getString(R.string.PAID))) {
+                                            && str[3].equals(getString(R.string.PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);
                                     }
                                 } else if (flag == 4) {
                                     if (id.substring(0, 3).equals(getString(R.string.REG))
-                                            && str[2].equals(getString(R.string.NOT_PAID))) {
+                                            && str[3].equals(getString(R.string.NOT_PAID))) {
                                         model.setName(name);
                                         model.setCountry(id.substring(3, id.length()));
                                         list.add(model);

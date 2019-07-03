@@ -84,6 +84,20 @@
                 android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
 
             <EditText
+                android:id="@+id/custompooja"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="custompooja" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="45dp"
+                android:hint="amount" />
+
+            <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_50"

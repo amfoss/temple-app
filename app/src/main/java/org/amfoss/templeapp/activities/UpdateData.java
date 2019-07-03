@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 
 public class UpdateData extends AppCompatActivity {
 
-    String id;
+    String id, amnt;
     String name;
     RadioGroup radioGroup;
     LinearLayout totalLayout;
@@ -29,6 +30,8 @@ public class UpdateData extends AppCompatActivity {
     Spinner poojaType;
     CheckBox paid;
     EditText moneyDonated;
+    EditText custompooja;
+    EditText amount;
     String paidCheck, poojaTyp, overall, money;
     private Button update;
     private EditText uid1ET, nameET;
@@ -43,6 +46,8 @@ public class UpdateData extends AppCompatActivity {
         poojaType = findViewById(R.id.spinner1);
         totalLayout = findViewById(R.id.total_View);
         moneyDonated = findViewById(R.id.money_donated);
+        custompooja = findViewById(R.id.custompooja);
+        amount = findViewById(R.id.amount);
 
         radioGroup = findViewById(R.id.radiogroup);
         totalLayout = findViewById(R.id.total_View);
@@ -64,6 +69,7 @@ public class UpdateData extends AppCompatActivity {
                                 totalLayout.setVisibility(View.VISIBLE);
                                 moneyDonated.setVisibility(View.GONE);
                                 poojaType.setVisibility(View.VISIBLE);
+                                amount.setVisibility(View.VISIBLE);
                                 id = getString(R.string.REG);
                                 flag = 1;
                                 Toast.makeText(
@@ -71,6 +77,25 @@ public class UpdateData extends AppCompatActivity {
                                         .show();
                                 break;
                         }
+                    }
+                });
+        poojaType.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        if (i == 4) {
+                            custompooja.setVisibility(View.VISIBLE);
+                            amount.setVisibility(View.VISIBLE);
+                        } else {
+                            custompooja.setVisibility(View.GONE);
+                            amount.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+                        Log.i(getString(R.string.insert_data), getString(R.string.nothingselected));
                     }
                 });
 
@@ -93,12 +118,22 @@ public class UpdateData extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         id = id + uid1ET.getText().toString();
+                        String sp = String.valueOf(poojaType.getSelectedItem());
                         name = nameET.getText().toString();
                         if (flag == 1) {
-                            poojaTyp = String.valueOf(poojaType.getSelectedItem());
+                            if (sp.contentEquals(getString(R.string.custompooja))) {
+                                String name = custompooja.getText().toString();
+                                poojaTyp = name;
+                                amnt = amount.getText().toString();
+                            } else {
+                                poojaTyp = String.valueOf(poojaType.getSelectedItem());
+                                amnt = amount.getText().toString();
+                            }
 
                             overall =
                                     poojaTyp
+                                            + getResources().getString(R.string.empty)
+                                            + amnt
                                             + getResources().getString(R.string.empty)
                                             + name
                                             + getResources().getString(R.string.empty)

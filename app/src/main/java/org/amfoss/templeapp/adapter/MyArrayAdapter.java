@@ -44,8 +44,11 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
 
         String[] str = item.getName().split("     ");
         String lastWord = str[0].substring(str[0].lastIndexOf(" ") + 1);
+        if (lastWord.length() > 1) {
+            lastWord = "C";
+        }
 
-        vh.textViewName.setText(str[1] + "     " + str[2]);
+        vh.textViewName.setText(str[1] + "     " + str[2] + "     " + str[3]);
         vh.type.setText(lastWord);
         vh.textViewId.setText(item.getId());
 
