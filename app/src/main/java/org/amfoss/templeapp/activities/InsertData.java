@@ -186,7 +186,7 @@ public class InsertData extends AppCompatActivity {
             }
             if (flag == 1) {
                 id = "REG";
-            }else {
+            } else {
                 id = "DON";
             }
             return null;
