@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.InsertDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
@@ -74,7 +73,6 @@ public class InsertData extends AppCompatActivity {
             }
         }
 
-
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
                 case R.id.radio_donate:
@@ -83,8 +81,7 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.moneyDonated.setVisibility(View.VISIBLE);
                     id = getResources().getString(R.string.DON);
                     flag = 0;
-                    Toast.makeText(
-                            getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
                             .show();
                     break;
 
@@ -94,13 +91,11 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.spinner1.setVisibility(View.VISIBLE);
                     id = getString(R.string.REG);
                     flag = 1;
-                    Toast.makeText(
-                            getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
                             .show();
                     break;
             }
         }
-
 
         public void onClick(View v) {
             if (((CheckBox) v).isChecked()) {

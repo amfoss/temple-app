@@ -8,14 +8,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.databinding.ActivityMainBinding;
 import org.amfoss.templeapp.databinding.DeleteDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONException;
@@ -48,20 +43,17 @@ public class DeleteData extends AppCompatActivity {
                 case R.id.radio_donate:
                     binding.totalView.setVisibility(View.VISIBLE);
                     flag = 0;
-                    Toast.makeText(
-                            getBaseContext(), getString(R.string.delete_donated), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.delete_donated), Toast.LENGTH_LONG)
                             .show();
                     break;
                 case R.id.radio_pooja:
                     binding.totalView.setVisibility(View.VISIBLE);
                     flag = 1;
-                    Toast.makeText(
-                            getBaseContext(), getString(R.string.delete_pooja), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.delete_pooja), Toast.LENGTH_LONG)
                             .show();
                     break;
             }
         }
-
     }
 
     class DeleteDataActivity extends AsyncTask<Void, Void, Void> {

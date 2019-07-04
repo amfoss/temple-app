@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import java.util.ArrayList;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.adapter.MyArrayAdapter;
 import org.amfoss.templeapp.adapter.MyDataModel;
@@ -19,8 +19,6 @@ import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class ReadAllData extends AppCompatActivity {
 
@@ -36,9 +34,9 @@ public class ReadAllData extends AppCompatActivity {
         readAllBinding = DataBindingUtil.setContentView(this, R.layout.read_all);
         readAllBinding.setReadAll(new ReadAll());
 
-        readAllBinding.listView.setAdapter(adapter);
         list = new ArrayList<>();
         adapter = new MyArrayAdapter(this, list);
+        readAllBinding.listView.setAdapter(adapter);
     }
 
     public class ReadAll {
@@ -59,24 +57,23 @@ public class ReadAllData extends AppCompatActivity {
             readAllBinding.poojaNotPaid.setChecked(false);
         }
 
-
         public void poojaPaid(View view) {
             readAllBinding.totalView.setVisibility(View.VISIBLE);
             flag = 3;
-            readAllBinding.heading.setText(getString(R.string.list_of_registered_poojas_people_who_paid_only));
+            readAllBinding.heading.setText(
+                    getString(R.string.list_of_registered_poojas_people_who_paid_only));
             readAllBinding.donatePaid.setChecked(false);
             readAllBinding.donateNotPaid.setChecked(false);
         }
-
 
         public void poojaNotPaid(View view) {
             readAllBinding.totalView.setVisibility(View.VISIBLE);
             flag = 4;
-            readAllBinding.heading.setText(getString(R.string.list_of_registered_poojas_who_not_paid_only));
+            readAllBinding.heading.setText(
+                    getString(R.string.list_of_registered_poojas_who_not_paid_only));
             readAllBinding.donatePaid.setChecked(false);
             readAllBinding.donateNotPaid.setChecked(false);
         }
-
 
         public void readAllButton(View view) {
             if (readAllBinding.donatePaid.isChecked() && readAllBinding.donateNotPaid.isChecked()) {
@@ -92,9 +89,7 @@ public class ReadAllData extends AppCompatActivity {
                     || readAllBinding.donatePaid.isChecked()
                     || readAllBinding.donateNotPaid.isChecked())) {
                 Toast.makeText(
-                        getApplicationContext(),
-                        getString(R.string.error_notSelected),
-                        Toast.LENGTH_LONG)
+                                getApplicationContext(), getString(R.string.error_notSelected), Toast.LENGTH_LONG)
                         .show();
             } else {
                 new ReadData1().execute();
@@ -102,7 +97,6 @@ public class ReadAllData extends AppCompatActivity {
                 readAllBinding.readAllBtn1.setVisibility(View.GONE);
             }
         }
-
     }
 
     class ReadData1 extends AsyncTask<Void, Void, Void> {

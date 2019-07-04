@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.ActivityMainBinding;
 import org.amfoss.templeapp.json_api.InternetConnection;

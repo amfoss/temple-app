@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.ReadDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
@@ -46,26 +45,22 @@ public class ReadSingleData extends AppCompatActivity {
             new ReadDataActivity().execute();
         }
 
-
         public void radioGroup(RadioGroup group, int checkedId) {
             switch (checkedId) {
                 case R.id.radio_donate:
                     binding.totalView.setVisibility(View.VISIBLE);
                     flag = 0;
-                    Toast.makeText(
-                            getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
                             .show();
                     break;
                 case R.id.radio_pooja:
                     binding.totalView.setVisibility(View.VISIBLE);
                     flag = 1;
-                    Toast.makeText(
-                            getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
                             .show();
                     break;
             }
         }
-
     }
 
     class ReadDataActivity extends AsyncTask<Void, Void, Void> {
