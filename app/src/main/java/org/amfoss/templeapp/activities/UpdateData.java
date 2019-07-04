@@ -182,6 +182,11 @@ public class UpdateData extends AppCompatActivity {
             } catch (JSONException je) {
                 Log.i(Controller.TAG, "" + je.getLocalizedMessage());
             }
+            if (flag == 1) {
+                id = "REG";
+            } else {
+                id = "DON";
+            }
             return null;
         }
 
