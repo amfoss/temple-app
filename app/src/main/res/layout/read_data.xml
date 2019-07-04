@@ -13,14 +13,14 @@
             android:id="@+id/radiogroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/margin_20"
             android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/radio_pooja"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="@dimen/margin_15"
                 android:text="@string/people_who_registered_for_pooja"
                 android:theme="@style/radioButton" />
 
@@ -28,7 +28,7 @@
                 android:id="@+id/radio_donate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="@dimen/margin_15"
                 android:text="@string/people_who_donated_money_for_temple"
                 android:theme="@style/radioButton" />
         </RadioGroup>
@@ -43,26 +43,26 @@
         <EditText
             android:id="@+id/uid"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/height_40"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_margin="40dp"
+            android:layout_margin="@dimen/height_40"
             android:hint="@string/user_id" />
 
 
         <Button
             android:id="@+id/insert_btn"
-            android:layout_width="175dp"
+            android:layout_width="@dimen/weight_175"
             android:layout_height="wrap_content"
             android:layout_below="@+id/uid"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="@dimen/margin_25"
+            android:layout_marginBottom="@dimen/margin_24"
             android:background="@drawable/button_animated"
             android:text="@string/find"
             android:textColor="#ffffff"
-            android:textSize="18dp" />
+            android:textSize="@dimen/text_18" />
 
         <TextView
             android:id="@+id/id_v"
@@ -87,7 +87,7 @@
             android:layout_below="@+id/id_l"
             android:layout_alignStart="@+id/id_l"
             android:layout_alignLeft="@+id/id_l"
-            android:layout_marginTop="31dp" />
+            android:layout_marginTop="@dimen/margin_31" />
 
         <TextView
             android:id="@+id/name_v"
@@ -104,7 +104,7 @@
             android:layout_below="@id/name_l"
             android:layout_alignStart="@id/name_l"
             android:layout_alignLeft="@id/name_l"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="@dimen/margin_35" />
 
         <TextView
             android:id="@+id/pooja_l"
@@ -113,7 +113,7 @@
             android:layout_below="@id/name_v"
             android:layout_alignStart="@id/name_v"
             android:layout_alignLeft="@id/name_v"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="@dimen/margin_35" />
 
 
         <TextView
@@ -123,7 +123,7 @@
             android:layout_below="@id/pooja_l"
             android:layout_alignStart="@id/name_l"
             android:layout_alignLeft="@id/name_l"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="@dimen/margin_35" />
 
         <TextView
             android:id="@+id/paid_v"
@@ -132,7 +132,7 @@
             android:layout_below="@id/pooja_v"
             android:layout_alignStart="@id/name_v"
             android:layout_alignLeft="@id/name_v"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="@dimen/margin_35" />
 
         <TextView
             android:id="@+id/am"
