@@ -65,7 +65,7 @@
                 android:id="@+id/insert_btn"
                 android:layout_width="@dimen/weight_175"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/uid"
+                android:layout_below="@+id/editText_id"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/margin_25"
                 android:layout_marginBottom="@dimen/margin_24"
