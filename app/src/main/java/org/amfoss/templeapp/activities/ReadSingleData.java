@@ -123,7 +123,7 @@ public class ReadSingleData extends AppCompatActivity {
 
                 String[] str = name.split(getString(R.string.empty));
                 binding.nameV.setText(str[2]);
-                binding.am.setText(getString(R.string.amount_inRs) + str[1]);
+                binding.am.setText(getString(R.string.amount_in_rs) + str[1]);
                 binding.poojaL.setText(str[0]);
                 binding.paidV.setText(str[3]);
                 if (flag == 0) {
