@@ -1,23 +1,20 @@
 package org.amfoss.templeapp.activities;
 
 import android.app.ProgressDialog;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.adapter.MyArrayAdapter;
 import org.amfoss.templeapp.adapter.MyDataModel;
+import org.amfoss.templeapp.databinding.ReadAllBinding;
 import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,114 +22,81 @@ import org.json.JSONObject;
 
 public class ReadAllData extends AppCompatActivity {
 
-    LinearLayout totalLayout;
-    LinearLayout radioButtonView;
+    ReadAllBinding readAllBinding;
     private int flag;
-    private ListView listView;
     private ArrayList<MyDataModel> list;
     private MyArrayAdapter adapter;
-    private Button readAll;
-    private TextView heading;
-    private CheckBox donatePaid;
-    private CheckBox donateNotPaid;
-    private CheckBox poojaPaid;
-    private CheckBox poojaNotPaid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.read_all);
 
-        readAll = findViewById(R.id.readAll_btn1);
+        readAllBinding = DataBindingUtil.setContentView(this, R.layout.read_all);
+        readAllBinding.setReadAll(new ReadAll());
+
         list = new ArrayList<>();
         adapter = new MyArrayAdapter(this, list);
-        listView = findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-        heading = findViewById(R.id.heading);
-        radioButtonView = findViewById(R.id.radiogroup_view);
+        readAllBinding.listView.setAdapter(adapter);
+    }
 
-        totalLayout = findViewById(R.id.total_View);
-        donatePaid = findViewById(R.id.donate_paid);
-        donateNotPaid = findViewById(R.id.donate_not_paid);
-        poojaPaid = findViewById(R.id.pooja_paid);
-        poojaNotPaid = findViewById(R.id.pooja_not_paid);
+    public class ReadAll {
 
-        readAll.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (donatePaid.isChecked() && donateNotPaid.isChecked()) {
-                            flag = 5;
-                        }
+        public void donatePaid(View view) {
+            readAllBinding.totalView.setVisibility(View.VISIBLE);
+            flag = 1;
+            readAllBinding.heading.setText(getString(R.string.list_of_donated_people_who_paid_only));
+            readAllBinding.poojaPaid.setChecked(false);
+            readAllBinding.poojaNotPaid.setChecked(false);
+        }
 
-                        if (poojaPaid.isChecked() && poojaNotPaid.isChecked()) {
-                            flag = 6;
-                        }
+        public void donateNotPaid(View view) {
+            readAllBinding.totalView.setVisibility(View.VISIBLE);
+            flag = 2;
+            readAllBinding.heading.setText(getString(R.string.list_of_donated_people_who_not_paid_only));
+            readAllBinding.poojaPaid.setChecked(false);
+            readAllBinding.poojaNotPaid.setChecked(false);
+        }
 
-                        if (!(poojaPaid.isChecked()
-                                || poojaNotPaid.isChecked()
-                                || donatePaid.isChecked()
-                                || donateNotPaid.isChecked())) {
-                            Toast.makeText(
-                                            getApplicationContext(),
-                                            getString(R.string.error_notSelected),
-                                            Toast.LENGTH_LONG)
-                                    .show();
-                        } else {
-                            new ReadData1().execute();
-                            radioButtonView.setVisibility(View.GONE);
-                            readAll.setVisibility(View.GONE);
-                        }
-                    }
-                });
+        public void poojaPaid(View view) {
+            readAllBinding.totalView.setVisibility(View.VISIBLE);
+            flag = 3;
+            readAllBinding.heading.setText(
+                    getString(R.string.list_of_registered_poojas_people_who_paid_only));
+            readAllBinding.donatePaid.setChecked(false);
+            readAllBinding.donateNotPaid.setChecked(false);
+        }
 
-        donatePaid.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        totalLayout.setVisibility(View.VISIBLE);
-                        flag = 1;
-                        heading.setText(getString(R.string.list_of_donated_people_who_paid_only));
-                        poojaPaid.setChecked(false);
-                        poojaNotPaid.setChecked(false);
-                    }
-                });
+        public void poojaNotPaid(View view) {
+            readAllBinding.totalView.setVisibility(View.VISIBLE);
+            flag = 4;
+            readAllBinding.heading.setText(
+                    getString(R.string.list_of_registered_poojas_who_not_paid_only));
+            readAllBinding.donatePaid.setChecked(false);
+            readAllBinding.donateNotPaid.setChecked(false);
+        }
 
-        donateNotPaid.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        totalLayout.setVisibility(View.VISIBLE);
-                        flag = 2;
-                        heading.setText(getString(R.string.list_of_donated_people_who_not_paid_only));
-                        poojaPaid.setChecked(false);
-                        poojaNotPaid.setChecked(false);
-                    }
-                });
+        public void readAllButton(View view) {
+            if (readAllBinding.donatePaid.isChecked() && readAllBinding.donateNotPaid.isChecked()) {
+                flag = 5;
+            }
 
-        poojaPaid.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        totalLayout.setVisibility(View.VISIBLE);
-                        flag = 3;
-                        heading.setText(getString(R.string.list_of_registered_poojas_people_who_paid_only));
-                        donatePaid.setChecked(false);
-                        donateNotPaid.setChecked(false);
-                    }
-                });
+            if (readAllBinding.poojaPaid.isChecked() && readAllBinding.poojaNotPaid.isChecked()) {
+                flag = 6;
+            }
 
-        poojaNotPaid.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        totalLayout.setVisibility(View.VISIBLE);
-                        flag = 4;
-                        heading.setText(getString(R.string.list_of_registered_poojas_who_not_paid_only));
-                        donatePaid.setChecked(false);
-                        donateNotPaid.setChecked(false);
-                    }
-                });
+            if (!(readAllBinding.poojaPaid.isChecked()
+                    || readAllBinding.poojaNotPaid.isChecked()
+                    || readAllBinding.donatePaid.isChecked()
+                    || readAllBinding.donateNotPaid.isChecked())) {
+                Toast.makeText(
+                                getApplicationContext(), getString(R.string.error_notSelected), Toast.LENGTH_LONG)
+                        .show();
+            } else {
+                new ReadData1().execute();
+                readAllBinding.radiogroupView.setVisibility(View.GONE);
+                readAllBinding.readAllBtn1.setVisibility(View.GONE);
+            }
+        }
     }
 
     class ReadData1 extends AsyncTask<Void, Void, Void> {
@@ -243,12 +207,12 @@ public class ReadAllData extends AppCompatActivity {
             /* Checking if List size if more than zero then Update ListView */
             if (list.size() > 0) {
                 adapter.notifyDataSetChanged();
-                heading.setVisibility(TextView.VISIBLE);
+                readAllBinding.heading.setVisibility(TextView.VISIBLE);
 
             } else {
                 Toast.makeText(getApplicationContext(), getString(R.string.no_data), Toast.LENGTH_LONG)
                         .show();
-                heading.setVisibility(TextView.INVISIBLE);
+                readAllBinding.heading.setVisibility(TextView.INVISIBLE);
             }
         }
     }

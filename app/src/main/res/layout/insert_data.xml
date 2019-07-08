@@ -1,130 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <variable
+            name="Onclick"
+            type="org.amfoss.templeapp.activities.InsertData.Onclick" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-            <RadioGroup
-                android:id="@+id/radiogroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_20"
-                android:orientation="vertical">
-
-                <RadioButton
-                    android:id="@+id/radio_pooja"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_15"
-                    android:text="@string/register_for_new_pooja"
-                    android:theme="@style/radioButton" />
-
-                <RadioButton
-                    android:id="@+id/radio_donate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_15"
-                    android:text="@string/donate_money_to_temple"
-                    android:theme="@style/radioButton" />
-            </RadioGroup>
-        </LinearLayout>
-
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/total_View"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <EditText
-                android:id="@+id/uid"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_50"
-                android:layout_margin="@dimen/margin_45"
-                android:hint="@string/user_id" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/margin_45"
-                android:layout_marginLeft="@dimen/margin_45"
-                android:layout_marginBottom="@dimen/margin_10"
-                android:text="@string/select_pooja_type"
-                android:textSize="@dimen/text_15" />
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/money_donated"
+
+                <RadioGroup
+                    android:id="@+id/radiogroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_20"
+                    android:onCheckedChanged="@{Onclick::onCheckedChanged}"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio_pooja"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_15"
+                        android:text="@string/register_for_new_pooja"
+                        android:theme="@style/radioButton" />
+
+                    <RadioButton
+                        android:id="@+id/radio_donate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_15"
+                        android:text="@string/donate_money_to_temple"
+                        android:theme="@style/radioButton" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/total_View"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/height_50"
-                android:layout_margin="@dimen/margin_45"
-                android:hint="@string/enter_money_donated" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_50"
-                android:layout_marginLeft="@dimen/margin_45"
-                android:layout_marginRight="@dimen/margin_45"
-                android:layout_marginBottom="@dimen/margin_45"
-                android:entries="@array/pooja_types"
-                android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
+                <EditText
+                    android:id="@+id/editText_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="@string/user_id" />
 
-            <EditText
-                android:id="@+id/custompooja"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="45dp"
-                android:hint="custompooja" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_45"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:text="@string/select_pooja_type"
+                    android:textSize="@dimen/text_15" />
 
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_50"
-                android:layout_margin="@dimen/margin_45"
-                android:hint="@string/name" />
+                <EditText
+                    android:id="@+id/money_donated"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="@string/enter_money_donated" />
 
-            <EditText
-                android:id="@+id/amount"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="45dp"
-                android:hint="amount" />
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:layout_marginRight="@dimen/margin_45"
+                    android:layout_marginBottom="@dimen/margin_45"
+                    android:entries="@array/pooja_types"
+                    android:onItemSelected="@{Onclick::onItemSelected}"
+                    android:prompt="@style/Base.Widget.AppCompat.Light.PopupMenu.Overflow" />
 
-            <android.support.v7.widget.AppCompatCheckBox
-                android:id="@+id/paid_check"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_40"
-                android:layout_margin="@dimen/margin_45"
-                android:text="@string/PAID" />
+                <EditText
+                    android:id="@+id/custompooja"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="45dp"
+                    android:hint="custompooja" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="@string/name" />
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="45dp"
+                    android:hint="amount" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/paid_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_40"
+                    android:layout_margin="@dimen/margin_45"
+                    android:onClick="@{Onclick::onClick}"
+                    android:text="@string/PAID" />
 
 
-            <Button
-                android:id="@+id/insert_btn"
-                android:layout_width="@dimen/width_175"
-                android:layout_height="@dimen/height_50"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_45"
-                android:layout_marginBottom="@dimen/margin_24"
-                android:background="@drawable/button_animated"
-                android:text="@string/insert_"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/text_18" />
+                <Button
+                    android:id="@+id/insert_btn"
+                    android:layout_width="@dimen/width_175"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_45"
+                    android:layout_marginBottom="@dimen/margin_24"
+                    android:background="@drawable/button_animated"
+                    android:onClick="@{Onclick::insertButton}"
+                    android:text="@string/insert_"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_18" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
-
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</layout>

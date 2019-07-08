@@ -1,148 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="read"
+            type="org.amfoss.templeapp.activities.ReadSingleData.Read" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioGroup
-            android:id="@+id/radiogroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_20"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/radio_pooja"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_15"
-                android:text="@string/people_who_registered_for_pooja"
-                android:theme="@style/radioButton" />
-
-            <RadioButton
-                android:id="@+id/radio_donate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_15"
-                android:text="@string/people_who_donated_money_for_temple"
-                android:theme="@style/radioButton" />
-        </RadioGroup>
-    </LinearLayout>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/total_View"
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/uid"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_40"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="@dimen/height_40"
-            android:hint="@string/user_id" />
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:onCheckedChanged="@{read::radioGroup}"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_pooja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_15"
+                    android:text="@string/people_who_registered_for_pooja"
+                    android:theme="@style/radioButton" />
+
+                <RadioButton
+                    android:id="@+id/radio_donate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_15"
+                    android:text="@string/people_who_donated_money_for_temple"
+                    android:theme="@style/radioButton" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/total_View"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editText_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_40"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/height_40"
+                android:hint="@string/user_id" />
 
 
-        <Button
-            android:id="@+id/insert_btn"
-            android:layout_width="@dimen/weight_175"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/uid"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/margin_25"
-            android:layout_marginBottom="@dimen/margin_24"
-            android:background="@drawable/button_animated"
-            android:text="@string/find"
-            android:textColor="#ffffff"
-            android:textSize="@dimen/text_18" />
+            <Button
+                android:id="@+id/insert_btn"
+                android:layout_width="@dimen/weight_175"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editText_id"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:background="@drawable/button_animated"
+                android:onClick="@{read :: readButton}"
+                android:text="@string/find"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_18" />
 
-        <TextView
-            android:id="@+id/id_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/insert_btn"
-            android:layout_toRightOf="@+id/insert_btn" />
+            <TextView
+                android:id="@+id/id_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/insert_btn"
+                android:layout_toRightOf="@+id/insert_btn" />
 
-        <TextView
-            android:id="@+id/id_l"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/insert_btn"
-            android:layout_toLeftOf="@+id/insert_btn" />
+            <TextView
+                android:id="@+id/id_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/insert_btn"
+                android:layout_toLeftOf="@+id/insert_btn" />
 
-        <TextView
-            android:id="@+id/name_l"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id_l"
-            android:layout_alignStart="@+id/id_l"
-            android:layout_alignLeft="@+id/id_l"
-            android:layout_marginTop="@dimen/margin_31" />
+            <TextView
+                android:id="@+id/name_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_l"
+                android:layout_alignStart="@+id/id_l"
+                android:layout_alignLeft="@+id/id_l"
+                android:layout_marginTop="@dimen/margin_31" />
 
-        <TextView
-            android:id="@+id/name_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/id_v"
-            android:layout_alignLeft="@+id/id_v"
-            android:layout_alignTop="@+id/name_l" />
+            <TextView
+                android:id="@+id/name_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/id_v"
+                android:layout_alignLeft="@+id/id_v"
+                android:layout_alignTop="@+id/name_l" />
 
-        <TextView
-            android:id="@+id/pooja_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_l"
-            android:layout_alignStart="@id/name_l"
-            android:layout_alignLeft="@id/name_l"
-            android:layout_marginTop="@dimen/margin_35" />
+            <TextView
+                android:id="@+id/pooja_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name_l"
+                android:layout_alignStart="@id/name_l"
+                android:layout_alignLeft="@id/name_l"
+                android:layout_marginTop="@dimen/margin_35" />
 
-        <TextView
-            android:id="@+id/pooja_l"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_v"
-            android:layout_alignStart="@id/name_v"
-            android:layout_alignLeft="@id/name_v"
-            android:layout_marginTop="@dimen/margin_35" />
+            <TextView
+                android:id="@+id/pooja_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name_v"
+                android:layout_alignStart="@id/name_v"
+                android:layout_alignLeft="@id/name_v"
+                android:layout_marginTop="@dimen/margin_35" />
 
 
-        <TextView
-            android:id="@+id/paid_l"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pooja_l"
-            android:layout_alignStart="@id/name_l"
-            android:layout_alignLeft="@id/name_l"
-            android:layout_marginTop="@dimen/margin_35" />
+            <TextView
+                android:id="@+id/paid_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pooja_l"
+                android:layout_alignStart="@id/name_l"
+                android:layout_alignLeft="@id/name_l"
+                android:layout_marginTop="@dimen/margin_35" />
 
-        <TextView
-            android:id="@+id/paid_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pooja_v"
-            android:layout_alignStart="@id/name_v"
-            android:layout_alignLeft="@id/name_v"
-            android:layout_marginTop="@dimen/margin_35" />
+            <TextView
+                android:id="@+id/paid_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pooja_v"
+                android:layout_alignStart="@id/name_v"
+                android:layout_alignLeft="@id/name_v"
+                android:layout_marginTop="@dimen/margin_35" />
 
-        <TextView
-            android:id="@+id/am"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/paid_l"
-            android:layout_alignStart="@id/paid_l"
-            android:layout_alignLeft="@id/paid_l"
-            android:layout_marginTop="35dp" />
+            <TextView
+                android:id="@+id/am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/paid_l"
+                android:layout_alignStart="@id/paid_l"
+                android:layout_alignLeft="@id/paid_l"
+                android:layout_marginTop="35dp" />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
