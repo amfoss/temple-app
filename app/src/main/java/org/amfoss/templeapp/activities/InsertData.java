@@ -147,6 +147,11 @@ public class InsertData extends AppCompatActivity {
             } catch (JSONException je) {
                 Log.i(Controller.TAG, getString(R.string.exception) + je.getLocalizedMessage());
             }
+            if (flag == 1) {
+                id = "REG";
+            } else {
+                id = "DON";
+            }
             return null;
         }
 
