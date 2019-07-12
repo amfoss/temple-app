@@ -79,6 +79,8 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.totalView.setVisibility(View.VISIBLE);
                     insertDataBinding.spinner1.setVisibility(View.GONE);
                     insertDataBinding.moneyDonated.setVisibility(View.VISIBLE);
+                    insertDataBinding.custompooja.setVisibility(View.GONE);
+                    insertDataBinding.amount.setVisibility(View.GONE);
                     id = getResources().getString(R.string.DON);
                     flag = 0;
                     Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
