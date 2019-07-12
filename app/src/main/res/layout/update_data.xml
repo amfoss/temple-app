@@ -80,7 +80,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_50"
                     android:layout_margin="@dimen/margin_45"
-                    android:hint="@string/enter_money_donated" />
+                    android:hint="@string/enter_money_donated"
+                    android:inputType="number"/>
 
 
                 <Spinner
@@ -106,7 +107,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="45dp"
-                    android:hint="amount" />
+                    android:hint="amount"
+                    android:inputType="number"/>
 
                 <EditText
                     android:id="@+id/name"
