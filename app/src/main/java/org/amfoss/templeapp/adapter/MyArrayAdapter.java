@@ -44,13 +44,18 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
 
         String[] str = item.getName().split("     ");
         String lastWord = str[0].substring(str[0].lastIndexOf(" ") + 1);
-        if (lastWord.length() > 1) {
-            lastWord = "C";
+
+        if (item.getId().substring(0, 3).equals("REG")) {
+            vh.textViewName.setText(str[1] + "     " + str[2] + "     " + str[3]);
+            if (lastWord.length() > 1) {
+                lastWord = "C";
+            }
+        } else {
+            vh.textViewName.setText(str[1] + "     " + str[2]);
         }
 
-        vh.textViewName.setText(str[1] + "     " + str[2] + "     " + str[3]);
         vh.type.setText(lastWord);
-        vh.textViewId.setText(item.getId());
+        vh.textViewId.setText(item.getId().substring(3, item.getId().length()));
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.listview_animator);
         vh.rootView.startAnimation(animation);
