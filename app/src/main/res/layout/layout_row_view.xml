@@ -24,7 +24,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="@dimen/width_325"
+                    android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -48,8 +48,10 @@
 
                 <RelativeLayout
                     android:id="@+id/relativelayout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/margin_6">
 
                     <ImageView
