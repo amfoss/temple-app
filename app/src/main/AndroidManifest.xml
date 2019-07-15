@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="org.amfoss.templeapp.activities.MainActivity">
+        <activity android:name="org.amfoss.templeapp.activities.MainActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,22 +22,27 @@
         </activity>
         <activity
             android:name="org.amfoss.templeapp.activities.InsertData"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Register New pooja"/>
         <activity
             android:name="org.amfoss.templeapp.activities.UpdateData"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Update Registered Pooja"/>
         <activity
             android:name="org.amfoss.templeapp.activities.ReadSingleData"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Search ID"/>
         <activity
             android:name="org.amfoss.templeapp.activities.DeleteData"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Delete Registered Pooja"/>
         <activity
             android:name="org.amfoss.templeapp.activities.ReadAllData"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
             android:label="Read all Registered Poojas"/>
     </application>
