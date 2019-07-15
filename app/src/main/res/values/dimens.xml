@@ -38,5 +38,6 @@
     <dimen name="text_35">35dp</dimen>
     <dimen name="text_18sp">18sp</dimen>
     <dimen name="text_24">24dp</dimen>
+    <dimen name="margin_280">280dp</dimen>
 
 </resources>
