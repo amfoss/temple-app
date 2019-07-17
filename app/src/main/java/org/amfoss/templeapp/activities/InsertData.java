@@ -81,7 +81,7 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.moneyDonated.setVisibility(View.VISIBLE);
                     id = getResources().getString(R.string.DON);
                     flag = 0;
-                    Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.selected_donate), Toast.LENGTH_SHORT)
                             .show();
                     break;
 
@@ -91,7 +91,7 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.spinner1.setVisibility(View.VISIBLE);
                     id = getString(R.string.REG);
                     flag = 1;
-                    Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.selected_register), Toast.LENGTH_SHORT)
                             .show();
                     break;
             }
@@ -159,7 +159,7 @@ public class InsertData extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             dialog.dismiss();
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
         }
     }
 }

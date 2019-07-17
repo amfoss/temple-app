@@ -89,7 +89,7 @@ public class ReadAllData extends AppCompatActivity {
                     || readAllBinding.donatePaid.isChecked()
                     || readAllBinding.donateNotPaid.isChecked())) {
                 Toast.makeText(
-                                getApplicationContext(), getString(R.string.error_notSelected), Toast.LENGTH_LONG)
+                                getApplicationContext(), getString(R.string.error_notSelected), Toast.LENGTH_SHORT)
                         .show();
             } else {
                 new ReadData1().execute();
@@ -210,7 +210,7 @@ public class ReadAllData extends AppCompatActivity {
                 readAllBinding.heading.setVisibility(TextView.VISIBLE);
 
             } else {
-                Toast.makeText(getApplicationContext(), getString(R.string.no_data), Toast.LENGTH_LONG)
+                Toast.makeText(getApplicationContext(), getString(R.string.no_data), Toast.LENGTH_SHORT)
                         .show();
                 readAllBinding.heading.setVisibility(TextView.INVISIBLE);
             }

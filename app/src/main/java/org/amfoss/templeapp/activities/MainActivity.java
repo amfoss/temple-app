@@ -13,6 +13,7 @@ import org.amfoss.templeapp.databinding.ActivityMainBinding;
 import org.amfoss.templeapp.json_api.InternetConnection;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int LENGTH_SHORT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
