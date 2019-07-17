@@ -152,41 +152,51 @@ public class ReadAllData extends AppCompatActivity {
                                             && str[2].equals(getString(R.string.PAID))) {
                                         model.setName(name);
 
-                                        model.setCountry(id.substring(3, id.length()));
+                                        model.setCountry(id);
                                         list.add(model);
                                     }
                                 } else if (flag == 2) {
                                     if (id.substring(0, 3).equals(getString(R.string.DON))
                                             && str[2].equals(getString(R.string.NOT_PAID))) {
                                         model.setName(name);
-                                        model.setCountry(id.substring(3, id.length()));
+                                        model.setCountry(id);
                                         list.add(model);
                                     }
                                 } else if (flag == 3) {
-                                    if (id.substring(0, 3).equals(getString(R.string.REG))
-                                            && str[3].equals(getString(R.string.PAID))) {
-                                        model.setName(name);
-                                        model.setCountry(id.substring(3, id.length()));
-                                        list.add(model);
+                                    if (id.substring(0, 3).equals(getString(R.string.REG))) {
+                                        try {
+                                            if (str[3].equalsIgnoreCase(getString(R.string.PAID))) {
+                                                model.setName(name);
+                                                model.setCountry(id);
+                                                list.add(model);
+                                            }
+                                        } catch (Exception e) {
+                                            Log.e("ReadAll", "Error in fetching poojas");
+                                        }
                                     }
                                 } else if (flag == 4) {
-                                    if (id.substring(0, 3).equals(getString(R.string.REG))
-                                            && str[3].equals(getString(R.string.NOT_PAID))) {
-                                        model.setName(name);
-                                        model.setCountry(id.substring(3, id.length()));
-                                        list.add(model);
+                                    if (id.substring(0, 3).equals(getString(R.string.REG))) {
+                                        try {
+                                            if (str[3].equalsIgnoreCase(getString(R.string.NOT_PAID))) {
+                                                model.setName(name);
+                                                model.setCountry(id);
+                                                list.add(model);
+                                            }
+                                        } catch (Exception e) {
+                                            Log.e("ReadAll", "Error in fetching poojas");
+                                        }
                                     }
                                 } else if (flag == 5) {
                                     if (id.substring(0, 3).equals(getString(R.string.DON))) {
                                         model.setName(name);
-                                        model.setCountry(id.substring(3, id.length()));
+                                        model.setCountry(id);
                                         list.add(model);
                                     }
 
                                 } else if (flag == 6) {
                                     if (id.substring(0, 3).equals(getString(R.string.REG))) {
                                         model.setName(name);
-                                        model.setCountry(id.substring(3, id.length()));
+                                        model.setCountry(id);
                                         list.add(model);
                                     }
                                 }
