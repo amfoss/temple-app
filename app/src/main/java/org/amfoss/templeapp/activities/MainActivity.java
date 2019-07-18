@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     public class Presenter {
         public void onInsertClick(View view) {
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), InsertData.class);
+            if (InternetConnection.checkConnection(getBaseContext())) {
+                Intent intent = new Intent(getBaseContext(), InsertData.class);
                 startActivity(intent);
             } else {
                 createNetErrorDialog();
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void onReadAllClick(View view) {
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), ReadAllData.class);
+            if (InternetConnection.checkConnection(getBaseContext())) {
+                Intent intent = new Intent(getBaseContext(), ReadAllData.class);
                 startActivity(intent);
             } else {
                 createNetErrorDialog();
@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void onUpdateClick(View view) {
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), UpdateData.class);
+            if (InternetConnection.checkConnection(getBaseContext())) {
+                Intent intent = new Intent(getBaseContext(), UpdateData.class);
                 startActivity(intent);
             } else {
                 createNetErrorDialog();
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void onReadSingleData(View view) {
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), ReadSingleData.class);
+            if (InternetConnection.checkConnection(getBaseContext())) {
+                Intent intent = new Intent(getBaseContext(), ReadSingleData.class);
                 startActivity(intent);
             } else {
                 createNetErrorDialog();
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void onDeleteClick(View view) {
-            if (InternetConnection.checkConnection(getApplicationContext())) {
-                Intent intent = new Intent(getApplicationContext(), DeleteData.class);
+            if (InternetConnection.checkConnection(getBaseContext())) {
+                Intent intent = new Intent(getBaseContext(), DeleteData.class);
                 startActivity(intent);
             } else {
                 createNetErrorDialog();
