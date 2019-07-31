@@ -83,7 +83,7 @@ public class UpdateData extends AppCompatActivity {
                     binding.moneyDonated.setVisibility(View.VISIBLE);
                     id = getString(R.string.DON);
                     flag = 0;
-                    Toast.makeText(getBaseContext(), getString(R.string.UPDATE), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), getString(R.string.UPDATE), Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.radio_pooja:
                     binding.totalView.setVisibility(View.VISIBLE);
@@ -92,7 +92,7 @@ public class UpdateData extends AppCompatActivity {
                     binding.amount.setVisibility(View.VISIBLE);
                     id = getString(R.string.REG);
                     flag = 1;
-                    Toast.makeText(getBaseContext(), getString(R.string.update_pooja), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(), getString(R.string.update_pooja), Toast.LENGTH_SHORT)
                             .show();
                     break;
             }
@@ -152,7 +152,7 @@ public class UpdateData extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             dialog.dismiss();
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), result, Toast.LENGTH_SHORT).show();
         }
     }
 }
