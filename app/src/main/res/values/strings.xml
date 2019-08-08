@@ -17,7 +17,7 @@
     <string name="select_pooja_type">Select Pooja Type</string>
     <string name="PAID">PAID</string>
     <string name="NOT_PAID">NOT PAID</string>
-    <string name="valid_ID">Please enter a valid user ID</string>
+    <string name="valid_ID">Please enter a valid employee ID</string>
     <string name="insert">Inserting your values..</string>
     <string name="exception">exception</string>
     <string name="UPDATE">Selected To update donated money details</string>
@@ -43,7 +43,7 @@
     <string name="enter_money_donated">Enter Money Donated</string>
     <string name="people_who_registered_for_pooja">People Who Registered For Pooja</string>
     <string name="people_who_donated_money_for_temple">People Who Donated Money For Temple</string>
-    <string name="user_id">User ID</string>
+    <string name="employee_id">Employee ID</string>
     <string name="delete">Delete</string>
     <string name="register_for_new_pooja">Register For New Pooja</string>
     <string name="donate_money_to_temple">Donate Money To Temple</string>
