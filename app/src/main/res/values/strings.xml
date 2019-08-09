@@ -18,6 +18,8 @@
     <string name="PAID">PAID</string>
     <string name="NOT_PAID">NOT PAID</string>
     <string name="valid_ID">Please enter a valid user ID</string>
+    <string name="Toast_donate">Selected To People Who Donated Money For Temple</string>
+    <string name="Toast_Pooja">Selected To People who Registered For Pooja</string>
     <string name="insert">Inserting your values..</string>
     <string name="exception">exception</string>
     <string name="UPDATE">Selected To update donated money details</string>
