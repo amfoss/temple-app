@@ -58,7 +58,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="@dimen/margin_45"
-                android:hint="@string/user_id" />
+                android:hint="@string/employee_id" />
 
 
             <Button
