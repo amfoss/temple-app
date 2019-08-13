@@ -7,7 +7,7 @@
     <string name="delete_pooja">Selected To Delete Registered Pooja</string>
     <string name="REG">REG</string>
     <string name="DON">DON</string>
-    <string name="wait">Hey Wait Please...</string>
+    <string name="wait">Please Wait</string>
     <string name="deleting">Deleting...</string>
     <string name="id_value">IDVALUE</string>
     <string name="json_obj">Json obj</string>
@@ -22,7 +22,7 @@
     <string name="exception">exception</string>
     <string name="UPDATE">Selected To update donated money details</string>
     <string name="update_pooja">Selected To update Registered Pooja details</string>
-    <string name="JSON">I am getting your JSON</string>
+    <string name="JSON">Fetching Data</string>
     <string name="ID_value">IDVALUE</string>
     <string name="user">user</string>
     <string name="ID">ID:</string>
@@ -31,7 +31,7 @@
     <string name="name_">NAME</string>
     <string name="type_of_pooja">Type of pooja:</string>
     <string name="money_donated">Money Donated:</string>
-    <string name="paid_status">Paid Staus:</string>
+    <string name="paid_status">Paid Status:</string>
     <string name="id_not_found">ID not found</string>
     <string name="internet_warn">You need internet connection for this app. Please turn on mobile network or Wi-Fi in Settings.</string>
     <string name="unable_to_connect">Unable to connect</string>
