@@ -78,10 +78,15 @@ public class ReadAllData extends AppCompatActivity {
         public void readAllButton(View view) {
             if (readAllBinding.donatePaid.isChecked() && readAllBinding.donateNotPaid.isChecked()) {
                 flag = 5;
+                readAllBinding.heading.setText(
+                        "List of Donated Poojas:Both paid and not paid");
             }
 
             if (readAllBinding.poojaPaid.isChecked() && readAllBinding.poojaNotPaid.isChecked()) {
                 flag = 6;
+                readAllBinding.heading.setText("List of registered Poojas:Both paid and not paid"
+                );
+
             }
 
             if (!(readAllBinding.poojaPaid.isChecked()

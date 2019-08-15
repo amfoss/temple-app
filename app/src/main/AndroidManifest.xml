@@ -44,7 +44,7 @@
             android:name="org.amfoss.templeapp.activities.ReadAllData"
             android:configChanges="orientation|screenSize"
             android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
-            android:label="Read all Registered Poojas"/>
+            android:label="Read all"/>
     </application>
 
 </manifest>
