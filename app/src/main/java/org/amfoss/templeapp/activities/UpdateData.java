@@ -81,6 +81,8 @@ public class UpdateData extends AppCompatActivity {
                     binding.totalView.setVisibility(View.VISIBLE);
                     binding.spinner1.setVisibility(View.GONE);
                     binding.moneyDonated.setVisibility(View.VISIBLE);
+                    binding.Select.setVisibility(View.GONE);
+                    binding.custompooja.setVisibility(View.GONE);
                     id = getString(R.string.DON);
                     flag = 0;
                     Toast.makeText(getBaseContext(), getString(R.string.UPDATE), Toast.LENGTH_SHORT).show();
@@ -89,7 +91,8 @@ public class UpdateData extends AppCompatActivity {
                     binding.totalView.setVisibility(View.VISIBLE);
                     binding.moneyDonated.setVisibility(View.GONE);
                     binding.spinner1.setVisibility(View.VISIBLE);
-                    binding.amount.setVisibility(View.VISIBLE);
+                    binding.Select.setVisibility(View.VISIBLE);
+
                     id = getString(R.string.REG);
                     flag = 1;
                     Toast.makeText(getBaseContext(), getString(R.string.update_pooja), Toast.LENGTH_SHORT)
