@@ -64,9 +64,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_50"
                     android:layout_margin="@dimen/margin_45"
-                    android:hint="@string/user_id" />
+                    android:hint="@string/employee_id" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="@string/name" />
 
                 <TextView
+                    android:id="@+id/select_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_45"
@@ -101,12 +109,6 @@
                     android:layout_margin="45dp"
                     android:hint="custompooja" />
 
-                <EditText
-                    android:id="@+id/name"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/height_50"
-                    android:layout_margin="@dimen/margin_45"
-                    android:hint="@string/name" />
 
                 <EditText
                     android:id="@+id/amount"
