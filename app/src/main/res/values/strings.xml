@@ -64,6 +64,8 @@
     <string name="amount_in_rs">Amount:                                         Rs.</string>
     <string name="search_donations">Selected to search for donations</string>
     <string name="search_poojas">Selected to search for registered poojas</string>
+    <string name="all_donated_poojas">List of Donated Poojas:Both paid and not paid</string>
+    <string name="all_registered_poojas">List of registered Poojas:Both paid and not paid</string>
 
 
     <string-array name="pooja_types">
