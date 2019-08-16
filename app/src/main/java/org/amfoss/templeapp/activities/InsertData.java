@@ -80,6 +80,7 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.spinner1.setVisibility(View.GONE);
                     insertDataBinding.moneyDonated.setVisibility(View.VISIBLE);
                     insertDataBinding.custompooja.setVisibility(View.GONE);
+                    insertDataBinding.selectText.setVisibility(View.GONE);
                     insertDataBinding.amount.setVisibility(View.GONE);
                     id = getResources().getString(R.string.DON);
                     flag = 0;
@@ -92,6 +93,7 @@ public class InsertData extends AppCompatActivity {
                     insertDataBinding.moneyDonated.setVisibility(View.GONE);
                     insertDataBinding.spinner1.setVisibility(View.VISIBLE);
                     insertDataBinding.amount.setVisibility(View.VISIBLE);
+                    insertDataBinding.selectText.setVisibility(View.VISIBLE);
                     id = getString(R.string.REG);
                     flag = 1;
                     Toast.makeText(
