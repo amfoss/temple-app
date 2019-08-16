@@ -61,7 +61,7 @@
     <string name="insert_data">Insert Data</string>
     <string name="nothingselected">Nothing selected</string>
     <string name="custompooja">Custom Pooja</string>
-    <string name="amount_in_rs">Amount:                           Rs.</string>
+    <string name="amount_in_rs">Amount:                                         Rs.</string>
     <string name="search_donations">Selected to search for donations</string>
     <string name="search_poojas">Selected to search for registered poojas</string>
 
