@@ -17,6 +17,8 @@ This app is a cost-efficient way of maintaining records of poojas, donations mad
 
 The app has a login interface and only some people like General secretary, president and treasurer of the temple can log in and be able to access the complete database.
 
+Here is the **[link](https://drive.google.com/file/d/19IcSP1h7L01xReBvOKihTy1zpEnMiuOF/view?usp=sharing)** to the apk of the latest release of the app.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and be running on your local machine for development and testing purposes.
