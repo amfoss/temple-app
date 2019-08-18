@@ -12,7 +12,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="org.amfoss.templeapp.activities.MainActivity"
+        <activity
+            android:name=".ui.main.HomeActivity"
+            android:label="TempleApp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.MainActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,30 +26,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.amfoss.templeapp.activities.InsertData"
+            android:name=".activities.InsertData"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
-            android:label="Register New pooja"/>
+            android:label="Register New pooja"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name="org.amfoss.templeapp.activities.UpdateData"
+            android:name=".activities.UpdateData"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
-            android:label="Update Registered Pooja"/>
+            android:label="Update Registered Pooja"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name="org.amfoss.templeapp.activities.ReadSingleData"
+            android:name=".activities.ReadSingleData"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
-            android:label="Search ID"/>
+            android:label="Search ID"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name="org.amfoss.templeapp.activities.DeleteData"
+            android:name=".activities.DeleteData"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
-            android:label="Delete Registered Pooja"/>
+            android:label="Delete Registered Pooja"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name="org.amfoss.templeapp.activities.ReadAllData"
+            android:name=".activities.ReadAllData"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName="org.amfoss.templeapp.activities.MainActivity"
-            android:label="Read all"/>
+            android:label="Read all"
+            android:parentActivityName=".activities.MainActivity" />
     </application>
 
 </manifest>

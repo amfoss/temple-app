@@ -11,6 +11,7 @@ import android.view.View;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.ActivityMainBinding;
 import org.amfoss.templeapp.json_api.InternetConnection;
+import org.amfoss.templeapp.ui.main.HomeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mainBinding.setPresenter(new Presenter());
+
+        mainBinding.checkBtn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                    }
+                });
     }
 
     protected void createNetErrorDialog() {
