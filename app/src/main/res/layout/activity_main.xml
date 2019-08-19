@@ -9,6 +9,7 @@
             name="Presenter"
             type="org.amfoss.templeapp.activities.MainActivity.Presenter" />
     </data>
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -148,7 +149,6 @@
 
 
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/check_btn"
