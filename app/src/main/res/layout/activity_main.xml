@@ -9,6 +9,7 @@
             name="Presenter"
             type="org.amfoss.templeapp.activities.MainActivity.Presenter" />
     </data>
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -148,6 +149,22 @@
 
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/check_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_120"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_5"
+                android:layout_weight="@dimen/weight_1"
+                android:background="@color/orange"
+                android:drawableTop="@android:drawable/ic_menu_delete"
+                android:drawablePadding="@dimen/padding_0"
+                android:drawableTint="#fff"
+                android:padding="@dimen/padding_20"
+                android:text="See New Layout"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
 
         </LinearLayout>
     </ScrollView>

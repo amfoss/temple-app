@@ -75,4 +75,13 @@
         <item>Type 4</item>
         <item>Custom Pooja</item>
     </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tabbed_activty">TabbedActivty</string>
+    <string name="tab_text_1">Pooja</string>
+    <string name="tab_text_2">Income</string>
+    <string name="tab_text_3">Expenses</string>
 </resources>
