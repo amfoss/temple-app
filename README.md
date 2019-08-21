@@ -95,6 +95,8 @@ Also, any registration can be deleted by giving the ID of the user whose registr
 - [okhttp](https://square.github.io/okhttp/)
 - [cardview-v7:28.0.0](https://mvnrepository.com/artifact/com.android.support/cardview-v7/28.0.0-alpha1)
 - [dataBinding](https://developer.android.com/topic/libraries/data-binding)
+- [retrofit](https://square.github.io/retrofit/)
+
 
 ## License
 This project is licensed under the [MIT LICENSE](https://github.com/amfoss/TempleApp/blob/master/LICENSE).
