@@ -9,8 +9,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import java.util.List;
+
 import org.amfoss.templeapp.R;
+
+import java.util.List;
 
 public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
 
