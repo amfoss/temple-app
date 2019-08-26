@@ -31,7 +31,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Add your first pooja details"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

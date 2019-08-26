@@ -1,15 +1,15 @@
 package org.amfoss.templeapp.activities;
 
 import android.app.ProgressDialog;
-import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.DeleteDataBinding;
 import org.amfoss.templeapp.json_api.Controller;
