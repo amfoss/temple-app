@@ -7,11 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
+import java.util.ArrayList;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.adapter.MyArrayAdapter;
 import org.amfoss.templeapp.adapter.MyDataModel;
@@ -20,8 +19,6 @@ import org.amfoss.templeapp.json_api.Controller;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class ReadAllData extends AppCompatActivity {
 

@@ -1,17 +1,13 @@
 package org.amfoss.templeapp.json_api;
 
 import android.util.Log;
-
 import androidx.annotation.NonNull;
-
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-
+import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
 
 public class Controller {
 

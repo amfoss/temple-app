@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.databinding.ActivityMainBinding;
 import org.amfoss.templeapp.json_api.InternetConnection;
