@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="Confirm_Details"
+            type="org.amfoss.templeapp.activities.ConfirmDetails" />
+
+
+
+    </data>
+
+    <LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+    <TextView
+        android:id="@+id/text_view_id"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="Pooja_ID" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="Customer name" />
+
+    <TextView
+        android:id="@+id/pooja"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="Poojas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+        <TextView
+            android:id="@+id/pooja1"
+            android:gravity="center_horizontal"
+            android:text="Pooja A"
+            android:layout_marginHorizontal="@dimen/margin_45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_35"
+            />
+        <TextView
+            android:id="@+id/pooja2"
+            android:gravity="center_horizontal"
+            android:text="Pooja B"
+            android:layout_marginHorizontal="@dimen/margin_45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+        <TextView
+            android:id="@+id/pooja3"
+            android:gravity="center_horizontal"
+            android:text="Pooja C"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_45"
+
+            />
+        <TableRow
+            android:id="@+id/hr1"
+            android:layout_width="360dp"
+            android:layout_height="1dp"
+            android:background="#444"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"></TableRow>
+
+        <TextView
+            android:id="@+id/Total"
+            android:gravity="center_horizontal"
+            android:text="Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginHorizontal="@dimen/margin_45"
+
+        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_width="@dimen/margin_45"
+                android:layout_height="@dimen/margin_45"
+                android:id="@+id/circle"
+                android:background="@drawable/button_bg_round"
+                android:src="@drawable/ic_action_name"
+                android:layout_marginTop="@dimen/margin_45"
+                android:layout_marginHorizontal="150dp"/>
+            <ImageButton
+                android:layout_width="@dimen/margin_45"
+                android:layout_height="@dimen/margin_45"
+                android:id="@+id/circle1"
+                android:background="@drawable/button_bg_round"
+                android:src="@drawable/ic_action_clear"
+                android:layout_marginTop="@dimen/margin_45"
+                android:layout_marginHorizontal="250dp"/>
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+</layout>

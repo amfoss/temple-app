@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="Add_Donation"
+            type="org.amfoss.templeapp.activities.AddDonation" />
+    </data>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            >
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:mtf_labelColor="#666">
+
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="Customer Name"
+                    android:textColor="#333"
+                    android:textSize="15sp" />
+            </com.github.florent37.materialtextfield.MaterialTextField>
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:mtf_labelColor="#666">
+
+
+
+
+
+                <EditText
+                    android:id="@+id/custompooja"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="cause"
+                    android:textColor="#333"
+                    android:textSize="15sp" />
+            </com.github.florent37.materialtextfield.MaterialTextField>
+            <com.github.florent37.materialtextfield.MaterialTextField
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:mtf_labelColor="#666">
+                <EditText
+                    android:id="@+id/money_donated"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_50"
+                    android:layout_margin="@dimen/margin_45"
+                    android:hint="Donation"
+                    android:textColor="#333"
+                    android:textSize="15sp" />
+            </com.github.florent37.materialtextfield.MaterialTextField>
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="wrap_content" android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_below="@+id/money_donated"
+                android:layout_marginTop="@dimen/margin_25"
+
+                >
+                <Button
+                    android:id="@+id/register"
+                    android:layout_width="@dimen/height_120"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/money_donated"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_25"
+                    android:layout_marginBottom="@dimen/margin_24"
+                    android:background="@drawable/button_animated"
+                    android:text="Register"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_18"
+                    android:layout_marginHorizontal="35dp"
+                    />
+
+                <Button
+                    android:id="@+id/print"
+                    android:layout_width="@dimen/height_120"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/register"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_25"
+                    android:layout_marginBottom="@dimen/margin_35"
+                    android:layout_toRightOf="@+id/register"
+                    android:background="@drawable/button_animated"
+                    android:text="Print"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_18"
+                    android:layout_marginHorizontal="40dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+</layout>
