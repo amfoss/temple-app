@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="Confirm_Details"
+            type="org.amfoss.templeapp.activities.ConfirmDetails" />
+
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_view_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/pooja_id_conf" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="@string/customer_name_conf" />
+
+        <TextView
+            android:id="@+id/pooja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="@string/poojas" />
+
+        <TextView
+            android:id="@+id/pooja1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_45"
+            android:layout_marginLeft="@dimen/margin_35"
+            android:gravity="center_horizontal"
+            android:text="@string/pooja_a" />
+
+        <TextView
+            android:id="@+id/pooja2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_45"
+            android:gravity="center_horizontal"
+            android:text="@string/pooja_b"
+
+            />
+
+        <TextView
+            android:id="@+id/pooja3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_45"
+            android:gravity="center_horizontal"
+            android:text="@string/pooja_c"
+
+            />
+
+        <TableRow
+            android:id="@+id/hr1"
+            android:layout_width="360dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="#444"></TableRow>
+
+
+        <TextView
+            android:id="@+id/Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_45"
+            android:layout_marginTop="@dimen/margin_15"
+            android:gravity="center_horizontal"
+            android:text="@string/total"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/circle"
+                android:layout_width="@dimen/margin_45"
+                android:layout_height="@dimen/margin_45"
+                android:layout_marginHorizontal="150dp"
+                android:layout_marginTop="@dimen/margin_45"
+                android:background="@drawable/button_bg_round"
+                android:src="@drawable/ic_action_check1" />
+
+            <ImageButton
+                android:id="@+id/circle1"
+                android:layout_width="@dimen/margin_45"
+                android:layout_height="@dimen/margin_45"
+                android:layout_marginHorizontal="250dp"
+                android:layout_marginTop="@dimen/margin_45"
+                android:background="@drawable/button_bg_round"
+                android:src="@drawable/ic_action_clear" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</layout>

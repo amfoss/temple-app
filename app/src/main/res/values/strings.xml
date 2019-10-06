@@ -84,4 +84,18 @@
     <string name="tab_text_1">Pooja</string>
     <string name="tab_text_2">Income</string>
     <string name="tab_text_3">Expenses</string>
+    <string name="pooja_id">Pooja ID:</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="pooja_type">Pooja Type</string>
+    <string name="amount">Amount</string>
+    <string name="add_new_pooja">Add New Pooja</string>
+    <string name="register">Register</string>
+    <string name="print">Print</string>
+    <string name="pooja_id_conf">Pooja_ID</string>
+    <string name="poojas">Poojas</string>
+    <string name="customer_name_conf">Customer name</string>
+    <string name="pooja_a">Pooja A</string>
+    <string name="pooja_b">Pooja B</string>
+    <string name="pooja_c">Pooja C</string>
+    <string name="total">Total</string>
 </resources>
