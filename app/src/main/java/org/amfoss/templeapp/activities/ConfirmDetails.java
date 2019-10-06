@@ -1,9 +1,7 @@
 package org.amfoss.templeapp.activities;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.amfoss.templeapp.R;
 
 public class ConfirmDetails extends AppCompatActivity {
@@ -13,5 +11,4 @@ public class ConfirmDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirm_details);
     }
-
 }

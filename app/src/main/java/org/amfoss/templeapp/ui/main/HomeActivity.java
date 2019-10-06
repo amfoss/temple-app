@@ -100,7 +100,6 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(HomeActivity.this, AddPooja.class);
             startActivity(intent);
 
-
             // Handle the camera action
         } else if (id == R.id.nav_income_record) {
 
