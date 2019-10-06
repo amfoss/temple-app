@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <data>
+
+        <variable
+            name="Add_Pooja"
+            type="org.amfoss.templeapp.activities.AddPooja" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="213dp"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/pooja_id"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_alignRight="@+id/editText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="0dp"
+            android:ems="10"
+            android:hint="@string/customer_name"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText2"
+            android:layout_alignRight="@+id/editText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="0dp"
+            android:ems="10"
+            android:hint="@string/pooja_type"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText3"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_alignRight="@+id/editText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="204dp"
+            android:layout_marginLeft="204dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginEnd="-140dp"
+            android:layout_marginRight="-140dp"
+            android:ems="10"
+            android:hint="@string/amount"
+            android:inputType="number"
+            android:textSize="15dp" />
+
+        <Button
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText4"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="57dp"
+            android:background="@drawable/ic_action_add1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText4"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/add_new_pooja"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText4"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="157dp"
+            android:background="@drawable/button_animated"
+            android:onClick="confirm"
+            android:text="@string/register" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText4"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="157dp"
+            android:layout_toRightOf="@id/button"
+            android:background="@drawable/button_animated"
+            android:text="@string/print" />
+
+    </RelativeLayout>
+</layout>

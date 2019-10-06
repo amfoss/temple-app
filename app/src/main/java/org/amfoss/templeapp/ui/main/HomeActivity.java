@@ -1,6 +1,7 @@
 package org.amfoss.templeapp.ui.main;
 
 import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.activities.AddPooja;
 
 /** @author Chromicle. */
 public class HomeActivity extends AppCompatActivity
@@ -95,6 +97,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_pooja) {
+            Intent intent = new Intent(HomeActivity.this, AddPooja.class);
+            startActivity(intent);
+
             // Handle the camera action
         } else if (id == R.id.nav_income_record) {
 
