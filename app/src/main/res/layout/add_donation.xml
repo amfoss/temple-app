@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="Add_Donation"
+            type="org.amfoss.templeapp.activities.AddDonation" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="213dp"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/costumername"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/costumerpooja"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="213dp"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/Cause"
+            android:textSize="15dp"
+            tools:ignore="InvalidId" />
+
+        <EditText
+            android:id="@+id/money_donated"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="213dp"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="@string/Donation"
+            android:textSize="15dp"
+             />
+
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_below="@+id/money_donated"
+            android:layout_marginTop="@dimen/margin_25">
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="@dimen/height_120"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/money_donated"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:background="@drawable/button_animated"
+                android:text="Register"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_18"
+                android:layout_marginHorizontal="15dp"/>
+
+
+            <Button
+                android:id="@+id/print"
+                android:layout_width="@dimen/height_120"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/register"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginBottom="@dimen/margin_35"
+                android:layout_toRightOf="@+id/register"
+                android:background="@drawable/button_animated"
+                android:text="Print"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_18"
+                android:layout_marginHorizontal="25dp"
+                android:onClick="print" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

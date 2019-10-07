@@ -51,15 +51,16 @@
             android:label="Read all"
             android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".activities.AddPooja"
+            android:name=".activities.AddDonation"
             android:configChanges="orientation|screenSize"
-            android:label="Add Pooja"
+            android:label="Add donation"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.ConfirmDetails"
             android:configChanges="orientation|screenSize"
-            android:label="Confirm Details"
+            android:label="Confirm details"
             android:parentActivityName=".activities.MainActivity" />
+
     </application>
 
 </manifest>

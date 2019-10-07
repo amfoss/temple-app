@@ -98,4 +98,7 @@
     <string name="pooja_b">Pooja B</string>
     <string name="pooja_c">Pooja C</string>
     <string name="total">Total</string>
+    <string name="Donation">donation</string>
+    <string name="Cause">cause</string>
+    <string name="costumername">costumer_name</string>
 </resources>
