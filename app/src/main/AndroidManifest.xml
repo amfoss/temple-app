@@ -60,6 +60,11 @@
             android:configChanges="orientation|screenSize"
             android:label="Confirm details"
             android:parentActivityName=".activities.MainActivity" />
+        <activity
+            android:name=".activities.AddPooja"
+            android:configChanges="orientation|screenSize"
+            android:label="Add Pooja"
+            android:parentActivityName=".activities.MainActivity" />
 
     </application>
 
