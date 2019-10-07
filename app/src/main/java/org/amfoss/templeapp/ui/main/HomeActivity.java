@@ -1,5 +1,6 @@
 package org.amfoss.templeapp.ui.main;
 
+import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +17,14 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.activities.AddDonation;
 import org.amfoss.templeapp.activities.AddPooja;
 
 /** @author Chromicle. */
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private Object View;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,19 +98,21 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
+        FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.nav_pooja) {
             Intent intent = new Intent(HomeActivity.this, AddPooja.class);
             startActivity(intent);
-
             // Handle the camera action
         } else if (id == R.id.nav_income_record) {
 
         } else if (id == R.id.nav_expense_record) {
 
         } else if (id == R.id.nav_donate_money) {
-
+            Intent myIntent = new Intent(HomeActivity.this, AddDonation.class);
+            startActivity(myIntent);
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_log_out) {
