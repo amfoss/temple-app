@@ -20,7 +20,6 @@ import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.activities.AddDonation;
 import org.amfoss.templeapp.activities.AddPooja;
 
-
 /** @author Chromicle. */
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

@@ -65,7 +65,6 @@
             android:configChanges="orientation|screenSize"
             android:label="Add Pooja"
             android:parentActivityName=".activities.MainActivity" />
-
     </application>
 
 </manifest>

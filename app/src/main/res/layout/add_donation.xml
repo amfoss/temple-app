@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="Add_Donation"
             type="org.amfoss.templeapp.activities.AddDonation" />
@@ -16,8 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:orientation="vertical">
-
-
 
         <EditText
             android:id="@+id/name"
@@ -72,7 +68,6 @@
             android:textSize="15dp"
              />
 
-
         <LinearLayout android:orientation="horizontal"
             android:layout_width="wrap_content" android:layout_height="match_parent"
             android:layout_gravity="center_horizontal|center"
@@ -93,7 +88,6 @@
                 android:textSize="@dimen/text_18"
                 android:layout_marginHorizontal="15dp"/>
 
-
             <Button
                 android:id="@+id/print"
                 android:layout_width="@dimen/height_120"
@@ -110,7 +104,5 @@
                 android:layout_marginHorizontal="25dp"
                 android:onClick="print" />
         </LinearLayout>
-
     </LinearLayout>
-
 </layout>
