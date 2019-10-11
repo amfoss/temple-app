@@ -1,16 +1,18 @@
-package org.amfoss.templeapp.activities;
+package org.amfoss.templeapp.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.activities.ConfirmDetails;
 
-public class AddPooja extends AppCompatActivity {
+public class AddDonation extends AppCompatActivity {
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_pooja);
+        setContentView(R.layout.add_donation);
     }
 
     public void confirm(View view) {
