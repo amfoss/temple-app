@@ -101,4 +101,10 @@
     <string name="Donation">donation</string>
     <string name="Cause">cause</string>
     <string name="costumername">costumer_name</string>
+    <string name="pooja">POOJA</string>
+    <string name="income">INCOME</string>
+    <string name="expenses">EXPENSES</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

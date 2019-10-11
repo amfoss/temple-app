@@ -17,8 +17,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.activities.AddDonation;
-import org.amfoss.templeapp.activities.AddPooja;
 
 /** @author Chromicle. */
 public class HomeActivity extends AppCompatActivity

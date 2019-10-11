@@ -5,34 +5,19 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.PlaceholderFragment">
-
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_margin="@dimen/height_50"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Hello World!! This is Temple App"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+    tools:context=".ui.main.AddPooja">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/fab"
+        android:layout_above="@id/fab_pooja"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="Add your first pooja details"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_pooja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

@@ -51,7 +51,7 @@
             android:label="Read all"
             android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".activities.AddDonation"
+            android:name=".ui.main.AddDonation"
             android:configChanges="orientation|screenSize"
             android:label="Add donation"
             android:parentActivityName=".activities.MainActivity" />
@@ -61,7 +61,7 @@
             android:label="Confirm details"
             android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".activities.AddPooja"
+            android:name=".ui.main.AddPooja"
             android:configChanges="orientation|screenSize"
             android:label="Add Pooja"
             android:parentActivityName=".activities.MainActivity" />
