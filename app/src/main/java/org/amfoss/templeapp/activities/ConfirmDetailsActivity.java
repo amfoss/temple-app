@@ -1,10 +1,10 @@
-package org.amfoss.templeapp.ui.main;
+package org.amfoss.templeapp.activities;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import org.amfoss.templeapp.R;
 
-public class ConfirmDetails extends AppCompatActivity {
+public class ConfirmDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

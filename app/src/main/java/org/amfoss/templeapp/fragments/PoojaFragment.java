@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.ui.main;
+package org.amfoss.templeapp.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.activities.AddPoojaActivity;
 
 /** @author Chromicle. */
-public class IncomeFragment extends Fragment {
-
+public class PoojaFragment extends Fragment {
     private FloatingActionButton fab;
 
-    public IncomeFragment() {
+    public PoojaFragment() {
         // Required empty public constructor
     }
 
@@ -22,14 +22,14 @@ public class IncomeFragment extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_income, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_pooja, container, false);
 
-        fab = rootView.findViewById(R.id.fab_income);
+        fab = rootView.findViewById(R.id.fab_pooja);
         fab.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(getActivity(), AddDonation.class);
+                        Intent intent = new Intent(getActivity(), AddPoojaActivity.class);
                         startActivity(intent);
                     }
                 });
