@@ -1,110 +1,24 @@
 <resources>
     <string name="app_name">TempleApp</string>
-    <string name="read">Read</string>
-    <string name="read_all">Read All</string>
-    <string name="empty">"     "</string>
-    <string name="delete_donated">Selected to Delete donated money</string>
-    <string name="delete_pooja">Selected to Delete registered Pooja</string>
-    <string name="REG">REG</string>
-    <string name="DON">DON</string>
-    <string name="wait">Please Wait</string>
-    <string name="deleting">Deleting...</string>
-    <string name="id_value">IDVALUE</string>
-    <string name="json_obj">Json obj</string>
-    <string name="result">result</string>
-    <string name="selected_donate">Selected to Donate money</string>
-    <string name="selected_register">Selected to Register new pooja</string>
-    <string name="select_pooja_type">Select Pooja type</string>
-    <string name="PAID">PAID</string>
-    <string name="NOT_PAID">NOT PAID</string>
-    <string name="valid_ID">Please enter a valid employee ID</string>
-    <string name="insert">Inserting your values..</string>
-    <string name="exception">exception</string>
-    <string name="UPDATE">Selected to Update donated money details</string>
-    <string name="update_pooja">Selected to Update registered pooja details</string>
-    <string name="JSON">Fetching Data</string>
-    <string name="ID_value">IDVALUE</string>
-    <string name="user">user</string>
-    <string name="ID">ID:</string>
-    <string name="ID_">ID</string>
-    <string name="name">Name:</string>
-    <string name="name_">NAME</string>
-    <string name="type_of_pooja">Type of pooja:</string>
-    <string name="money_donated">Money Donated:</string>
-    <string name="paid_status">Paid Status:</string>
-    <string name="id_not_found">ID not found</string>
-    <string name="internet_warn">You need internet connection for this app. Please turn on mobile network or Wi-Fi in Settings.</string>
-    <string name="unable_to_connect">Unable to connect</string>
-    <string name="settings">Settings</string>
-    <string name="Cancel">Cancel</string>
-    <string name="fetch">Fetching all the Values</string>
-    <string name="records">records</string>
-    <string name="no_data">No data found</string>
-    <string name="enter_money_donated">Enter Money Donated</string>
-    <string name="people_who_registered_for_pooja">People who registered for pooja</string>
-    <string name="people_who_donated_money_for_temple">People who donated money for temple</string>
-    <string name="employee_id">Employee ID</string>
-    <string name="delete">Delete</string>
-    <string name="register_for_new_pooja">Register for new pooja</string>
-    <string name="donate_money_to_temple">Donate money to temple</string>
-    <string name="insert_">Insert</string>
-    <string name="list_of_donated_people_who_paid_only">People who are willing to donate and have paid</string>
-    <string name="list_of_donated_people_who_not_paid_only">People who are willing to donate and have not paid</string>
-    <string name="list_of_registered_poojas_people_who_paid_only">People who have registered and have paid</string>
-    <string name="list_of_registered_poojas_who_not_paid_only">People who have registered and have not paid</string>
-    <string name="find">Find</string>
-    <string name="update_registered_pooja_details">Update registered pooja details</string>
-    <string name="update_the_details_of_donated_money">Update the details of donated money</string>
-    <string name="update">Update</string>
-    <string name="error_notSelected">Please select any option</string>
-    <string name="fetch_name">name</string>
-    <string name="insert_data">Insert Data</string>
-    <string name="nothingselected">Nothing selected</string>
-    <string name="custompooja">Custom Pooja</string>
-    <string name="amount_in_rs">Amount:                                         Rs.</string>
-    <string name="search_donations">Selected to search for donations</string>
-    <string name="search_poojas">Selected to search for registered poojas</string>
-    <string name="all_donated_poojas">List of Donated Poojas:Both paid and not paid</string>
-    <string name="all_registered_poojas">List of registered Poojas:Both paid and not paid</string>
 
 
-    <string-array name="pooja_types">
-        <item>Type 1</item>
-        <item>Type 2</item>
-        <item>Type 3</item>
-        <item>Type 4</item>
-        <item>Custom Pooja</item>
-    </string-array>
-    <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_tabbed_activty">TabbedActivty</string>
-    <string name="tab_text_1">Pooja</string>
-    <string name="tab_text_2">Income</string>
-    <string name="tab_text_3">Expenses</string>
-    <string name="pooja_id">Pooja ID:</string>
-    <string name="customer_name">Customer Name</string>
-    <string name="pooja_type">Pooja Type</string>
     <string name="amount">Amount</string>
     <string name="add_new_pooja">Add New Pooja</string>
     <string name="register">Register</string>
     <string name="print">Print</string>
-    <string name="pooja_id_conf">Pooja_ID</string>
     <string name="poojas">Poojas</string>
     <string name="customer_name_conf">Customer name</string>
     <string name="pooja_a">Pooja A</string>
     <string name="pooja_b">Pooja B</string>
     <string name="pooja_c">Pooja C</string>
     <string name="total">Total</string>
-    <string name="Donation">donation</string>
-    <string name="Cause">cause</string>
-    <string name="costumername">costumer_name</string>
     <string name="pooja">POOJA</string>
     <string name="income">INCOME</string>
     <string name="expenses">EXPENSES</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

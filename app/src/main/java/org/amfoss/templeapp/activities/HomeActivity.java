@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.ui.main;
+package org.amfoss.templeapp.activities;
 
 import android.app.FragmentManager;
 import android.app.SearchManager;
@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.fragments.SectionsPagerAdapter;
 
 /** @author Chromicle. */
 public class HomeActivity extends AppCompatActivity
@@ -101,7 +102,7 @@ public class HomeActivity extends AppCompatActivity
         FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.nav_pooja) {
-            Intent intent = new Intent(HomeActivity.this, AddPooja.class);
+            Intent intent = new Intent(HomeActivity.this, AddPoojaActivity.class);
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_income_record) {
@@ -109,7 +110,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_expense_record) {
 
         } else if (id == R.id.nav_donate_money) {
-            Intent myIntent = new Intent(HomeActivity.this, AddDonation.class);
+            Intent myIntent = new Intent(HomeActivity.this, AddDonationActivity.class);
             startActivity(myIntent);
         } else if (id == R.id.nav_settings) {
 

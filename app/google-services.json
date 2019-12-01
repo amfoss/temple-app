@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "816746780698",
+    "firebase_url": "https://templeapp-9c74e.firebaseio.com",
+    "project_id": "templeapp-9c74e",
+    "storage_bucket": "templeapp-9c74e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816746780698:android:87e3c2e4deb3fecdcd19a3",
+        "android_client_info": {
+          "package_name": "org.amfoss.templeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816746780698-77dk0tm9ql3mfcm5qga3u6suj3ij810k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.amfoss.templeapp",
+            "certificate_hash": "d49ad4300580576fe419125421373605b0a7a47c"
+          }
+        },
+        {
+          "client_id": "816746780698-773bqm5isnimi55pdfuk2k6ie28tga52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChKq1LaJ2O-3Og3bpYF1qpln8WnmpaYnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816746780698-773bqm5isnimi55pdfuk2k6ie28tga52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

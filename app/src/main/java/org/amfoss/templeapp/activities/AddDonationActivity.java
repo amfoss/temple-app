@@ -1,13 +1,12 @@
-package org.amfoss.templeapp.ui.main;
+package org.amfoss.templeapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.activities.ConfirmDetails;
 
-public class AddDonation extends AppCompatActivity {
+public class AddDonationActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -16,7 +15,7 @@ public class AddDonation extends AppCompatActivity {
     }
 
     public void confirm(View view) {
-        Intent intent = new Intent(this, ConfirmDetails.class);
+        Intent intent = new Intent(this, ConfirmDetailsActivity.class);
         startActivity(intent);
     }
 }
