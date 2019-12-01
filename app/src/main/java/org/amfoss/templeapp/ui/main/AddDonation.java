@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.activities.ConfirmDetails;
 
 public class AddDonation extends AppCompatActivity {
 

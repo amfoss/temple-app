@@ -4,12 +4,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorSecondary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="radioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
-        <item name="android:colorControlNormal">@color/orange</item>
+        <item name="android:colorControlNormal">@color/colorPrimary</item>
         <item name="android:colorControlActivated">@color/colorPrimary</item>
         <item name="android:colorControlHighlight">@color/lightpink</item>
         <item name="android:textColorPrimaryDisableOnly">@color/black</item>
