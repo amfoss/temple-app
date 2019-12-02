@@ -20,7 +20,6 @@
         android:hint="Eg: Ravi shankar"
         android:id="@+id/editTextDate"
         android:imeOptions="actionDone"
-        android:inputType="text"
         android:layout_height="55dp"
         android:layout_marginBottom="@dimen/margin_35"
         android:layout_marginLeft="@dimen/margin_35"

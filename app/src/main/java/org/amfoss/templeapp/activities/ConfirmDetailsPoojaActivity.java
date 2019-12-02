@@ -18,11 +18,10 @@ import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.utils.PoojaUtils;
 import org.amfoss.templeapp.utils.UserUtils;
 
-
 /**
- * @author Chromicle (ajayprabhakar369@gmail.com)
- * @since 02/12/2019
- */
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 02/12/2019
+*/
 public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
 
     @BindView(R.id.textViewPoojaAmount)
