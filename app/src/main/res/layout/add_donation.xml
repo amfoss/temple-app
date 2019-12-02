@@ -1,116 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_35"
         android:layout_marginTop="@dimen/margin_35"
-        android:layout_width="wrap_content"
         android:text="Customer Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:layout_marginRight="@dimen/margin_35"
+        android:layout_marginBottom="@dimen/margin_35"
         android:background="@drawable/edittext_background"
         android:ems="10"
         android:focusable="true"
         android:hint="Eg: Ravi shankar"
-        android:id="@+id/editTextDate"
         android:imeOptions="actionDone"
-        android:layout_height="55dp"
-        android:layout_marginBottom="@dimen/margin_35"
-        android:layout_marginLeft="@dimen/margin_35"
-        android:layout_marginRight="@dimen/margin_35"
-        android:layout_width="match_parent"
+        android:inputType="date"
         android:padding="12dp"
         android:shadowColor="#000000"
         android:textSize="15sp" />
 
 
     <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_35"
-        android:layout_width="wrap_content"
         android:text="Cause"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
-        android:background="@drawable/edittext_background"
-        android:hint="Eg: For temple development"
         android:id="@+id/editTextPilgrimName"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginLeft="@dimen/margin_35"
         android:layout_marginRight="@dimen/margin_35"
-        android:layout_width="match_parent"
+        android:background="@drawable/edittext_background"
+        android:hint="Eg: For temple development"
+        android:inputType="text"
         android:padding="12dp"
         android:textSize="15sp" />
 
     <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_35"
         android:layout_marginTop="@dimen/margin_35"
-        android:layout_width="wrap_content"
         android:text="Amount"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
+        android:id="@+id/editTextPoojaName"
+        android:layout_width="160dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/edittext_background"
         android:hint="Eg: 400"
-        android:id="@+id/editTextPoojaName"
         android:inputType="number"
-        android:layout_height="51dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="35dp"
-        android:layout_width="160dp"
         android:padding="12dp"
         android:textSize="15sp" />
 
 
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:background="@drawable/ic_action_add1"
+            android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="40dp"
-            android:layout_width="52dp" />
+            android:background="@drawable/ic_action_add1" />
 
         <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="39dp"
-            android:layout_width="wrap_content"
             android:text="Add new donation"
             android:textSize="15sp" />
     </LinearLayout>
 
 
     <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_width="match_parent"
         android:orientation="horizontal">
 
         <Button
-            android:background="@drawable/button_animated"
             android:id="@+id/button2"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:layout_marginStart="70dp"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/button_animated"
             android:text="@string/print" />
 
         <Button
-            android:background="@drawable/button_animated"
             android:id="@+id/btnRegister"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_animated"
             android:onClick="confirm"
             android:text="@string/register" />
     </LinearLayout>

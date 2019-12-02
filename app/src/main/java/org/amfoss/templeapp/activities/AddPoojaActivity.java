@@ -24,7 +24,7 @@ import org.amfoss.templeapp.utils.UserUtils;
 */
 public class AddPoojaActivity extends AppCompatActivity {
 
-    @BindView(R.id.editText_date)
+    @BindView(R.id.editTextDate)
     EditText editTextDate;
 
     @BindView(R.id.btn_date)
