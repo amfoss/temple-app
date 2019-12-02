@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom Rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>
+        Custom rule-set for Android application
+    </description>
+
+    <exclude-pattern>.*/R.java</exclude-pattern>
+    <exclude-pattern>.*/gen/.*</exclude-pattern>
+
+    <rule ref="rulesets/java/android.xml" />
+    <rule ref="rulesets/java/clone.xml" />
+    <rule ref="rulesets/java/finalizers.xml" />
+    <rule ref="rulesets/java/imports.xml">
+        <exclude name="TooManyStaticImports" />
+    </rule>
+    <rule ref="rulesets/java/logging-java.xml" />
+    <rule ref="rulesets/java/braces.xml" />
+    <rule ref="rulesets/java/strings.xml">
+        <exclude name="AvoidDuplicateLiterals" />
+        <exclude name="InefficientEmptyStringCheck" />
+        <exclude name="AppendCharacterWithChar" />
+        <exclude name="InefficientStringBuffering" />
+        <exclude name="ConsecutiveAppendsShouldReuse" />
+        <exclude name="InsufficientStringBufferDeclaration" />
+        <exclude name="AvoidStringBufferField" />
+    </rule>
+    <rule ref="rulesets/java/basic.xml">
+        <exclude name="DontUseFloatTypeForLoopIndices" />
+        <exclude name="CollapsibleIfStatements" />
+        <exclude name="SimplifiedTernary" />
+        <exclude name="AvoidBranchingStatementAsLastInLoop" />
+        <exclude name="ReturnFromFinallyBlock" />
+    </rule>
+    <rule ref="category/java/design.xml">
+        <exclude name="AvoidCatchingGenericException" />
+        <exclude name="AvoidThrowingRawExceptionTypes" />
+        <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal" />
+        <exclude name="CollapsibleIfStatements" />
+        <exclude name="CyclomaticComplexity" />
+        <exclude name="DataClass" />
+        <exclude name="ExcessiveImports" />
+        <exclude name="ExcessiveMethodLength" />
+        <exclude name="GodClass" />
+        <exclude name="ImmutableField" />
+        <exclude name="LawOfDemeter" />
+        <exclude name="NcssCount" />
+        <exclude name="NPathComplexity" />
+        <exclude name="SignatureDeclareThrowsException" />
+        <exclude name="SingularField" />
+        <exclude name="SwitchDensity" />
+        <exclude name="TooManyFields" />
+        <exclude name="TooManyMethods" />
+        <exclude name="UseObjectForClearerAPI" />
+    </rule>
+    <rule ref="rulesets/java/optimizations.xml">
+        <exclude name="LocalVariableCouldBeFinal" />
+        <exclude name="MethodArgumentCouldBeFinal" />
+        <exclude name="AvoidInstantiatingObjectsInLoops" />
+        <exclude name="RedundantFieldInitializer" />
+        <exclude name="PrematureDeclaration" />
+        <exclude name="UseStringBufferForStringAppends" />
+        <exclude name="SimplifyStartsWith" />
+        <exclude name="UnnecessaryWrapperObjectCreation" />
+    </rule>
+    <rule ref="rulesets/java/strictexception.xml">
+        <exclude name="SignatureDeclareThrowsException" />
+        <exclude name="AvoidCatchingGenericException" />
+        <exclude name="AvoidThrowingRawExceptionTypes" />
+        <exclude name="ExceptionAsFlowControl" />
+        <exclude name="AvoidCatchingNPE" />
+        <exclude name="AvoidCatchingThrowable" />
+    </rule>
+    <rule ref="rulesets/java/typeresolution.xml">
+        <exclude name="SignatureDeclareThrowsException" />
+        <exclude name="LooseCoupling" />
+    </rule>
+    <rule ref="rulesets/java/unnecessary.xml">
+        <!-- Decided not to use in #1519 -->
+        <exclude name="UselessParentheses" />
+    </rule>
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="AtLeastOneConstructor" />
+        <exclude name="CallSuperInConstructor" />
+        <exclude name="ClassNamingConventions" />
+        <exclude name="CommentDefaultAccessModifier" />
+        <exclude name="ConfusingTernary" />
+        <exclude name="DefaultPackage" />
+        <exclude name="FieldDeclarationsShouldBeAtStartOfClass" />
+        <exclude name="FieldNamingConventions" />
+        <exclude name="IdenticalCatchBranches" />
+        <exclude name="LinguisticNaming" />
+        <exclude name="LocalVariableCouldBeFinal" />
+        <exclude name="LongVariable" />
+        <exclude name="MethodArgumentCouldBeFinal" />
+        <exclude name="OnlyOneReturn" />
+        <exclude name="ShortClassName" />
+        <exclude name="ShortMethodName" />
+        <exclude name="ShortVariable" />
+        <exclude name="TooManyStaticImports" />
+        <exclude name="UnnecessaryConstructor" />
+        <exclude name="UselessParentheses" />
+    </rule>
+    <rule ref="rulesets/java/unusedcode.xml" />
+</ruleset>

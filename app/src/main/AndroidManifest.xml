@@ -31,7 +31,8 @@
             android:label="Add donation"
             android:parentActivityName=".activities.HomeActivity" />
         <activity
-            android:name=".activities.ConfirmDetailsActivity"
+            android:name=".activities.ConfirmDetailsPoojaActivity"
+            android:parentActivityName=".activities.AddPoojaActivity"
             android:configChanges="orientation|screenSize"
             android:label="Confirm details" />
         <activity

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -16,24 +18,54 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.fragments.SectionsPagerAdapter;
+import org.amfoss.templeapp.adapters.SectionsPagerAdapter;
+import org.amfoss.templeapp.utils.UserUtils;
 
-/** @author Chromicle. */
+/**
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 02/12/2019
+*/
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Object View;
+    private Toolbar toolbar;
+    private TextView userName;
+    private TextView userEmail;
+    private ImageView userImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setNavigationView();
+        setViewPagers();
+    }
+
+    private void setViewPagers() {
+        SectionsPagerAdapter sectionsPagerAdapter =
+                new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+    }
+
+    private void setNavigationView() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        android.view.View headerview = navigationView.getHeaderView(0);
+        userName = headerview.findViewById(R.id.userName);
+        userEmail = headerview.findViewById(R.id.userEmail);
+        userImage = headerview.findViewById(R.id.userImage);
+
         ActionBarDrawerToggle toggle =
                 new ActionBarDrawerToggle(
                         this,
@@ -41,16 +73,15 @@ public class HomeActivity extends AppCompatActivity
                         toolbar,
                         R.string.navigation_drawer_open,
                         R.string.navigation_drawer_close);
+
+        UserUtils user = new UserUtils();
+
+        userName.setText("Namaskaram " + user.getUserName());
+        userEmail.setText(user.getUserEmail());
+
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-        SectionsPagerAdapter sectionsPagerAdapter =
-                new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -115,11 +146,10 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_log_out) {
-
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            finishAffinity();
         }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }

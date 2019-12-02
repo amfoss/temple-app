@@ -15,7 +15,7 @@ public class AddDonationActivity extends AppCompatActivity {
     }
 
     public void confirm(View view) {
-        Intent intent = new Intent(this, ConfirmDetailsActivity.class);
+        Intent intent = new Intent(this, ConfirmDetailsPoojaActivity.class);
         startActivity(intent);
     }
 }
