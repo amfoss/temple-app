@@ -38,7 +38,7 @@ public class UserUtils {
     }
 
     public String getUserName() {
-        return user.getDisplayName();
+        return userName;
     }
 
     public void setUser(FirebaseUser user) {
