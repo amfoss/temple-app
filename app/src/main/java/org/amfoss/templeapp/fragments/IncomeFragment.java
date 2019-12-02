@@ -10,7 +10,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.activities.AddDonationActivity;
 
-/** @author Chromicle. */
+/**
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 17/10/2019
+*/
 public class IncomeFragment extends Fragment {
 
     private FloatingActionButton fab;

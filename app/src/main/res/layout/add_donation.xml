@@ -18,7 +18,7 @@
         android:ems="10"
         android:focusable="true"
         android:hint="Eg: Ravi shankar"
-        android:id="@+id/editText"
+        android:id="@+id/editTextDate"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:layout_height="55dp"
@@ -41,7 +41,7 @@
     <EditText
         android:background="@drawable/edittext_background"
         android:hint="Eg: For temple development"
-        android:id="@+id/editText2"
+        android:id="@+id/editTextPilgrimName"
         android:layout_height="51dp"
         android:layout_marginLeft="@dimen/margin_35"
         android:layout_marginRight="@dimen/margin_35"
@@ -60,7 +60,7 @@
     <EditText
         android:background="@drawable/edittext_background"
         android:hint="Eg: 400"
-        android:id="@+id/editText3"
+        android:id="@+id/editTextPoojaName"
         android:inputType="number"
         android:layout_height="51dp"
         android:layout_marginEnd="10dp"
@@ -109,7 +109,7 @@
 
         <Button
             android:background="@drawable/button_animated"
-            android:id="@+id/button"
+            android:id="@+id/btnRegister"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:onClick="confirm"

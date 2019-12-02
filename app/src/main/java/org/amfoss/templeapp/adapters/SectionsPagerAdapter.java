@@ -1,12 +1,18 @@
-package org.amfoss.templeapp.fragments;
+package org.amfoss.templeapp.adapters;
 
 import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.fragments.ExpensesFragment;
+import org.amfoss.templeapp.fragments.IncomeFragment;
+import org.amfoss.templeapp.fragments.PoojaFragment;
 
-/** @author Chromicle. */
+/**
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 17/10/2019
+*/
 
 /**
 * A [FragmentPagerAdapter] that returns a fragment corresponding to one of the sections/tabs/pages.

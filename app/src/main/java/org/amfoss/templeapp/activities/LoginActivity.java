@@ -13,6 +13,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.amfoss.templeapp.R;
 
+/**
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 17/10/2019
+*/
 public class LoginActivity extends AppCompatActivity {
 
     Button signInButton;
