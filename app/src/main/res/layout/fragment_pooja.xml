@@ -6,22 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".activities.AddPoojaActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/poojaRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:listitem="@layout/individual_pooja" />
+
+    <ProgressBar
+        android:id="@+id/poojaprogressBarLoading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fab_pooja"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
     <TextView
+        android:id="@+id/textViewAddPooja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/fab_pooja"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Add your first pooja details"/>
+        android:text="Add your first pooja details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_pooja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add" />
+
 
 </RelativeLayout>

@@ -46,6 +46,7 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
     DatabaseReference poojaDb;
 
     private String poojaDate, pilgrimName, poojaName, poojaAmount;
+    private static String DB_POOJAS_NAME = "poojas";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +88,7 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
 
         PoojaUtils poojaDetails = new PoojaUtils(poojaDate, pilgrimName, poojaName, poojaAmount);
         poojaDb
-                .child("poojas")
+                .child(DB_POOJAS_NAME)
                 .child(id)
                 .setValue(poojaDetails)
                 .addOnSuccessListener(
