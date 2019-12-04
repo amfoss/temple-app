@@ -7,6 +7,11 @@ package org.amfoss.templeapp.utils;
 public class DonationUtils {
     private String donationDate, pilgrimName, donationCause, donationAmount;
 
+    public DonationUtils(){
+
+    }
+
+    
     public DonationUtils(
             String donationDate, String pilgrimName, String donationCause, String donationAmount) {
         this.donationDate = donationDate;
