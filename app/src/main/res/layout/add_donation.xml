@@ -10,11 +10,50 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_35"
         android:layout_marginTop="@dimen/margin_35"
-        android:text="Customer Name"
+        android:text="Donation given date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginLeft="@dimen/margin_35"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="@dimen/margin_35"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:focusable="true"
+            android:hint="Eg: 02-09-2019"
+            android:imeOptions="actionDone"
+            android:padding="12dp"
+            android:shadowColor="#000000"
+            android:textSize="15sp"
+            android:inputType="date" />
+
+        <Button
+            android:id="@+id/btn_date"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/button_animated"
+            android:text="SELECT DATE" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:text="Pilgrim Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/editTextPilgrimName"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginLeft="@dimen/margin_35"
@@ -39,7 +78,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
-        android:id="@+id/editTextPilgrimName"
+        android:id="@+id/editTextDonationCause"
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginLeft="@dimen/margin_35"
@@ -59,7 +98,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
-        android:id="@+id/editTextPoojaName"
+        android:id="@+id/editTextDonationAmount"
         android:layout_width="160dp"
         android:layout_height="51dp"
         android:layout_marginStart="35dp"
@@ -100,7 +139,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonPrint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
@@ -113,7 +152,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_animated"
-            android:onClick="confirm"
             android:text="@string/register" />
     </LinearLayout>
 </LinearLayout>
