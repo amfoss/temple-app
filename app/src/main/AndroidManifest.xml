@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.ConfirmDetailsDonationActivity"></activity>
         <activity
             android:name=".activities.HomeActivity"
             android:label="TempleApp"
@@ -32,9 +33,9 @@
             android:parentActivityName=".activities.HomeActivity" />
         <activity
             android:name=".activities.ConfirmDetailsPoojaActivity"
-            android:parentActivityName=".activities.AddPoojaActivity"
             android:configChanges="orientation|screenSize"
-            android:label="Confirm details" />
+            android:label="Confirm details"
+            android:parentActivityName=".activities.AddPoojaActivity" />
         <activity
             android:name=".activities.AddPoojaActivity"
             android:configChanges="orientation|screenSize"
