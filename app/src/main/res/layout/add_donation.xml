@@ -64,7 +64,6 @@
         android:focusable="true"
         android:hint="Eg: Ravi shankar"
         android:imeOptions="actionDone"
-        android:inputType="date"
         android:padding="12dp"
         android:shadowColor="#000000"
         android:textSize="15sp" />
