@@ -9,38 +9,32 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import java.util.ArrayList;
+import java.util.List;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.activities.AddDonationActivity;
 import org.amfoss.templeapp.adapters.DonationAdapter;
 import org.amfoss.templeapp.utils.DonationUtils;
 import org.amfoss.templeapp.utils.UserUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
- * @author Chromicle (ajayprabhakar369@gmail.com)
- * @since 17/10/2019
- */
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 17/10/2019
+*/
 public class IncomeFragment extends Fragment {
-
 
     @BindView(R.id.fab_income)
     FloatingActionButton fab;
@@ -53,7 +47,6 @@ public class IncomeFragment extends Fragment {
 
     @BindView(R.id.textViewAddIncome)
     TextView textViewAddIncome;
-
 
     private List<DonationUtils> donationUtilsArrayList;
     private DonationAdapter donationAdapter;
@@ -77,7 +70,6 @@ public class IncomeFragment extends Fragment {
         fetchDonations();
         return rootView;
     }
-
 
     private void fetchDonations() {
 

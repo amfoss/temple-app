@@ -5,25 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import java.util.List;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.utils.DonationUtils;
 
-import java.util.List;
-
 /**
- * @author by Chromicle (ajayprabhakar369@gmail.com)
- * @since 12/4/2019
- */
+* @author by Chromicle (ajayprabhakar369@gmail.com)
+* @since 12/4/2019
+*/
 public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.DonationViewHolder> {
-
 
     Context context;
     List<DonationUtils> DonationList;
-
 
     public DonationAdapter(Context context, List<DonationUtils> donationList) {
         this.context = context;
@@ -35,7 +30,6 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
     public DonationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new DonationAdapter.DonationViewHolder(
                 LayoutInflater.from(context).inflate(R.layout.individual_income, parent, false));
-
     }
 
     @Override
@@ -46,7 +40,6 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
         holder.listDonationCause.setText(donation.getDonationCause());
         holder.listDonationAmount.setText(donation.getDonationAmount());
         holder.listDonationDate.setText(donation.getDonationDate());
-
     }
 
     @Override
