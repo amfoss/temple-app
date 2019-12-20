@@ -99,4 +99,4 @@ Also, any registration can be deleted by giving the ID of the user whose registr
 
 
 ## License
-This project is licensed under the [MIT LICENSE](https://github.com/amfoss/TempleApp/blob/master/LICENSE).
+This project is licensed under the [GNU General Public License v3.0](https://github.com/amfoss/TempleApp/blob/master/LICENSE).
