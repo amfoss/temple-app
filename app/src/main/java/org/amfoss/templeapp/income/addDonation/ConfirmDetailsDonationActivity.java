@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.activities;
+package org.amfoss.templeapp.income.addDonation;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,23 +15,18 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.utils.PoojaUtils;
-import org.amfoss.templeapp.utils.UserUtils;
+import org.amfoss.templeapp.home.UserModel;
+import org.amfoss.templeapp.income.adapter.DonationModel;
 
-/**
-* @author Chromicle (ajayprabhakar369@gmail.com)
-* @since 02/12/2019
-*/
-public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
+public class ConfirmDetailsDonationActivity extends AppCompatActivity {
+    @BindView(R.id.textViewDonationAmount)
+    TextView textViewDonationAmount;
 
-    @BindView(R.id.textViewPoojaAmount)
-    TextView textViewPoojaAmount;
+    @BindView(R.id.textViewDonationDate)
+    TextView textViewDonationDate;
 
-    @BindView(R.id.textViewPoojaDate)
-    TextView textViewPoojaDate;
-
-    @BindView(R.id.textViewPoojaName)
-    TextView textViewPoojaName;
+    @BindView(R.id.textViewDonationCause)
+    TextView textViewDonationCause;
 
     @BindView(R.id.textViewPilgrimName)
     TextView textViewPilgrimName;
@@ -42,16 +37,15 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
     @BindView(R.id.btnDetailsInCorrect)
     ImageButton btnDetailsInCorrect;
 
-    Bundle bundle;
-    DatabaseReference poojaDb;
+    DatabaseReference donationDb;
 
-    private String poojaDate, pilgrimName, poojaName, poojaAmount;
-    private static String DB_POOJAS_NAME = "poojas";
+    private String donationDate, pilgrimName, donationCause, donationAmount;
+    private static String DB_POOJAS_NAME = "donations";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.confirm_details_pooja);
+        setContentView(R.layout.confirm_details_donation);
 
         ButterKnife.bind(this);
 
@@ -61,41 +55,42 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
     }
 
     private void createFirebaseInstance() {
-        UserUtils user = new UserUtils();
+        UserModel user = new UserModel();
         String dbUserName = user.getDbUserName();
-        poojaDb = FirebaseDatabase.getInstance().getReference(dbUserName);
+        donationDb = FirebaseDatabase.getInstance().getReference(dbUserName);
     }
 
     private void setTextViews() {
         textViewPilgrimName.setText(pilgrimName);
-        textViewPoojaAmount.setText(poojaAmount);
-        textViewPoojaDate.setText(poojaDate);
-        textViewPoojaName.setText(poojaName);
+        textViewDonationAmount.setText(donationAmount);
+        textViewDonationDate.setText(donationDate);
+        textViewDonationCause.setText(donationCause);
     }
 
     private void getPoojaDetails() {
-        bundle = getIntent().getExtras();
 
-        poojaDate = getIntent().getStringExtra("poojaDate");
-        poojaName = getIntent().getStringExtra("poojaName");
-        poojaAmount = getIntent().getStringExtra("poojaAmount");
+        donationDate = getIntent().getStringExtra("donationDate");
+        donationCause = getIntent().getStringExtra("donationCause");
+        donationAmount = getIntent().getStringExtra("donationAmount");
         pilgrimName = getIntent().getStringExtra("pilgrimName");
     }
 
     @OnClick(R.id.btnDetailsCorrect)
-    public void uploadPoojaDetails(View view) {
-        String id = poojaDb.push().getKey();
+    public void uploadDonationDetails(View view) {
+        String id = donationDb.push().getKey();
 
-        PoojaUtils poojaDetails = new PoojaUtils(poojaDate, pilgrimName, poojaName, poojaAmount);
-        poojaDb
+        DonationModel donationDetails =
+                new DonationModel(donationDate, pilgrimName, donationCause, donationAmount);
+        donationDb
                 .child(DB_POOJAS_NAME)
                 .child(id)
-                .setValue(poojaDetails)
+                .setValue(donationDetails)
                 .addOnSuccessListener(
                         new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(ConfirmDetailsPoojaActivity.this, "Pooja Added", Toast.LENGTH_SHORT)
+                                Toast.makeText(
+                                                ConfirmDetailsDonationActivity.this, "Donation Added", Toast.LENGTH_SHORT)
                                         .show();
                             }
                         })
@@ -103,7 +98,8 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
                         new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(ConfirmDetailsPoojaActivity.this, e.getMessage(), Toast.LENGTH_SHORT)
+                                Toast.makeText(
+                                                ConfirmDetailsDonationActivity.this, e.getMessage(), Toast.LENGTH_SHORT)
                                         .show();
                             }
                         });

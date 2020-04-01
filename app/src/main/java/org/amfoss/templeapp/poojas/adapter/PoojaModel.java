@@ -1,15 +1,15 @@
-package org.amfoss.templeapp.utils;
+package org.amfoss.templeapp.poojas.adapter;
 
 /**
 * @author by Chromicle (ajayprabhakar369@gmail.com)
 * @since 12/12/2019
 */
-public class PoojaUtils {
-    String poojaDate, pilgrimName, poojaName, poojaAmount;
+public class PoojaModel {
+    private String poojaDate, pilgrimName, poojaName, poojaAmount;
 
-    public PoojaUtils() {}
+    public PoojaModel() {}
 
-    public PoojaUtils(String poojaDate, String pilgrimName, String poojaName, String poojaAmount) {
+    public PoojaModel(String poojaDate, String pilgrimName, String poojaName, String poojaAmount) {
         this.poojaDate = poojaDate;
         this.pilgrimName = pilgrimName;
         this.poojaName = poojaName;

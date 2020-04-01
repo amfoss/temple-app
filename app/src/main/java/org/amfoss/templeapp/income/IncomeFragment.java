@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.fragments;
+package org.amfoss.templeapp.income;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -25,10 +27,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.activities.AddDonationActivity;
-import org.amfoss.templeapp.adapters.DonationAdapter;
-import org.amfoss.templeapp.utils.DonationUtils;
-import org.amfoss.templeapp.utils.UserUtils;
+import org.amfoss.templeapp.home.UserModel;
+import org.amfoss.templeapp.income.adapter.DonationAdapter;
+import org.amfoss.templeapp.income.adapter.DonationModel;
+import org.amfoss.templeapp.income.addDonation.AddDonationActivity;
+import org.amfoss.templeapp.income.viewmodels.IncomeViewModel;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)
@@ -48,10 +51,11 @@ public class IncomeFragment extends Fragment {
     @BindView(R.id.textViewAddIncome)
     TextView textViewAddIncome;
 
-    private List<DonationUtils> donationUtilsArrayList;
+    private List<DonationModel> donationUtilsArrayList;
     private DonationAdapter donationAdapter;
 
     private DatabaseReference donationDb;
+    IncomeViewModel incomeViewModel;
 
     public IncomeFragment() {
         // Required empty public constructor
@@ -65,10 +69,36 @@ public class IncomeFragment extends Fragment {
 
         ButterKnife.bind(this, rootView);
 
-        addFirebaseInstance();
+        incomeRecycleView.setHasFixedSize(true);
+        incomeRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        fetchDonations();
+        incomeViewModel = ViewModelProviders.of(requireActivity()).get(IncomeViewModel.class);
+        incomeViewModel.init(getContext());
+
+        updateRecycleView();
         return rootView;
+    }
+
+    private void updateRecycleView() {
+        incomeViewModel
+                .getDonationsList()
+                .observe(
+                        getViewLifecycleOwner(),
+                        new Observer<ArrayList<DonationModel>>() {
+                            @Override
+                            public void onChanged(ArrayList<DonationModel> DonationModels) {
+                                donationAdapter.notifyDataSetChanged();
+
+                                incomeProgressBar.setVisibility(incomeViewModel.displayProgress());
+                                if (donationAdapter.getItemCount() > 0) {
+                                    changeFabPosition();
+                                }
+                            }
+                        });
+
+        donationAdapter =
+                new DonationAdapter(getActivity(), incomeViewModel.getDonationsList().getValue());
+        incomeRecycleView.setAdapter(donationAdapter);
     }
 
     private void fetchDonations() {
@@ -82,7 +112,7 @@ public class IncomeFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            DonationUtils donationValue = postSnapshot.getValue(DonationUtils.class);
+                            DonationModel donationValue = postSnapshot.getValue(DonationModel.class);
                             donationUtilsArrayList.add(donationValue);
                         }
 
@@ -100,7 +130,7 @@ public class IncomeFragment extends Fragment {
     }
 
     private void addFirebaseInstance() {
-        UserUtils user = new UserUtils();
+        UserModel user = new UserModel();
         String dbUserName = user.getDbUserName();
         donationDb = FirebaseDatabase.getInstance().getReference(dbUserName).child("donations");
     }

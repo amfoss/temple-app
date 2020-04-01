@@ -1,13 +1,12 @@
-package org.amfoss.templeapp.activities;
+package org.amfoss.templeapp.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import java.util.Arrays;
 import java.util.List;
@@ -19,23 +18,17 @@ import org.amfoss.templeapp.R;
 */
 public class LoginActivity extends AppCompatActivity {
 
-    Button signInButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        layoutsInIt();
-        signInButton.setOnClickListener(new UserSignIn());
-        isUserSignin();
+        isUserSignedIn();
     }
 
-    private void layoutsInIt() {
-        signInButton = findViewById(R.id.sign_in_button);
-    }
-
-    private void isUserSignin() {
+    @OnClick(R.id.sign_in_button)
+    public void isUserSignedIn() {
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             List<AuthUI.IdpConfig> signInIntentBuilders =
                     Arrays.asList(
@@ -55,19 +48,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private class UserSignIn implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            isUserSignin();
-        }
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 200) {
-            IdpResponse response = IdpResponse.fromResultIntent(data);
             if (resultCode == RESULT_OK) {
                 finish();
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));

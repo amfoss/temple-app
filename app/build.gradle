@@ -74,4 +74,8 @@ dependencies {
 
     //cardView
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    //MVVM
+    implementation "android.arch.lifecycle:runtime:1.1.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 }

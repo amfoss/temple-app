@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.activities;
+package org.amfoss.templeapp.poojas.addPooja;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -16,9 +16,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.utils.UserUtils;
+import org.amfoss.templeapp.home.UserModel;
 
-public class AddDonationActivity extends AppCompatActivity {
+/**
+* @author Chromicle (ajayprabhakar369@gmail.com)
+* @since 02/12/2019
+*/
+public class AddPoojaActivity extends AppCompatActivity {
+
+    @BindView(R.id.editTextDate)
+    EditText editTextDate;
 
     @BindView(R.id.btn_date)
     Button btnDate;
@@ -26,35 +33,31 @@ public class AddDonationActivity extends AppCompatActivity {
     @BindView(R.id.btnRegister)
     Button btnRegister;
 
-    @BindView(R.id.editTextDonationCause)
-    EditText editTextDonationCause;
-
-    @BindView(R.id.editTextDonationAmount)
-    EditText editTextDonationAmount;
+    @BindView(R.id.btnPrint)
+    Button btnPrint;
 
     @BindView(R.id.editTextPilgrimName)
-    EditText editTextPlgrimName;
+    EditText editTextPilgrimName;
 
-    @BindView(R.id.editTextDate)
-    EditText editTextDate;
+    @BindView(R.id.editTextPoojaName)
+    EditText editTextPoojaName;
 
-    private UserUtils user;
+    @BindView(R.id.editTextPoojaAmount)
+    EditText editTextPoojaAmount;
+
+    private Bundle bundle;
+
+    private UserModel user;
     private int mYear, mMonth, mDay;
-    private String donationDate;
-    private String donationCause, donationAmount, pilgrimName;
+    private String poojaDate, pilgrimName, poojaName, poojaAmount;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_donation);
-
+        setContentView(R.layout.add_pooja);
         ButterKnife.bind(this);
-    }
 
-    @OnClick({R.id.btnRegister})
-    public void confirm(View view) {
-        Intent intent = new Intent(this, ConfirmDetailsDonationActivity.class);
-        startActivity(intent);
+        user = new UserModel();
     }
 
     @OnClick(R.id.btn_date)
@@ -71,8 +74,8 @@ public class AddDonationActivity extends AppCompatActivity {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                                donationDate = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
-                                editTextDate.setText(donationDate);
+                                poojaDate = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
+                                editTextDate.setText(poojaDate);
                             }
                         },
                         mYear,
@@ -84,7 +87,7 @@ public class AddDonationActivity extends AppCompatActivity {
     @OnClick(R.id.btnRegister)
     public void registerPooja(View view) {
 
-        getDonationValues();
+        getPoojaValues();
         if (!checkErrors()) {
             return;
         }
@@ -92,17 +95,17 @@ public class AddDonationActivity extends AppCompatActivity {
     }
 
     private void verifyDetails() {
-        Intent intent = new Intent(this, ConfirmDetailsDonationActivity.class);
+        Intent intent = new Intent(this, ConfirmDetailsPoojaActivity.class);
         intent.putExtra("pilgrimName", pilgrimName);
-        intent.putExtra("donationAmount", donationAmount);
-        intent.putExtra("donationCause", donationCause);
-        intent.putExtra("donationDate", donationDate);
+        intent.putExtra("poojaAmount", poojaAmount);
+        intent.putExtra("poojaName", poojaName);
+        intent.putExtra("poojaDate", poojaDate);
         startActivity(intent);
     }
 
     private boolean checkErrors() {
         EditText[] allFields = {
-            editTextDate, editTextPlgrimName, editTextDonationAmount, editTextDonationCause
+            editTextDate, editTextPilgrimName, editTextPoojaAmount, editTextPoojaName
         };
         List<EditText> ErrorFields = new ArrayList<EditText>();
         for (EditText edit : allFields) {
@@ -119,9 +122,9 @@ public class AddDonationActivity extends AppCompatActivity {
         return true;
     }
 
-    private void getDonationValues() {
-        pilgrimName = editTextPlgrimName.getText().toString().trim();
-        donationAmount = editTextDonationAmount.getText().toString().trim();
-        donationCause = editTextDonationCause.getText().toString().trim();
+    private void getPoojaValues() {
+        pilgrimName = editTextPilgrimName.getText().toString().trim();
+        poojaAmount = editTextPoojaAmount.getText().toString().trim();
+        poojaName = editTextPoojaName.getText().toString().trim();
     }
 }

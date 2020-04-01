@@ -1,13 +1,13 @@
-package org.amfoss.templeapp.adapters;
+package org.amfoss.templeapp.home;
 
 import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.fragments.ExpensesFragment;
-import org.amfoss.templeapp.fragments.IncomeFragment;
-import org.amfoss.templeapp.fragments.PoojaFragment;
+import org.amfoss.templeapp.expenses.ExpensesFragment;
+import org.amfoss.templeapp.income.IncomeFragment;
+import org.amfoss.templeapp.poojas.PoojaFragment;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)

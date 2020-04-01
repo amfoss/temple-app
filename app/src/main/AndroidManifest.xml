@@ -12,13 +12,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ConfirmDetailsDonationActivity"></activity>
+        <activity android:name=".income.addDonation.ConfirmDetailsDonationActivity"></activity>
         <activity
-            android:name=".activities.HomeActivity"
+            android:name=".home.HomeActivity"
             android:label="TempleApp"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".home.LoginActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,20 +27,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.AddDonationActivity"
+            android:name=".income.addDonation.AddDonationActivity"
             android:configChanges="orientation|screenSize"
             android:label="Add donation"
-            android:parentActivityName=".activities.HomeActivity" />
+            android:parentActivityName=".home.HomeActivity" />
         <activity
-            android:name=".activities.ConfirmDetailsPoojaActivity"
+            android:name=".poojas.addPooja.ConfirmDetailsPoojaActivity"
             android:configChanges="orientation|screenSize"
             android:label="Confirm details"
-            android:parentActivityName=".activities.AddPoojaActivity" />
+            android:parentActivityName=".poojas.addPooja.AddPoojaActivity" />
         <activity
-            android:name=".activities.AddPoojaActivity"
+            android:name=".poojas.addPooja.AddPoojaActivity"
             android:configChanges="orientation|screenSize"
             android:label="Add Pooja"
-            android:parentActivityName=".activities.HomeActivity" />
+            android:parentActivityName=".home.HomeActivity" />
     </application>
 
 </manifest>

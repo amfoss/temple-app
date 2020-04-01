@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.activities;
+package org.amfoss.templeapp.home;
 
 import android.app.FragmentManager;
 import android.app.SearchManager;
@@ -20,8 +20,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.adapters.SectionsPagerAdapter;
-import org.amfoss.templeapp.utils.UserUtils;
+import org.amfoss.templeapp.income.addDonation.AddDonationActivity;
+import org.amfoss.templeapp.poojas.addPooja.AddPoojaActivity;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)
@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity
                         R.string.navigation_drawer_open,
                         R.string.navigation_drawer_close);
 
-        UserUtils user = new UserUtils();
+        UserModel user = new UserModel();
 
         userName.setText("Namaskaram " + user.getUserName());
         userEmail.setText(user.getUserEmail());

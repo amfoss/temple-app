@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.adapters;
+package org.amfoss.templeapp.poojas.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.utils.PoojaUtils;
 
 /**
 * @author by Chromicle (ajayprabhakar369@gmail.com)
@@ -18,9 +17,9 @@ import org.amfoss.templeapp.utils.PoojaUtils;
 public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHolder> {
 
     Context context;
-    List<PoojaUtils> poojaList;
+    private List<PoojaModel> poojaList;
 
-    public PoojaAdapter(Context context, List<PoojaUtils> poojaList) {
+    public PoojaAdapter(Context context, List<PoojaModel> poojaList) {
         this.context = context;
         this.poojaList = poojaList;
     }
@@ -34,7 +33,7 @@ public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHol
 
     @Override
     public void onBindViewHolder(@NonNull PoojaViewHolder holder, int position) {
-        PoojaUtils pooja = poojaList.get(position);
+        PoojaModel pooja = poojaList.get(position);
         holder.listPilgrimName.setText(pooja.getPilgrimName());
         holder.listPoojaName.setText(pooja.getPoojaName());
         holder.listPoojaAmount.setText(pooja.getPoojaAmount());

@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.fragments;
+package org.amfoss.templeapp.poojas;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,27 +8,21 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
-import java.util.List;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.activities.AddPoojaActivity;
-import org.amfoss.templeapp.adapters.PoojaAdapter;
-import org.amfoss.templeapp.utils.PoojaUtils;
-import org.amfoss.templeapp.utils.UserUtils;
+import org.amfoss.templeapp.poojas.adapter.PoojaAdapter;
+import org.amfoss.templeapp.poojas.adapter.PoojaModel;
+import org.amfoss.templeapp.poojas.addPooja.AddPoojaActivity;
+import org.amfoss.templeapp.poojas.viewmodel.PoojaViewModel;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)
@@ -48,10 +42,8 @@ public class PoojaFragment extends Fragment {
     @BindView(R.id.textViewAddPooja)
     TextView textViewAddPooja;
 
-    List<PoojaUtils> poojaUtilsArrayList;
     PoojaAdapter poojaAdapter;
-
-    DatabaseReference poojaDb;
+    private PoojaViewModel poojaViewModel;
 
     public PoojaFragment() {
         // Required empty public constructor
@@ -64,45 +56,35 @@ public class PoojaFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_pooja, container, false);
         ButterKnife.bind(this, rootView);
 
-        addFirebaseInstance();
+        poojaRecycleView.setHasFixedSize(true);
+        poojaRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        fetchPoojas();
+        poojaViewModel = ViewModelProviders.of(requireActivity()).get(PoojaViewModel.class);
+        poojaViewModel.init(getContext());
 
+        updateRecycleView();
         return rootView;
     }
 
-    private void fetchPoojas() {
+    private void updateRecycleView() {
+        poojaViewModel
+                .getPoojaslist()
+                .observe(
+                        getViewLifecycleOwner(),
+                        new Observer<ArrayList<PoojaModel>>() {
+                            @Override
+                            public void onChanged(ArrayList<PoojaModel> poojaModels) {
+                                poojaAdapter.notifyDataSetChanged();
 
-        poojaRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+                                poojaProgressBar.setVisibility(poojaViewModel.displayProgress());
+                                if (poojaAdapter.getItemCount() > 0) {
+                                    changeFabPosition();
+                                }
+                            }
+                        });
 
-        poojaUtilsArrayList = new ArrayList<>();
-
-        poojaDb.addValueEventListener(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            PoojaUtils poojaValue = postSnapshot.getValue(PoojaUtils.class);
-                            poojaUtilsArrayList.add(poojaValue);
-                        }
-
-                        poojaAdapter = new PoojaAdapter(getActivity(), poojaUtilsArrayList);
-                        poojaRecycleView.setAdapter(poojaAdapter);
-                        poojaProgressBar.setVisibility(View.GONE);
-                        changeFabPosition();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-
-    private void addFirebaseInstance() {
-        UserUtils user = new UserUtils();
-        String dbUserName = user.getDbUserName();
-        poojaDb = FirebaseDatabase.getInstance().getReference(dbUserName).child("poojas");
+        poojaAdapter = new PoojaAdapter(getActivity(), poojaViewModel.getPoojaslist().getValue());
+        poojaRecycleView.setAdapter(poojaAdapter);
     }
 
     private void changeFabPosition() {

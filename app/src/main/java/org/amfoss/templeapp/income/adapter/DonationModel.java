@@ -1,15 +1,15 @@
-package org.amfoss.templeapp.utils;
+package org.amfoss.templeapp.income.adapter;
 
 /**
 * @author by Chromicle (ajayprabhakar369@gmail.com)
 * @since 12/3/2019
 */
-public class DonationUtils {
+public class DonationModel {
     private String donationDate, pilgrimName, donationCause, donationAmount;
 
-    public DonationUtils() {}
+    public DonationModel() {}
 
-    public DonationUtils(
+    public DonationModel(
             String donationDate, String pilgrimName, String donationCause, String donationAmount) {
         this.donationDate = donationDate;
         this.pilgrimName = pilgrimName;

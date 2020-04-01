@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.adapters;
+package org.amfoss.templeapp.income.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import org.amfoss.templeapp.R;
-import org.amfoss.templeapp.utils.DonationUtils;
 
 /**
 * @author by Chromicle (ajayprabhakar369@gmail.com)
@@ -18,9 +17,9 @@ import org.amfoss.templeapp.utils.DonationUtils;
 public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.DonationViewHolder> {
 
     Context context;
-    List<DonationUtils> DonationList;
+    List<DonationModel> DonationList;
 
-    public DonationAdapter(Context context, List<DonationUtils> donationList) {
+    public DonationAdapter(Context context, List<DonationModel> donationList) {
         this.context = context;
         DonationList = donationList;
     }
@@ -35,7 +34,7 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
     @Override
     public void onBindViewHolder(@NonNull DonationViewHolder holder, int position) {
 
-        DonationUtils donation = DonationList.get(position);
+        DonationModel donation = DonationList.get(position);
         holder.listPilgrimName.setText(donation.getPilgrimName());
         holder.listDonationCause.setText(donation.getDonationCause());
         holder.listDonationAmount.setText(donation.getDonationAmount());

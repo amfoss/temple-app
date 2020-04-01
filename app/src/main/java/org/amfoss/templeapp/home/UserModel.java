@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.utils;
+package org.amfoss.templeapp.home;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -7,14 +7,14 @@ import com.google.firebase.auth.FirebaseUser;
 * @author Chromicle (ajayprabhakar369@gmail.com)
 * @since 02/12/2019
 */
-public class UserUtils {
+public class UserModel {
 
     private FirebaseUser user;
     private String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
     private String userName;
     private String dbUserName;
 
-    public UserUtils() {}
+    public UserModel() {}
 
     public void setDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;

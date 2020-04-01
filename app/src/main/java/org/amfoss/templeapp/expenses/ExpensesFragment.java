@@ -1,4 +1,4 @@
-package org.amfoss.templeapp.fragments;
+package org.amfoss.templeapp.expenses;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
