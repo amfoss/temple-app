@@ -9,5 +9,11 @@
 
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="ic_delete">30dp</dimen>
+    <dimen name="padd_10">10dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="head_marg">2dp</dimen>
+    <dimen name="delete_text_size">13sp</dimen>
+    <dimen name="foreground_elevation">20dp</dimen>
 
 </resources>

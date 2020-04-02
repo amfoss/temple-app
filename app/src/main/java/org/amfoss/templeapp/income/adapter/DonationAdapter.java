@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,6 +49,7 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
 
     public class DonationViewHolder extends RecyclerView.ViewHolder {
 
+        public RelativeLayout viewBackground, viewForeground;
         TextView listPilgrimName;
         TextView listDonationCause;
         TextView listDonationDate;
@@ -60,6 +62,19 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
             listDonationCause = itemView.findViewById(R.id.listDonationName);
             listDonationDate = itemView.findViewById(R.id.listDonationDate);
             listDonationAmount = itemView.findViewById(R.id.listDonationAmount);
+            viewBackground = itemView.findViewById(R.id.view_background_inc);
+            viewForeground = itemView.findViewById(R.id.view_foreground_inc);
         }
+    }
+
+    public void removeItem(int position) {
+        DonationList.remove(position);
+        DonationList.clear();
+        notifyDataSetChanged();
+    }
+
+    public String getName(int position) {
+        DonationModel donation = DonationList.get(position);
+        return donation.getPilgrimName();
     }
 }

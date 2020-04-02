@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.Constants;
 import org.amfoss.templeapp.home.UserModel;
 import org.amfoss.templeapp.income.adapter.DonationModel;
 
@@ -71,6 +73,37 @@ public class IncomeViewModel extends ViewModel {
                         Toast.makeText(mContext, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    public void removeDonation(String value) {
+        addFirebaseInstance();
+        donationDb
+                .orderByChild(Constants.PILGRIM_NAME)
+                .equalTo(value)
+                .addListenerForSingleValueEvent(
+                        new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                    String key = childSnapshot.getKey();
+                                    donationDb
+                                            .child(key)
+                                            .setValue(null)
+                                            .addOnSuccessListener(
+                                                    aVoid ->
+                                                            Toast.makeText(mContext, R.string.remove_success, Toast.LENGTH_SHORT)
+                                                                    .show())
+                                            .addOnFailureListener(
+                                                    e ->
+                                                            Toast.makeText(
+                                                                            mContext, R.string.unable_delete_donation, Toast.LENGTH_SHORT)
+                                                                    .show());
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {}
+                        });
     }
 
     private void addFirebaseInstance() {

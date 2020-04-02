@@ -17,6 +17,19 @@
     <string name="pooja">POOJA</string>
     <string name="income">INCOME</string>
     <string name="expenses">EXPENSES</string>
+    <string name="delete">Delete</string>
+    <string name="remove_success">Removed successfully</string>
+    <string name="ask_delete">Do you want to delete ?</string>
+    <string name="unable_delete_donation">Unable to delete donation details</string>
+    <string name="alert">Alert !</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="donated_amount">Donated Amount</string>
+    <string name="donation_cause">Donation Cause:</string>
+    <string name="pooja_name">Pooja Name:</string>
+    <string name="pooja_date">Pooja Date:</string>
+    <string name="pooja_amount">Pooja Amount</string>
+    <string name="donated_date">Donated Date:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

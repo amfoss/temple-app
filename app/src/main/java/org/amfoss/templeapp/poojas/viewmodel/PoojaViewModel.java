@@ -7,12 +7,16 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.Constants;
 import org.amfoss.templeapp.home.UserModel;
 import org.amfoss.templeapp.poojas.adapter.PoojaModel;
 
@@ -69,6 +73,47 @@ public class PoojaViewModel extends ViewModel {
                         Toast.makeText(mContext, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    public void removePooja(String name) {
+        addFirebaseInstance();
+        poojaDb
+                .orderByChild(Constants.PILGRIM_NAME)
+                .equalTo(name)
+                .addListenerForSingleValueEvent(
+                        new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                    String key = snapshot.getKey();
+                                    poojaDb
+                                            .child(key)
+                                            .setValue(null)
+                                            .addOnSuccessListener(
+                                                    new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            Toast.makeText(mContext, R.string.remove_success, Toast.LENGTH_SHORT)
+                                                                    .show();
+                                                        }
+                                                    })
+                                            .addOnFailureListener(
+                                                    new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Toast.makeText(
+                                                                            mContext, R.string.unable_delete_donation, Toast.LENGTH_SHORT)
+                                                                    .show();
+                                                        }
+                                                    });
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                Toast.makeText(mContext, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
     }
 
     private void addFirebaseInstance() {

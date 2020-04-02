@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,6 +48,7 @@ public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHol
 
     public class PoojaViewHolder extends RecyclerView.ViewHolder {
 
+        public RelativeLayout viewBackground, viewForeground;
         TextView listPilgrimName;
         TextView listPoojaName;
         TextView listPoojaDate;
@@ -59,6 +61,19 @@ public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHol
             listPoojaName = itemView.findViewById(R.id.listPoojaName);
             listPoojaDate = itemView.findViewById(R.id.listPoojaDate);
             listPoojaAmount = itemView.findViewById(R.id.listPoojaAmount);
+            viewBackground = itemView.findViewById(R.id.view_background);
+            viewForeground = itemView.findViewById(R.id.view_foreground);
         }
+    }
+
+    public void removeItem(int position) {
+        poojaList.remove(position);
+        poojaList.clear();
+        notifyDataSetChanged();
+    }
+
+    public String getName(int position) {
+        PoojaModel pooja = poojaList.get(position);
+        return pooja.getPilgrimName();
     }
 }
