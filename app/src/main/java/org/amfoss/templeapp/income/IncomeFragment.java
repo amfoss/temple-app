@@ -1,7 +1,6 @@
 package org.amfoss.templeapp.income;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import java.util.ArrayList;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.ActivityUtils;
 import org.amfoss.templeapp.income.adapter.DonationAdapter;
 import org.amfoss.templeapp.income.adapter.DonationModel;
 import org.amfoss.templeapp.income.addDonation.AddDonationActivity;
@@ -111,8 +111,7 @@ public class IncomeFragment extends Fragment
 
     @OnClick(R.id.fab_income)
     void setUpFab(View view) {
-        Intent intent = new Intent(getActivity(), AddDonationActivity.class);
-        startActivity(intent);
+        ActivityUtils.launchActivity(getActivity(), AddDonationActivity.class, false);
     }
 
     @Override

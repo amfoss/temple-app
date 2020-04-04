@@ -78,4 +78,8 @@ dependencies {
     //MVVM
     implementation "android.arch.lifecycle:runtime:1.1.1"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+
+    //preferences
+    implementation 'androidx.preference:preference:1.1.0'
 }

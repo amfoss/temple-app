@@ -2,7 +2,6 @@ package org.amfoss.templeapp.home;
 
 import android.app.FragmentManager;
 import android.app.SearchManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,8 +19,10 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.ActivityUtils;
 import org.amfoss.templeapp.income.addDonation.AddDonationActivity;
 import org.amfoss.templeapp.poojas.addPooja.AddPoojaActivity;
+import org.amfoss.templeapp.settings.SettingsActivity;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)
@@ -123,22 +124,19 @@ public class HomeActivity extends AppCompatActivity
         FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.nav_pooja) {
-            Intent intent = new Intent(HomeActivity.this, AddPoojaActivity.class);
-            startActivity(intent);
+            ActivityUtils.launchActivity(HomeActivity.this, AddPoojaActivity.class, false);
             // Handle the camera action
         } else if (id == R.id.nav_income_record) {
 
         } else if (id == R.id.nav_expense_record) {
 
         } else if (id == R.id.nav_donate_money) {
-            Intent myIntent = new Intent(HomeActivity.this, AddDonationActivity.class);
-            startActivity(myIntent);
+            ActivityUtils.launchActivity(HomeActivity.this, AddDonationActivity.class, false);
         } else if (id == R.id.nav_settings) {
-
+            ActivityUtils.launchActivity(HomeActivity.this, SettingsActivity.class, false);
         } else if (id == R.id.nav_log_out) {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-            finishAffinity();
+            ActivityUtils.launchActivity(HomeActivity.this, LoginActivity.class, true);
         }
         return true;
     }

@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.Constants;
 import org.amfoss.templeapp.home.UserModel;
 import org.amfoss.templeapp.poojas.adapter.PoojaModel;
 
@@ -46,7 +47,6 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
     DatabaseReference poojaDb;
 
     private String poojaDate, pilgrimName, poojaName, poojaAmount;
-    private static String DB_POOJAS_NAME = "poojas";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
 
     private void createFirebaseInstance() {
         UserModel user = new UserModel();
-        String dbUserName = user.getDbUserName();
+        String dbUserName = user.getRealDbUserName(getApplicationContext());
         poojaDb = FirebaseDatabase.getInstance().getReference(dbUserName);
     }
 
@@ -88,7 +88,7 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
 
         PoojaModel poojaDetails = new PoojaModel(poojaDate, pilgrimName, poojaName, poojaAmount);
         poojaDb
-                .child(DB_POOJAS_NAME)
+                .child(Constants.DB_POOJA_NAME)
                 .child(id)
                 .setValue(poojaDetails)
                 .addOnSuccessListener(

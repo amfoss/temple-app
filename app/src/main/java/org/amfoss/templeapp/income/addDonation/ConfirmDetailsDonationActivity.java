@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.Constants;
 import org.amfoss.templeapp.home.UserModel;
 import org.amfoss.templeapp.income.adapter.DonationModel;
 
@@ -40,7 +41,6 @@ public class ConfirmDetailsDonationActivity extends AppCompatActivity {
     DatabaseReference donationDb;
 
     private String donationDate, pilgrimName, donationCause, donationAmount;
-    private static String DB_POOJAS_NAME = "donations";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class ConfirmDetailsDonationActivity extends AppCompatActivity {
 
     private void createFirebaseInstance() {
         UserModel user = new UserModel();
-        String dbUserName = user.getDbUserName();
+        String dbUserName = user.getRealDbUserName(getApplicationContext());
         donationDb = FirebaseDatabase.getInstance().getReference(dbUserName);
     }
 
@@ -82,7 +82,7 @@ public class ConfirmDetailsDonationActivity extends AppCompatActivity {
         DonationModel donationDetails =
                 new DonationModel(donationDate, pilgrimName, donationCause, donationAmount);
         donationDb
-                .child(DB_POOJAS_NAME)
+                .child(Constants.DB_DONATION_NAME)
                 .child(id)
                 .setValue(donationDetails)
                 .addOnSuccessListener(

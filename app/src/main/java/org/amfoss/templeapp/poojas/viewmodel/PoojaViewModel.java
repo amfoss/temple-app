@@ -118,8 +118,9 @@ public class PoojaViewModel extends ViewModel {
 
     private void addFirebaseInstance() {
         UserModel user = new UserModel();
-        String dbUserName = user.getDbUserName();
-        poojaDb = FirebaseDatabase.getInstance().getReference(dbUserName).child("poojas");
+        String dbUserName = user.getRealDbUserName(mContext);
+        poojaDb =
+                FirebaseDatabase.getInstance().getReference(dbUserName).child(Constants.DB_POOJA_NAME);
     }
 
     public int displayProgress() {

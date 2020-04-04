@@ -108,8 +108,9 @@ public class IncomeViewModel extends ViewModel {
 
     private void addFirebaseInstance() {
         UserModel user = new UserModel();
-        String dbUserName = user.getDbUserName();
-        donationDb = FirebaseDatabase.getInstance().getReference(dbUserName).child("donations");
+        String dbUserName = user.getRealDbUserName(mContext);
+        donationDb =
+                FirebaseDatabase.getInstance().getReference(dbUserName).child(Constants.DB_DONATION_NAME);
     }
 
     public int displayProgress() {

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="General Settings">
+
+        <EditTextPreference
+            android:key="add_member"
+            android:icon="@drawable/ic_person_add_black"
+            android:summary="To add a new member, enter their email below"
+            android:title="Add a member to share database" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_admin"
+            android:key="is_admin"
+            android:summary="Please check this option if you are an admin of the temple"
+            android:title="I am an admin" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="others">
+        <EditTextPreference
+            android:key="get_access"
+            android:icon="@drawable/ic_people_black"
+            android:summary="Please fill the text field with the admin email in order to gain access from the admin."
+            android:title="Collaborate" />
+    </PreferenceCategory>
+</PreferenceScreen>

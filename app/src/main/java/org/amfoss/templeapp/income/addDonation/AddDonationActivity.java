@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.ActivityUtils;
 import org.amfoss.templeapp.home.UserModel;
 
 public class AddDonationActivity extends AppCompatActivity {
@@ -53,8 +54,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
     @OnClick({R.id.btnRegister})
     public void confirm(View view) {
-        Intent intent = new Intent(this, ConfirmDetailsDonationActivity.class);
-        startActivity(intent);
+        ActivityUtils.launchActivity(this, ConfirmDetailsDonationActivity.class, false);
     }
 
     @OnClick(R.id.btn_date)

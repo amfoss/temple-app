@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Arrays;
 import java.util.List;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.ActivityUtils;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)
@@ -43,8 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                             .build(),
                     200);
         } else if (FirebaseAuth.getInstance().getCurrentUser().getDisplayName() != null) {
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-            finish();
+            ActivityUtils.launchActivity(LoginActivity.this, HomeActivity.class, true);
         }
     }
 
@@ -54,8 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (requestCode == 200) {
             if (resultCode == RESULT_OK) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                ActivityUtils.launchActivity(LoginActivity.this, HomeActivity.class, true);
             }
         }
     }

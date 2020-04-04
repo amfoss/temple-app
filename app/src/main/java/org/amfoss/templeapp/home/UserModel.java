@@ -1,7 +1,11 @@
 package org.amfoss.templeapp.home;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import org.amfoss.templeapp.settings.PreferenceKeys;
 
 /**
 * @author Chromicle (ajayprabhakar369@gmail.com)
@@ -13,8 +17,21 @@ public class UserModel {
     private String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
     private String userName;
     private String dbUserName;
+    private String realDbUserName;
+    private SharedPreferences preferences;
 
     public UserModel() {}
+
+    public String getRealDbUserName(Context context) {
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String adminEmail = preferences.getString(PreferenceKeys.KEY_GET_ACCESS, getUserEmail());
+        realDbUserName = adminEmail.substring(0, adminEmail.indexOf("@"));
+        return realDbUserName;
+    }
+
+    public void setRealDbUserName(String realDbUserName) {
+        this.realDbUserName = realDbUserName;
+    }
 
     public void setDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;

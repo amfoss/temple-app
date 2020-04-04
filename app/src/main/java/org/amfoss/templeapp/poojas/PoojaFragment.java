@@ -1,7 +1,6 @@
 package org.amfoss.templeapp.poojas;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import java.util.ArrayList;
 import org.amfoss.templeapp.R;
+import org.amfoss.templeapp.Util.ActivityUtils;
 import org.amfoss.templeapp.poojas.adapter.PoojaAdapter;
 import org.amfoss.templeapp.poojas.adapter.PoojaModel;
 import org.amfoss.templeapp.poojas.addPooja.AddPoojaActivity;
@@ -108,8 +108,7 @@ public class PoojaFragment extends Fragment
 
     @OnClick(R.id.fab_pooja)
     public void setUpFab(View view) {
-        Intent intent = new Intent(getActivity(), AddPoojaActivity.class);
-        startActivity(intent);
+        ActivityUtils.launchActivity(getActivity(), AddPoojaActivity.class, false);
     }
 
     @Override

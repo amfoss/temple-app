@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".income.addDonation.ConfirmDetailsDonationActivity"></activity>
+        <activity android:name=".settings.SettingsActivity"></activity>
         <activity
             android:name=".home.HomeActivity"
             android:label="TempleApp"
