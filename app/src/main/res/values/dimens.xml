@@ -15,5 +15,6 @@
     <dimen name="head_marg">2dp</dimen>
     <dimen name="delete_text_size">13sp</dimen>
     <dimen name="foreground_elevation">20dp</dimen>
+    <dimen name="two_btn_padding">285dp</dimen>
 
 </resources>

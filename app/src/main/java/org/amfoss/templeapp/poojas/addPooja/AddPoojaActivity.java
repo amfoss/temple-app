@@ -105,7 +105,7 @@ public class AddPoojaActivity extends AppCompatActivity {
 
     private boolean checkErrors() {
         EditText[] allFields = {
-            editTextDate, editTextPilgrimName, editTextPoojaAmount, editTextPoojaName
+            editTextPilgrimName, editTextDate, editTextPoojaName, editTextPoojaAmount
         };
         List<EditText> ErrorFields = new ArrayList<EditText>();
         for (EditText edit : allFields) {

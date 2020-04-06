@@ -30,6 +30,12 @@
     <string name="pooja_date">Pooja Date:</string>
     <string name="pooja_amount">Pooja Amount</string>
     <string name="donated_date">Donated Date:</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="eg_ravi_shankar">Eg: Ravi Shankar</string>
+    <string name="eg_02_09_2019">Eg: 02-09-2019</string>
+    <string name="pooja_type">Pooja type</string>
+    <string name="eg_archana">Eg: Archana</string>
+    <string name="rs_1000">Rs: 1000</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

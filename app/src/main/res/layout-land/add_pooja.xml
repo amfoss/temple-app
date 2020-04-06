@@ -5,7 +5,7 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,7 +16,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_35"
-                android:paddingBottom="@dimen/padd_10"
+                android:paddingBottom="10dp"
                 android:text="@string/customer_name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_35"
                 android:text="@string/pooja_date"
-                android:paddingBottom="@dimen/padd_10"
+                android:paddingBottom="10dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <LinearLayout
@@ -53,7 +53,7 @@
 
                 <EditText
                     android:id="@+id/editTextDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="685dp"
                     android:layout_height="@dimen/margin_45"
                     android:layout_marginLeft="@dimen/margin_35"
                     android:layout_marginRight="15dp"
@@ -72,7 +72,7 @@
                     android:id="@+id/btn_date"
                     android:layout_width="33dp"
                     android:layout_height="32dp"
-                    android:layout_marginRight="100dp"
+                    android:layout_marginRight="@dimen/margin_35"
                     android:background="@drawable/ic_date_range_black_24dp" />
             </LinearLayout>
         </LinearLayout>
@@ -89,7 +89,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="339dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_35"
                     android:paddingBottom="@dimen/padd_10"
@@ -97,7 +97,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="327dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:paddingBottom="10dp"
@@ -113,20 +113,20 @@
 
                 <EditText
                     android:id="@+id/editTextPoojaName"
-                    android:layout_width="120dp"
+                    android:layout_width="339dp"
                     android:layout_height="@dimen/margin_45"
                     android:layout_marginStart="35dp"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="50dp"
                     android:background="@drawable/edittext_background"
                     android:hint="@string/eg_archana"
-                    android:inputType="text"
                     android:imeOptions="actionNext"
+                    android:inputType="text"
                     android:padding="12dp"
                     android:textSize="15sp" />
 
                 <EditText
                     android:id="@+id/editTextPoojaAmount"
-                    android:layout_width="120dp"
+                    android:layout_width="333dp"
                     android:layout_height="@dimen/margin_45"
                     android:background="@drawable/edittext_background"
                     android:hint="@string/rs_1000"
@@ -141,13 +141,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
+            android:layout_marginBottom="@dimen/padd_10"
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btnPrint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:layout_marginEnd="60dp"
+                android:layout_marginStart="@dimen/two_btn_padding"
+                android:layout_marginEnd="50dp"
                 android:background="@drawable/button_animated"
                 android:text="@string/print" />
 

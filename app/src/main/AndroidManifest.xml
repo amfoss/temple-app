@@ -39,7 +39,7 @@
             android:parentActivityName=".poojas.addPooja.AddPoojaActivity" />
         <activity
             android:name=".poojas.addPooja.AddPoojaActivity"
-            android:configChanges="orientation|screenSize"
+            android:configChanges="orientation"
             android:label="Add Pooja"
             android:parentActivityName=".home.HomeActivity" />
     </application>
