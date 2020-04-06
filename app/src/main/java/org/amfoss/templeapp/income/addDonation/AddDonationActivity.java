@@ -102,7 +102,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
     private boolean checkErrors() {
         EditText[] allFields = {
-            editTextDate, editTextPlgrimName, editTextDonationAmount, editTextDonationCause
+            editTextPlgrimName, editTextDate, editTextDonationCause, editTextDonationAmount
         };
         List<EditText> ErrorFields = new ArrayList<EditText>();
         for (EditText edit : allFields) {

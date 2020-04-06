@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_35"
-                android:text="@string/pilgrim_name"
+                android:text="@string/donated_date"
                 android:paddingBottom="@dimen/padd_10"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -56,7 +56,7 @@
 
                 <EditText
                     android:id="@+id/editTextDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="685dp"
                     android:layout_height="@dimen/margin_45"
                     android:layout_marginLeft="@dimen/margin_35"
                     android:layout_marginRight="15dp"
@@ -75,7 +75,7 @@
                     android:id="@+id/btn_date"
                     android:layout_width="33dp"
                     android:layout_height="32dp"
-                    android:layout_marginRight="100dp"
+                    android:layout_marginRight="@dimen/margin_35"
                     android:background="@drawable/ic_date_range_black_24dp" />
             </LinearLayout>
         </LinearLayout>
@@ -144,13 +144,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
+            android:layout_marginBottom="@dimen/padd_10"
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btnPrint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:layout_marginEnd="60dp"
+                android:layout_marginStart="@dimen/two_btn_padding"
+                android:layout_marginEnd="50dp"
                 android:background="@drawable/button_animated"
                 android:text="@string/print" />
 

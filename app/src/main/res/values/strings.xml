@@ -32,6 +32,11 @@
     <string name="donated_date">Donated Date:</string>
     <string name="customer_name">Customer Name</string>
     <string name="eg_ravi_shankar">Eg: Ravi Shankar</string>
+    <string name="donation_amount">Donation amount</string>
+    <string name="cause">Cause</string>
+    <string name="eg_1000">Eg:1000</string>
+    <string name="pilgrim_name">Pilgrim Name</string>
+    <string name="eg_temple_development">Eg: Temple development</string>
     <string name="eg_02_09_2019">Eg: 02-09-2019</string>
     <string name="pooja_type">Pooja type</string>
     <string name="eg_archana">Eg: Archana</string>
