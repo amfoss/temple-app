@@ -4,24 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".expenses.ExpensesFragment">
+    tools:context=".expenses.addExpense.AddExpenseActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expenseRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:listitem="@layout/individual_expense" />
+
+    <ProgressBar
+        android:id="@+id/expenseProgressBarLoading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fab_expense"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 
     <TextView
+        android:id="@+id/textViewAddExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/fab_expenses"
+        android:layout_above="@id/fab_expense"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Add your first Expenses details"/>
+        android:text="@string/add_your_first_expense_details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_expenses"
+        android:id="@+id/fab_expense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add" />
+
 
 </RelativeLayout>

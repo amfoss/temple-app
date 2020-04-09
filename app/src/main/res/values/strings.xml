@@ -17,6 +17,7 @@
     <string name="pooja">POOJA</string>
     <string name="income">INCOME</string>
     <string name="expenses">EXPENSES</string>
+    <string name="expense">Expenses</string>
     <string name="delete">Delete</string>
     <string name="remove_success">Removed successfully</string>
     <string name="ask_delete">Do you want to delete ?</string>
@@ -41,6 +42,20 @@
     <string name="pooja_type">Pooja type</string>
     <string name="eg_archana">Eg: Archana</string>
     <string name="rs_1000">Rs: 1000</string>
+    <string name="expense_date">Expense date</string>
+    <string name="expense_type">Expense type</string>
+    <string name="eg_bill">Eg: Bill</string>
+    <string name="expense_description">Expense description</string>
+    <string name="eg_electricity_bill">Eg: Electricity bill</string>
+    <string name="id">Id</string>
+    <string name="eg_104">Eg: 104</string>
+    <string name="unable_delete_expense">Unable to delete expense detail</string>
+    <string name="expense_a">expense A</string>
+    <string name="expense_b">expense b</string>
+    <string name="expense_c">expense C</string>
+    <string name="expense_added">Expense Added</string>
+    <string name="add_your_first_expense_details">Add your first expense details</string>
+    <string name="id_">Id:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_35"
+            android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="339dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_35"
+                    android:paddingBottom="@dimen/padd_10"
+                    android:text="@string/expense_type"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <EditText
+                    android:id="@+id/editTextExpenseType"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/eg_bill"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_35"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="339dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_35"
+                    android:paddingBottom="10dp"
+                    android:text="@string/amount"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <TextView
+                    android:layout_width="327dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="@string/expense_date"
+                    android:paddingBottom="@dimen/padd_10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextExpenseAmount"
+                    android:layout_width="339dp"
+                    android:layout_height="@dimen/margin_45"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/rs_1000"
+                    android:inputType="number"
+                    android:layout_marginStart="@dimen/margin_35"
+                    android:layout_marginEnd="50dp"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/editTextExpenseDate"
+                    android:layout_width="333dp"
+                    android:layout_height="@dimen/margin_45"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/eg_02_09_2019"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:shadowColor="#000000"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_date"
+                    android:layout_width="33dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/ic_date_range_black_24dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_35"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_35"
+                    android:paddingBottom="@dimen/padd_10"
+                    android:text="@string/expense_description"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextExpenseDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:layout_marginStart="@dimen/margin_35"
+                    android:layout_marginEnd="@dimen/margin_35"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/eg_electricity_bill"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="@dimen/padd_10"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnPrint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/two_btn_padding"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/button_animated"
+                android:text="@string/print" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_animated"
+                android:text="@string/register" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

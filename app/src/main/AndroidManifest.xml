@@ -42,6 +42,16 @@
             android:configChanges="orientation"
             android:label="Add Pooja"
             android:parentActivityName=".home.HomeActivity" />
+        <activity
+            android:name=".expenses.addExpense.AddExpenseActivity"
+            android:configChanges="orientation"
+            android:label="Add Expense"
+            android:parentActivityName=".home.HomeActivity" />
+        <activity
+            android:name=".expenses.addExpense.ConfirmDetailsExpenseActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="Confirm Expense details"
+            android:parentActivityName=".expenses.addExpense.AddExpenseActivity" />
     </application>
 
 </manifest>
