@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import java.util.List;
 import org.amfoss.templeapp.R;
 
@@ -15,14 +18,17 @@ import org.amfoss.templeapp.R;
 * @author by Chromicle (ajayprabhakar369@gmail.com)
 * @since 12/4/2019
 */
-public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.DonationViewHolder> {
+public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.DonationViewHolder>
+        implements Filterable {
 
     Context context;
     List<DonationModel> DonationList;
+    private List<DonationModel> donationListFiltered;
 
     public DonationAdapter(Context context, List<DonationModel> donationList) {
         this.context = context;
-        DonationList = donationList;
+        this.DonationList = donationList;
+        this.donationListFiltered = donationList;
     }
 
     @NonNull
@@ -45,6 +51,37 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
     @Override
     public int getItemCount() {
         return DonationList.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String charString = constraint.toString();
+                if (charString.isEmpty()) {
+                    DonationList = donationListFiltered;
+                } else {
+                    List<DonationModel> filteredList = new ArrayList<>();
+                    String filterPattern = constraint.toString().toLowerCase().trim();
+                    for (DonationModel item : donationListFiltered) {
+                        if (item.getPilgrimName().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                    }
+                    DonationList = filteredList;
+                }
+                FilterResults results = new FilterResults();
+                results.values = DonationList;
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                DonationList = (ArrayList<DonationModel>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     public class DonationViewHolder extends RecyclerView.ViewHolder {

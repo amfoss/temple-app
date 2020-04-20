@@ -1,13 +1,17 @@
 package org.amfoss.templeapp.poojas.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import java.util.List;
 import org.amfoss.templeapp.R;
 
@@ -15,14 +19,17 @@ import org.amfoss.templeapp.R;
 * @author by Chromicle (ajayprabhakar369@gmail.com)
 * @since 12/3/2019
 */
-public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHolder> {
+public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHolder>
+        implements Filterable {
 
     Context context;
     private List<PoojaModel> poojaList;
+    private List<PoojaModel> poojaListFiltered;
 
     public PoojaAdapter(Context context, List<PoojaModel> poojaList) {
         this.context = context;
         this.poojaList = poojaList;
+        this.poojaListFiltered = poojaList;
     }
 
     @NonNull
@@ -75,5 +82,37 @@ public class PoojaAdapter extends RecyclerView.Adapter<PoojaAdapter.PoojaViewHol
     public String getName(int position) {
         PoojaModel pooja = poojaList.get(position);
         return pooja.getPilgrimName();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String charString = constraint.toString();
+                if (charString.isEmpty()) {
+                    poojaList = poojaListFiltered;
+                } else {
+                    List<PoojaModel> filteredList = new ArrayList<>();
+                    String filterPattern = constraint.toString().toLowerCase().trim();
+                    for (PoojaModel item : poojaListFiltered) {
+                        if (item.getPilgrimName().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                    }
+                    poojaList = filteredList;
+                }
+                FilterResults results = new FilterResults();
+                results.values = poojaList;
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                poojaList = (ArrayList<PoojaModel>) results.values;
+                Log.d("size", String.valueOf(poojaList.size()));
+                notifyDataSetChanged();
+            }
+        };
     }
 }

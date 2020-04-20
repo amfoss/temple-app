@@ -3,11 +3,16 @@ package org.amfoss.templeapp.income;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -64,7 +69,7 @@ public class IncomeFragment extends Fragment
         ButterKnife.bind(this, rootView);
         incomeRecycleView.setHasFixedSize(true);
         incomeRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        setHasOptionsMenu(true);
         incomeViewModel = ViewModelProviders.of(requireActivity()).get(IncomeViewModel.class);
         incomeViewModel.init(getContext());
 
@@ -107,6 +112,38 @@ public class IncomeFragment extends Fragment
         lay.setMargins(2, 2, 75, 75);
         fab.setLayoutParams(lay);
         textViewAddIncome.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.list_menu, menu);
+        MenuItem searchItem = menu.findItem(R.id.menu_filter);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchItem.setShowAsAction(
+                MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        searchItem.setActionView(searchView);
+        searchView.setOnQueryTextListener(
+                new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        donationAdapter.getFilter().filter(newText);
+                        return false;
+                    }
+                });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_filter:
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @OnClick(R.id.fab_income)
