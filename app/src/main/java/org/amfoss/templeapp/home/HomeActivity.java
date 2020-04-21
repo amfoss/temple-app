@@ -1,10 +1,12 @@
 package org.amfoss.templeapp.home;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -111,9 +113,31 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
             ActivityUtils.launchActivity(HomeActivity.this, SettingsActivity.class, false);
         } else if (id == R.id.nav_log_out) {
-            FirebaseAuth.getInstance().signOut();
-            ActivityUtils.launchActivity(HomeActivity.this, LoginActivity.class, true);
+            dialog();
         }
         return true;
+    }
+
+    public void dialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Set the message show for the Alert time
+        builder.setMessage(R.string.ask_logout);
+        builder.setTitle(R.string.alert);
+        builder.setCancelable(false);
+        builder.setPositiveButton(
+                R.string.yes,
+                (dialog, which) -> {
+                    FirebaseAuth.getInstance().signOut();
+                    ActivityUtils.launchActivity(HomeActivity.this, LoginActivity.class, true);
+                    Toast.makeText(this, R.string.logout_successful, Toast.LENGTH_SHORT).show();
+                });
+        builder.setNegativeButton(
+                R.string.no,
+                (dialog, which) -> {
+                    dialog.cancel();
+                });
+        // Create the Alert dialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
