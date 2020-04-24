@@ -5,7 +5,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_pooja"
+            android:id="@+id/nav_pooja_record"
             android:icon="@drawable/ic_add"
             android:title="Add Pooja" />
         <item
@@ -16,10 +16,6 @@
             android:id="@+id/nav_expense_record"
             android:icon="@drawable/ic_add"
             android:title="Add Expense Record" />
-        <item
-            android:id="@+id/nav_donate_money"
-            android:icon="@drawable/ic_donate"
-            android:title="Donate Money" />
     </group>
 
     <item android:title="General settings">

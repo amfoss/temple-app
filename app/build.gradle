@@ -82,4 +82,5 @@ dependencies {
 
     //preferences
     implementation 'androidx.preference:preference:1.1.0'
+    implementation 'androidx.mediarouter:mediarouter:1.0.0'
 }

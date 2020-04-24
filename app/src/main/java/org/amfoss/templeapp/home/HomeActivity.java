@@ -18,6 +18,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import org.amfoss.templeapp.R;
 import org.amfoss.templeapp.Util.ActivityUtils;
+import org.amfoss.templeapp.expenses.addExpense.AddExpenseActivity;
 import org.amfoss.templeapp.income.addDonation.AddDonationActivity;
 import org.amfoss.templeapp.poojas.addPooja.AddPoojaActivity;
 import org.amfoss.templeapp.settings.SettingsActivity;
@@ -101,15 +102,12 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_pooja) {
+        if (id == R.id.nav_pooja_record) {
             ActivityUtils.launchActivity(HomeActivity.this, AddPoojaActivity.class, false);
-            // Handle the camera action
         } else if (id == R.id.nav_income_record) {
-
-        } else if (id == R.id.nav_expense_record) {
-
-        } else if (id == R.id.nav_donate_money) {
             ActivityUtils.launchActivity(HomeActivity.this, AddDonationActivity.class, false);
+        } else if (id == R.id.nav_expense_record) {
+            ActivityUtils.launchActivity(HomeActivity.this, AddExpenseActivity.class, false);
         } else if (id == R.id.nav_settings) {
             ActivityUtils.launchActivity(HomeActivity.this, SettingsActivity.class, false);
         } else if (id == R.id.nav_log_out) {
