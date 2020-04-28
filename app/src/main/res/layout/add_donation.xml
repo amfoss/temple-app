@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_35"
-                android:text="@string/pilgrim_name"
+                android:text="@string/donated_date"
                 android:paddingBottom="@dimen/padd_10"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
