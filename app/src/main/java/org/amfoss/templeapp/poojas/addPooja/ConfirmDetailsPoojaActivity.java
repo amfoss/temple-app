@@ -107,6 +107,7 @@ public class ConfirmDetailsPoojaActivity extends AppCompatActivity {
                                         .show();
                             }
                         });
+        finish();
     }
 
     @OnClick(R.id.btnDetailsInCorrect)

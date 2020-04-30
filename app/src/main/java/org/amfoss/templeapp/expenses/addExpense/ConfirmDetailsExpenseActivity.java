@@ -114,6 +114,7 @@ public class ConfirmDetailsExpenseActivity extends AppCompatActivity {
                                         .show();
                             }
                         });
+        finish();
     }
 
     @OnClick(R.id.btnDetailsInCorrect)

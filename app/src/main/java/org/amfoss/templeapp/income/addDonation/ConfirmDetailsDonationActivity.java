@@ -103,6 +103,7 @@ public class ConfirmDetailsDonationActivity extends AppCompatActivity {
                                         .show();
                             }
                         });
+        finish();
     }
 
     @OnClick(R.id.btnDetailsInCorrect)
