@@ -4,11 +4,15 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -59,7 +63,7 @@ public class ExpensesFragment extends Fragment
         ButterKnife.bind(this, rootView);
         expenseRecyclerView.setHasFixedSize(true);
         expenseRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        setHasOptionsMenu(true);
         expenseViewModel = ViewModelProviders.of(requireActivity()).get(ExpenseViewModel.class);
         expenseViewModel.init(getContext());
 
@@ -91,6 +95,24 @@ public class ExpensesFragment extends Fragment
         expenseAdapter =
                 new ExpenseAdapter(getActivity(), expenseViewModel.getExpenseslist().getValue());
         expenseRecyclerView.setAdapter(expenseAdapter);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.list_menu, menu);
+        MenuItem item = menu.findItem(R.id.menu_filter);
+        item.setVisible(false);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_filter:
+                return true;
+            case R.id.sort_filter:
+                expenseAdapter.sortFilter();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void changeFabPosition() {

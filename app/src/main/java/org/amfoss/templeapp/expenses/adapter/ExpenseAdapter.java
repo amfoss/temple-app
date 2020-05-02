@@ -1,6 +1,8 @@
 package org.amfoss.templeapp.expenses.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.Collections;
 import java.util.List;
 import org.amfoss.templeapp.R;
 
@@ -44,6 +47,24 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
     @Override
     public int getItemCount() {
         return expenseList.size();
+    }
+
+    public void sortFilter() {
+        final String[] sort = {"Date"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Sort By");
+        builder.setItems(
+                sort,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (which == 0) {
+                            Collections.sort(expenseList, ExpenseModel.BY_TITLE_DATE);
+                            notifyDataSetChanged();
+                        }
+                    }
+                });
+        builder.create().show();
     }
 
     public class ExpenseViewHolder extends RecyclerView.ViewHolder {

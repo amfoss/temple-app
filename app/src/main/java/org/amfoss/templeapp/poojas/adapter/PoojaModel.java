@@ -1,5 +1,7 @@
 package org.amfoss.templeapp.poojas.adapter;
 
+import java.util.Comparator;
+
 /**
 * @author by Chromicle (ajayprabhakar369@gmail.com)
 * @since 12/12/2019
@@ -47,4 +49,20 @@ public class PoojaModel {
     public String getPoojaAmount() {
         return poojaAmount;
     }
+
+    public static final Comparator<PoojaModel> BY_TITLE_NAME =
+            new Comparator<PoojaModel>() {
+                @Override
+                public int compare(PoojaModel o1, PoojaModel o2) {
+                    return o1.getPilgrimName().compareTo(o2.getPilgrimName());
+                }
+            };
+
+    public static final Comparator<PoojaModel> BY_TITLE_DATE =
+            new Comparator<PoojaModel>() {
+                @Override
+                public int compare(PoojaModel o1, PoojaModel o2) {
+                    return o1.getPoojaDate().compareTo(o2.getPoojaDate());
+                }
+            };
 }

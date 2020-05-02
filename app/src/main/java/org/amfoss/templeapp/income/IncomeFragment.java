@@ -142,6 +142,8 @@ public class IncomeFragment extends Fragment
         switch (item.getItemId()) {
             case R.id.menu_filter:
                 return true;
+            case R.id.sort_filter:
+                donationAdapter.sortFilter();
         }
         return super.onOptionsItemSelected(item);
     }

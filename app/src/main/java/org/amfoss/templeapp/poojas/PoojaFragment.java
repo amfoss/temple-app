@@ -139,6 +139,8 @@ public class PoojaFragment extends Fragment
         switch (item.getItemId()) {
             case R.id.menu_filter:
                 return true;
+            case R.id.sort_filter:
+                poojaAdapter.sortFilter();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/sort_filter"
         android:icon="@drawable/ic_sort"
         android:title="Sort"
         app:showAsAction="always"/>

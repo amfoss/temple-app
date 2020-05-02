@@ -1,5 +1,7 @@
 package org.amfoss.templeapp.expenses.adapter;
 
+import java.util.Comparator;
+
 /**
 * @author robustTechie(s.priyadarshi629@gmail.com)
 * @since 09/04/2020
@@ -48,4 +50,12 @@ public class ExpenseModel {
     public String getExpenseType() {
         return expenseType;
     }
+
+    public static final Comparator<ExpenseModel> BY_TITLE_DATE =
+            new Comparator<ExpenseModel>() {
+                @Override
+                public int compare(ExpenseModel o1, ExpenseModel o2) {
+                    return o1.getExpenseDate().compareTo(o2.getExpenseDate());
+                }
+            };
 }

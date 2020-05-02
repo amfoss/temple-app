@@ -1,6 +1,8 @@
 package org.amfoss.templeapp.income.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.amfoss.templeapp.R;
 
@@ -51,6 +54,28 @@ public class DonationAdapter extends RecyclerView.Adapter<DonationAdapter.Donati
     @Override
     public int getItemCount() {
         return DonationList.size();
+    }
+
+    public void sortFilter() {
+        final String[] sort = {"Name", "Date"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Sort By");
+        builder.setItems(
+                sort,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (which == 0) {
+                            Collections.sort(DonationList, DonationModel.BY_TITLE_NAME);
+                            notifyDataSetChanged();
+                        }
+                        if (which == 1) {
+                            Collections.sort(DonationList, DonationModel.BY_TITLE_DATE);
+                            notifyDataSetChanged();
+                        }
+                    }
+                });
+        builder.create().show();
     }
 
     @Override
